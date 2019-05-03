@@ -1,0 +1,12 @@
+
+local t ={}
+
+function t.qq()
+	print("Get QQ")
+end
+
+function t.tt()
+	print("Get TT")
+end
+
+return t

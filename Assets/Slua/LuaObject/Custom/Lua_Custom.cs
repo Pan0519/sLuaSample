@@ -17,17 +17,7 @@ public class Lua_Custom : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(argc==3){
-				Custom self=(Custom)checkSelf(l);
-				System.Int32 a1;
-				checkType(l,2,out a1);
-				System.String a2;
-				checkType(l,3,out a2);
-				self.send(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(argc==4){
+			if(argc==4){
 				Custom self=(Custom)checkSelf(l);
 				System.Int32 a1;
 				checkType(l,2,out a1);
@@ -42,6 +32,41 @@ public class Lua_Custom : LuaObject {
 			pushValue(l,false);
 			LuaDLL.lua_pushstring(l,"No matched override function send to call");
 			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int AFuncByDouble(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			Custom self=(Custom)checkSelf(l);
+			System.Int32 a1;
+			checkType(l,2,out a1);
+			System.String a2;
+			checkType(l,3,out a2);
+			self.send(a1,a2);
+			pushValue(l,true);
+			return 1;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -323,6 +348,7 @@ public class Lua_Custom : LuaObject {
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"Custom");
+		addMember(l,AFuncByDouble);
 		addMember(l,send);
 		addMember(l,setStr);
 		addMember(l,getStr);

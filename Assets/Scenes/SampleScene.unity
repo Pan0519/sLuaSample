@@ -521,6 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9dbd352bcdd524dba31f36fc135a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fileName: testlua2
   ProgressText: {fileID: 612877164}
   ResultText: {fileID: 959421042}
 --- !u!4 &1579121673

@@ -1,3 +1,5 @@
+local custom = require "custom"
+
 import "UnityEngine"
 if not UnityEngine.GameObject then
     error("Click Make/All to generate lua wrap file")
@@ -7,13 +9,17 @@ local class = {}
 
 local arr = {1, 2, 3, 4, 5}
 
-local class = {}
-
 function main()
     print("lua--- run lua main function")
-    class.testMain = GameObject.Find("Main"):GetComponent(TestMain)
-    class.ftext = GameObject.Find("Canvas/Text"):GetComponent(UI.Text)
-    -- class:init()
+    
+    -- class.testMain = TestMain.instanceTestMain
+    class.testMain = GameObject.Find("Main"):GetComponent("TestMain")
+    print(class.testMain == nill)
+    
+   -- custom.qq()
+
+   custom.tt()
+    
     return class
 end
 
@@ -128,10 +134,14 @@ local time = 0
 -- 在C#的Update函数中被调用
 function class:update()
     time = time + Time.deltaTime
-    class.ftext.text = time
+    class.testMain:luaCallCS(time)
 end
 
 function class:start()
     print("Start Run")
+end
+
+function class:destory()
+    print("destory")
 end
 

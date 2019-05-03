@@ -5,6 +5,7 @@ namespace SLua {
 	public class BindCustom {
 		public static Action<IntPtr>[] GetBindList() {
 			Action<IntPtr>[] list= {
+				Lua_LuaBehavior.reg,
 				Lua_TestMain.reg,
 				Lua_Custom.reg,
 				Lua_Custom_IFoo.reg,

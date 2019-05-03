@@ -22,7 +22,7 @@ public class Custom : MonoBehaviour
             l.start("custom");
         });
 
-        
+       
     }
 
     // Update is called once per frame
@@ -60,6 +60,7 @@ public class Custom : MonoBehaviour
 
     }
 
+    [LuaOverride("AFuncByDouble")]
     public void send(int amount, string s)
     {
 
