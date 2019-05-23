@@ -360,39 +360,6 @@ public class Lua_UnityEngine_Vector2 : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int Perpendicular_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Vector2 a1;
-			checkType(l,1,out a1);
-			var ret=UnityEngine.Vector2.Perpendicular(a1);
-			pushValue(l,true);
-			pushValue(l,ret);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int Dot_s(IntPtr l) {
 		try {
 			#if DEBUG
@@ -682,61 +649,23 @@ public class Lua_UnityEngine_Vector2 : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(argc==4){
-				UnityEngine.Vector2 a1;
-				checkType(l,1,out a1);
-				UnityEngine.Vector2 a2;
-				checkType(l,2,out a2);
-				UnityEngine.Vector2 a3;
-				checkType(l,3,out a3);
-				System.Single a4;
-				checkType(l,4,out a4);
-				var ret=UnityEngine.Vector2.SmoothDamp(a1,a2,ref a3,a4);
-				pushValue(l,true);
-				pushValue(l,ret);
-				pushValue(l,a3);
-				return 3;
-			}
-			else if(argc==5){
-				UnityEngine.Vector2 a1;
-				checkType(l,1,out a1);
-				UnityEngine.Vector2 a2;
-				checkType(l,2,out a2);
-				UnityEngine.Vector2 a3;
-				checkType(l,3,out a3);
-				System.Single a4;
-				checkType(l,4,out a4);
-				System.Single a5;
-				checkType(l,5,out a5);
-				var ret=UnityEngine.Vector2.SmoothDamp(a1,a2,ref a3,a4,a5);
-				pushValue(l,true);
-				pushValue(l,ret);
-				pushValue(l,a3);
-				return 3;
-			}
-			else if(argc==6){
-				UnityEngine.Vector2 a1;
-				checkType(l,1,out a1);
-				UnityEngine.Vector2 a2;
-				checkType(l,2,out a2);
-				UnityEngine.Vector2 a3;
-				checkType(l,3,out a3);
-				System.Single a4;
-				checkType(l,4,out a4);
-				System.Single a5;
-				checkType(l,5,out a5);
-				System.Single a6;
-				checkType(l,6,out a6);
-				var ret=UnityEngine.Vector2.SmoothDamp(a1,a2,ref a3,a4,a5,a6);
-				pushValue(l,true);
-				pushValue(l,ret);
-				pushValue(l,a3);
-				return 3;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function SmoothDamp to call");
-			return 2;
+			UnityEngine.Vector2 a1;
+			checkType(l,1,out a1);
+			UnityEngine.Vector2 a2;
+			checkType(l,2,out a2);
+			UnityEngine.Vector2 a3;
+			checkType(l,3,out a3);
+			System.Single a4;
+			checkType(l,4,out a4);
+			System.Single a5;
+			checkType(l,5,out a5);
+			System.Single a6;
+			checkType(l,6,out a6);
+			var ret=UnityEngine.Vector2.SmoothDamp(a1,a2,ref a3,a4,a5,a6);
+			pushValue(l,true);
+			pushValue(l,ret);
+			pushValue(l,a3);
+			return 3;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -823,6 +752,39 @@ public class Lua_UnityEngine_Vector2 : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int op_UnaryNegation(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Vector2 a1;
+			checkType(l,1,out a1);
+			var ret=-a1;
+			pushValue(l,true);
+			pushValue(l,ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int op_Multiply(IntPtr l) {
 		try {
 			#if DEBUG
@@ -835,17 +797,7 @@ public class Lua_UnityEngine_Vector2 : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(float),typeof(UnityEngine.Vector2))){
-				System.Single a1;
-				checkType(l,1,out a1);
-				UnityEngine.Vector2 a2;
-				checkType(l,2,out a2);
-				var ret=a1*a2;
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,1,typeof(UnityEngine.Vector2),typeof(float))){
+			if(matchType(l,argc,1,typeof(UnityEngine.Vector2),typeof(float))){
 				UnityEngine.Vector2 a1;
 				checkType(l,1,out a1);
 				System.Single a2;
@@ -855,8 +807,8 @@ public class Lua_UnityEngine_Vector2 : LuaObject {
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(UnityEngine.Vector2),typeof(UnityEngine.Vector2))){
-				UnityEngine.Vector2 a1;
+			else if(matchType(l,argc,1,typeof(float),typeof(UnityEngine.Vector2))){
+				System.Single a1;
 				checkType(l,1,out a1);
 				UnityEngine.Vector2 a2;
 				checkType(l,2,out a2);
@@ -895,60 +847,11 @@ public class Lua_UnityEngine_Vector2 : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(UnityEngine.Vector2),typeof(float))){
-				UnityEngine.Vector2 a1;
-				checkType(l,1,out a1);
-				System.Single a2;
-				checkType(l,2,out a2);
-				var ret=a1/a2;
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,1,typeof(UnityEngine.Vector2),typeof(UnityEngine.Vector2))){
-				UnityEngine.Vector2 a1;
-				checkType(l,1,out a1);
-				UnityEngine.Vector2 a2;
-				checkType(l,2,out a2);
-				var ret=a1/a2;
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function op_Division to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int op_UnaryNegation(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
 			UnityEngine.Vector2 a1;
 			checkType(l,1,out a1);
-			var ret=-a1;
+			System.Single a2;
+			checkType(l,2,out a2);
+			var ret=a1/a2;
 			pushValue(l,true);
 			pushValue(l,ret);
 			return 2;
@@ -1619,7 +1522,6 @@ public class Lua_UnityEngine_Vector2 : LuaObject {
 		addMember(l,MoveTowards_s);
 		addMember(l,Scale_s);
 		addMember(l,Reflect_s);
-		addMember(l,Perpendicular_s);
 		addMember(l,Dot_s);
 		addMember(l,Angle_s);
 		addMember(l,SignedAngle_s);
@@ -1631,9 +1533,9 @@ public class Lua_UnityEngine_Vector2 : LuaObject {
 		addMember(l,SmoothDamp_s);
 		addMember(l,op_Addition);
 		addMember(l,op_Subtraction);
+		addMember(l,op_UnaryNegation);
 		addMember(l,op_Multiply);
 		addMember(l,op_Division);
-		addMember(l,op_UnaryNegation);
 		addMember(l,op_Equality);
 		addMember(l,op_Inequality);
 		addMember(l,getItem);

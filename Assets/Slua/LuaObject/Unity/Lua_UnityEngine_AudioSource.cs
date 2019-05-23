@@ -2433,6 +2433,6 @@ public class Lua_UnityEngine_AudioSource : LuaObject {
 		addMember(l,"minDistance",get_minDistance,set_minDistance,true);
 		addMember(l,"maxDistance",get_maxDistance,set_maxDistance,true);
 		addMember(l,"rolloffMode",get_rolloffMode,set_rolloffMode,true);
-		createTypeMetatable(l,null, typeof(UnityEngine.AudioSource),typeof(UnityEngine.AudioBehaviour));
+		createTypeMetatable(l,null, typeof(UnityEngine.AudioSource),typeof(UnityEngine.Behaviour));
 	}
 }

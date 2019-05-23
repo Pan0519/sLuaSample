@@ -5,6 +5,38 @@ using System.Collections.Generic;
 public class Lua_UnityEngine_Rendering_GraphicsSettings : LuaObject {
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int constructor(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Rendering.GraphicsSettings o;
+			o=new UnityEngine.Rendering.GraphicsSettings();
+			pushValue(l,true);
+			pushValue(l,o);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int SetShaderMode_s(IntPtr l) {
 		try {
 			#if DEBUG
@@ -509,6 +541,6 @@ public class Lua_UnityEngine_Rendering_GraphicsSettings : LuaObject {
 		addMember(l,"transparencySortAxis",get_transparencySortAxis,set_transparencySortAxis,false);
 		addMember(l,"lightsUseLinearIntensity",get_lightsUseLinearIntensity,set_lightsUseLinearIntensity,false);
 		addMember(l,"lightsUseColorTemperature",get_lightsUseColorTemperature,set_lightsUseColorTemperature,false);
-		createTypeMetatable(l,null, typeof(UnityEngine.Rendering.GraphicsSettings),typeof(UnityEngine.Object));
+		createTypeMetatable(l,constructor, typeof(UnityEngine.Rendering.GraphicsSettings),typeof(UnityEngine.Object));
 	}
 }

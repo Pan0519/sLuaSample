@@ -16,23 +16,11 @@ public class Lua_UnityEngine_TextAsset : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			int argc = LuaDLL.lua_gettop(l);
 			UnityEngine.TextAsset o;
-			if(argc==1){
-				o=new UnityEngine.TextAsset();
-				pushValue(l,true);
-				pushValue(l,o);
-				return 2;
-			}
-			else if(argc==2){
-				System.String a1;
-				checkType(l,2,out a1);
-				o=new UnityEngine.TextAsset(a1);
-				pushValue(l,true);
-				pushValue(l,o);
-				return 2;
-			}
-			return error(l,"New object failed.");
+			o=new UnityEngine.TextAsset();
+			pushValue(l,true);
+			pushValue(l,o);
+			return 2;
 		}
 		catch(Exception e) {
 			return error(l,e);

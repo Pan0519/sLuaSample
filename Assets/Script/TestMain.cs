@@ -17,9 +17,15 @@ public class TestMain : LuaBehavior
 
     static TestMain selfClass;
 
+    [CustomLuaClass]
+    public delegate void newClassDelegate(object self);
+    newClassDelegate newClassDele;
+
     public override void Awake()
     {
         selfClass = this;
+
+        ShowProgressText = ProgressText;
 
         base.Awake();
     }
@@ -33,11 +39,18 @@ public class TestMain : LuaBehavior
         return 2;
     }
 
+    public override void Start()
+    {
+
+    }
+
     public override void initComplete()
     {
-        int isPrime = LuaSvr.mainState.getFunction("testFun").call().convertToInt();
+        LuaSvr.mainState.getFunction("testBaseMain").call();
 
-        ResultText.text = string.Concat("isPrime:", isPrime);
+        //int isPrime =.convertToInt();
+
+        //ResultText.text = string.Concat("isPrime:", isPrime);
 
         // 调用lua的方法
 

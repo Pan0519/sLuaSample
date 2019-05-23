@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Lua_UnityEngine_Texture : LuaObject {
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int IncrementUpdateCount(IntPtr l) {
+	static public int constructor(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -16,10 +16,11 @@ public class Lua_UnityEngine_Texture : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Texture self=(UnityEngine.Texture)checkSelf(l);
-			self.IncrementUpdateCount();
+			UnityEngine.Texture o;
+			o=new UnityEngine.Texture();
 			pushValue(l,true);
-			return 1;
+			pushValue(l,o);
+			return 2;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -86,37 +87,6 @@ public class Lua_UnityEngine_Texture : LuaObject {
 			UnityEngine.Texture.SetGlobalAnisotropicFilteringLimits(a1,a2);
 			pushValue(l,true);
 			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_updateCount(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Texture self=(UnityEngine.Texture)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.updateCount);
-			return 2;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -449,6 +419,134 @@ public class Lua_UnityEngine_Texture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int get_filterMode(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Texture self=(UnityEngine.Texture)checkSelf(l);
+			pushValue(l,true);
+			pushEnum(l,(int)self.filterMode);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int set_filterMode(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Texture self=(UnityEngine.Texture)checkSelf(l);
+			UnityEngine.FilterMode v;
+			v = (UnityEngine.FilterMode)LuaDLL.luaL_checkinteger(l, 2);
+			self.filterMode=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_anisoLevel(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Texture self=(UnityEngine.Texture)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.anisoLevel);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int set_anisoLevel(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Texture self=(UnityEngine.Texture)checkSelf(l);
+			int v;
+			checkType(l,2,out v);
+			self.anisoLevel=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int get_wrapMode(IntPtr l) {
 		try {
 			#if DEBUG
@@ -705,134 +803,6 @@ public class Lua_UnityEngine_Texture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_filterMode(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Texture self=(UnityEngine.Texture)checkSelf(l);
-			pushValue(l,true);
-			pushEnum(l,(int)self.filterMode);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int set_filterMode(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Texture self=(UnityEngine.Texture)checkSelf(l);
-			UnityEngine.FilterMode v;
-			v = (UnityEngine.FilterMode)LuaDLL.luaL_checkinteger(l, 2);
-			self.filterMode=v;
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_anisoLevel(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Texture self=(UnityEngine.Texture)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.anisoLevel);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int set_anisoLevel(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Texture self=(UnityEngine.Texture)checkSelf(l);
-			int v;
-			checkType(l,2,out v);
-			self.anisoLevel=v;
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_mipMapBias(IntPtr l) {
 		try {
 			#if DEBUG
@@ -929,23 +899,21 @@ public class Lua_UnityEngine_Texture : LuaObject {
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.Texture");
-		addMember(l,IncrementUpdateCount);
 		addMember(l,GetNativeTexturePtr);
 		addMember(l,SetGlobalAnisotropicFilteringLimits_s);
-		addMember(l,"updateCount",get_updateCount,null,true);
 		addMember(l,"masterTextureLimit",get_masterTextureLimit,set_masterTextureLimit,false);
 		addMember(l,"anisotropicFiltering",get_anisotropicFiltering,set_anisotropicFiltering,false);
 		addMember(l,"width",get_width,set_width,true);
 		addMember(l,"height",get_height,set_height,true);
 		addMember(l,"dimension",get_dimension,set_dimension,true);
+		addMember(l,"filterMode",get_filterMode,set_filterMode,true);
+		addMember(l,"anisoLevel",get_anisoLevel,set_anisoLevel,true);
 		addMember(l,"wrapMode",get_wrapMode,set_wrapMode,true);
 		addMember(l,"wrapModeU",get_wrapModeU,set_wrapModeU,true);
 		addMember(l,"wrapModeV",get_wrapModeV,set_wrapModeV,true);
 		addMember(l,"wrapModeW",get_wrapModeW,set_wrapModeW,true);
-		addMember(l,"filterMode",get_filterMode,set_filterMode,true);
-		addMember(l,"anisoLevel",get_anisoLevel,set_anisoLevel,true);
 		addMember(l,"mipMapBias",get_mipMapBias,set_mipMapBias,true);
 		addMember(l,"texelSize",get_texelSize,null,true);
-		createTypeMetatable(l,null, typeof(UnityEngine.Texture),typeof(UnityEngine.Object));
+		createTypeMetatable(l,constructor, typeof(UnityEngine.Texture),typeof(UnityEngine.Object));
 	}
 }

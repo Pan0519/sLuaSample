@@ -67,6 +67,36 @@ public class Lua_UnityEngine_Application : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int CancelQuit_s(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Application.CancelQuit();
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int Unload_s(IntPtr l) {
 		try {
 			#if DEBUG
@@ -109,16 +139,16 @@ public class Lua_UnityEngine_Application : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(string))){
-				System.String a1;
+			if(matchType(l,argc,1,typeof(int))){
+				System.Int32 a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Application.GetStreamProgressForLevel(a1);
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(int))){
-				System.Int32 a1;
+			else if(matchType(l,argc,1,typeof(string))){
+				System.String a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Application.GetStreamProgressForLevel(a1);
 				pushValue(l,true);
@@ -156,16 +186,16 @@ public class Lua_UnityEngine_Application : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(string))){
-				System.String a1;
+			if(matchType(l,argc,1,typeof(int))){
+				System.Int32 a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Application.CanStreamedLevelBeLoaded(a1);
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(int))){
-				System.Int32 a1;
+			else if(matchType(l,argc,1,typeof(string))){
+				System.String a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Application.CanStreamedLevelBeLoaded(a1);
 				pushValue(l,true);
@@ -1451,6 +1481,7 @@ public class Lua_UnityEngine_Application : LuaObject {
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.Application");
 		addMember(l,Quit_s);
+		addMember(l,CancelQuit_s);
 		addMember(l,Unload_s);
 		addMember(l,GetStreamProgressForLevel_s);
 		addMember(l,CanStreamedLevelBeLoaded_s);

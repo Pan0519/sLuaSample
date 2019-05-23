@@ -18,7 +18,21 @@ public class Lua_UnityEngine_CubemapArray : LuaObject {
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
 			UnityEngine.CubemapArray o;
-			if(argc==6){
+			if(argc==5){
+				System.Int32 a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				UnityEngine.TextureFormat a3;
+				a3 = (UnityEngine.TextureFormat)LuaDLL.luaL_checkinteger(l, 4);
+				System.Boolean a4;
+				checkType(l,5,out a4);
+				o=new UnityEngine.CubemapArray(a1,a2,a3,a4);
+				pushValue(l,true);
+				pushValue(l,o);
+				return 2;
+			}
+			else if(argc==6){
 				System.Int32 a1;
 				checkType(l,2,out a1);
 				System.Int32 a2;
@@ -34,21 +48,62 @@ public class Lua_UnityEngine_CubemapArray : LuaObject {
 				pushValue(l,o);
 				return 2;
 			}
-			else if(argc==5){
-				System.Int32 a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				UnityEngine.TextureFormat a3;
-				a3 = (UnityEngine.TextureFormat)LuaDLL.luaL_checkinteger(l, 4);
-				System.Boolean a4;
-				checkType(l,5,out a4);
-				o=new UnityEngine.CubemapArray(a1,a2,a3,a4);
-				pushValue(l,true);
-				pushValue(l,o);
-				return 2;
-			}
 			return error(l,"New object failed.");
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int Apply(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==1){
+				UnityEngine.CubemapArray self=(UnityEngine.CubemapArray)checkSelf(l);
+				self.Apply();
+				pushValue(l,true);
+				return 1;
+			}
+			else if(argc==2){
+				UnityEngine.CubemapArray self=(UnityEngine.CubemapArray)checkSelf(l);
+				System.Boolean a1;
+				checkType(l,2,out a1);
+				self.Apply(a1);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(argc==3){
+				UnityEngine.CubemapArray self=(UnityEngine.CubemapArray)checkSelf(l);
+				System.Boolean a1;
+				checkType(l,2,out a1);
+				System.Boolean a2;
+				checkType(l,3,out a2);
+				self.Apply(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function Apply to call");
+			return 2;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -289,61 +344,6 @@ public class Lua_UnityEngine_CubemapArray : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int Apply(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(argc==1){
-				UnityEngine.CubemapArray self=(UnityEngine.CubemapArray)checkSelf(l);
-				self.Apply();
-				pushValue(l,true);
-				return 1;
-			}
-			else if(argc==2){
-				UnityEngine.CubemapArray self=(UnityEngine.CubemapArray)checkSelf(l);
-				System.Boolean a1;
-				checkType(l,2,out a1);
-				self.Apply(a1);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(argc==3){
-				UnityEngine.CubemapArray self=(UnityEngine.CubemapArray)checkSelf(l);
-				System.Boolean a1;
-				checkType(l,2,out a1);
-				System.Boolean a2;
-				checkType(l,3,out a2);
-				self.Apply(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function Apply to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_cubemapCount(IntPtr l) {
 		try {
 			#if DEBUG
@@ -407,11 +407,11 @@ public class Lua_UnityEngine_CubemapArray : LuaObject {
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.CubemapArray");
+		addMember(l,Apply);
 		addMember(l,SetPixels);
 		addMember(l,SetPixels32);
 		addMember(l,GetPixels);
 		addMember(l,GetPixels32);
-		addMember(l,Apply);
 		addMember(l,"cubemapCount",get_cubemapCount,null,true);
 		addMember(l,"format",get_format,null,true);
 		createTypeMetatable(l,constructor, typeof(UnityEngine.CubemapArray),typeof(UnityEngine.Texture));

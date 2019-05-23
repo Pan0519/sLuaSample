@@ -126,20 +126,20 @@ public class Lua_UnityEngine_Rect : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(UnityEngine.Vector3))){
+			if(matchType(l,argc,2,typeof(UnityEngine.Vector2))){
 				UnityEngine.Rect self;
 				checkValueType(l,1,out self);
-				UnityEngine.Vector3 a1;
+				UnityEngine.Vector2 a1;
 				checkType(l,2,out a1);
 				var ret=self.Contains(a1);
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,2,typeof(UnityEngine.Vector2))){
+			else if(matchType(l,argc,2,typeof(UnityEngine.Vector3))){
 				UnityEngine.Rect self;
 				checkValueType(l,1,out self);
-				UnityEngine.Vector2 a1;
+				UnityEngine.Vector3 a1;
 				checkType(l,2,out a1);
 				var ret=self.Contains(a1);
 				pushValue(l,true);

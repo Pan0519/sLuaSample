@@ -18,7 +18,23 @@ public class Lua_UnityEngine_Texture2DArray : LuaObject {
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
 			UnityEngine.Texture2DArray o;
-			if(argc==7){
+			if(argc==6){
+				System.Int32 a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				System.Int32 a3;
+				checkType(l,4,out a3);
+				UnityEngine.TextureFormat a4;
+				a4 = (UnityEngine.TextureFormat)LuaDLL.luaL_checkinteger(l, 5);
+				System.Boolean a5;
+				checkType(l,6,out a5);
+				o=new UnityEngine.Texture2DArray(a1,a2,a3,a4,a5);
+				pushValue(l,true);
+				pushValue(l,o);
+				return 2;
+			}
+			else if(argc==7){
 				System.Int32 a1;
 				checkType(l,2,out a1);
 				System.Int32 a2;
@@ -36,23 +52,62 @@ public class Lua_UnityEngine_Texture2DArray : LuaObject {
 				pushValue(l,o);
 				return 2;
 			}
-			else if(argc==6){
-				System.Int32 a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.Int32 a3;
-				checkType(l,4,out a3);
-				UnityEngine.TextureFormat a4;
-				a4 = (UnityEngine.TextureFormat)LuaDLL.luaL_checkinteger(l, 5);
-				System.Boolean a5;
-				checkType(l,6,out a5);
-				o=new UnityEngine.Texture2DArray(a1,a2,a3,a4,a5);
-				pushValue(l,true);
-				pushValue(l,o);
-				return 2;
-			}
 			return error(l,"New object failed.");
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int Apply(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==1){
+				UnityEngine.Texture2DArray self=(UnityEngine.Texture2DArray)checkSelf(l);
+				self.Apply();
+				pushValue(l,true);
+				return 1;
+			}
+			else if(argc==2){
+				UnityEngine.Texture2DArray self=(UnityEngine.Texture2DArray)checkSelf(l);
+				System.Boolean a1;
+				checkType(l,2,out a1);
+				self.Apply(a1);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(argc==3){
+				UnityEngine.Texture2DArray self=(UnityEngine.Texture2DArray)checkSelf(l);
+				System.Boolean a1;
+				checkType(l,2,out a1);
+				System.Boolean a2;
+				checkType(l,3,out a2);
+				self.Apply(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function Apply to call");
+			return 2;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -277,61 +332,6 @@ public class Lua_UnityEngine_Texture2DArray : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int Apply(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(argc==1){
-				UnityEngine.Texture2DArray self=(UnityEngine.Texture2DArray)checkSelf(l);
-				self.Apply();
-				pushValue(l,true);
-				return 1;
-			}
-			else if(argc==2){
-				UnityEngine.Texture2DArray self=(UnityEngine.Texture2DArray)checkSelf(l);
-				System.Boolean a1;
-				checkType(l,2,out a1);
-				self.Apply(a1);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(argc==3){
-				UnityEngine.Texture2DArray self=(UnityEngine.Texture2DArray)checkSelf(l);
-				System.Boolean a1;
-				checkType(l,2,out a1);
-				System.Boolean a2;
-				checkType(l,3,out a2);
-				self.Apply(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function Apply to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_depth(IntPtr l) {
 		try {
 			#if DEBUG
@@ -395,11 +395,11 @@ public class Lua_UnityEngine_Texture2DArray : LuaObject {
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.Texture2DArray");
+		addMember(l,Apply);
 		addMember(l,SetPixels);
 		addMember(l,SetPixels32);
 		addMember(l,GetPixels);
 		addMember(l,GetPixels32);
-		addMember(l,Apply);
 		addMember(l,"depth",get_depth,null,true);
 		addMember(l,"format",get_format,null,true);
 		createTypeMetatable(l,constructor, typeof(UnityEngine.Texture2DArray),typeof(UnityEngine.Texture));

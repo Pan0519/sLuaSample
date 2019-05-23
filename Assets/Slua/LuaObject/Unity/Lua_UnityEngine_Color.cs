@@ -149,8 +149,8 @@ public class Lua_UnityEngine_Color : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(float),typeof(UnityEngine.Color))){
-				System.Single a1;
+			if(matchType(l,argc,1,typeof(UnityEngine.Color),typeof(UnityEngine.Color))){
+				UnityEngine.Color a1;
 				checkType(l,1,out a1);
 				UnityEngine.Color a2;
 				checkType(l,2,out a2);
@@ -169,8 +169,8 @@ public class Lua_UnityEngine_Color : LuaObject {
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(UnityEngine.Color),typeof(UnityEngine.Color))){
-				UnityEngine.Color a1;
+			else if(matchType(l,argc,1,typeof(float),typeof(UnityEngine.Color))){
+				System.Single a1;
 				checkType(l,1,out a1);
 				UnityEngine.Color a2;
 				checkType(l,2,out a2);

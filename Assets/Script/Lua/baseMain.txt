@@ -1,0 +1,20 @@
+baseMain = {}
+
+function baseMain:new(printValue,xxxmainClass)
+    print("This Base Main")
+    print(printValue)
+    local _base = setmetatable({},{__index = baseMain})
+    local _super = getmetatable(_base)
+
+    setmetatable(xxxmainClass,_super)
+
+    _base.super = setmetatable({},_super)
+    local _child = setmetatable(_base,{__index = xxxmainClass})
+    return _child
+end
+
+function baseMain:testBaseMain()
+    print("Enter Base Main")
+end
+
+-- return baseMain

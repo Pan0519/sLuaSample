@@ -1,4 +1,4 @@
-local custom = require "custom"
+require "custom"
 
 import "UnityEngine"
 if not UnityEngine.GameObject then
@@ -13,7 +13,7 @@ function main()
     print("lua--- run lua main function")
     
     -- class.testMain = TestMain.instanceTestMain
-    class.testMain = GameObject.Find("Main"):GetComponent("TestMain")
+    class.testMain = GameObject.Find("Main"):GetComponent(TestMain)
     print(class.testMain == nill)
     
    -- custom.qq()

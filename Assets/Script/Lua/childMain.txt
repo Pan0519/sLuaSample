@@ -1,0 +1,14 @@
+require "baseMain"
+
+childMain = {}
+
+function main()
+	print("lua--- run lua main function")
+	baseMain:new("Child Main",childMain)
+end
+
+function childMain:testBaseMain()
+	self.super.testBaseMain(self)
+end
+
+return childMain

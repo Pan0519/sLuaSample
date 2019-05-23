@@ -25,8 +25,8 @@ public class Lua_UnityEngine_RuntimePlatform : LuaObject {
 		addMember(l,18,"MetroPlayerX86");
 		addMember(l,19,"WSAPlayerX64");
 		addMember(l,19,"MetroPlayerX64");
-		addMember(l,20,"WSAPlayerARM");
 		addMember(l,20,"MetroPlayerARM");
+		addMember(l,20,"WSAPlayerARM");
 		addMember(l,21,"WP8Player");
 		addMember(l,22,"BlackBerryPlayer");
 		addMember(l,22,"BB10Player");

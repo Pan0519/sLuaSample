@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Lua_UnityEngine_Shader : LuaObject {
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int PropertyToID_s(IntPtr l) {
+	static public int constructor(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -16,11 +16,10 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			System.String a1;
-			checkType(l,1,out a1);
-			var ret=UnityEngine.Shader.PropertyToID(a1);
+			UnityEngine.Shader o;
+			o=new UnityEngine.Shader();
 			pushValue(l,true);
-			pushValue(l,ret);
+			pushValue(l,o);
 			return 2;
 		}
 		catch(Exception e) {
@@ -168,330 +167,6 @@ public class Lua_UnityEngine_Shader : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int WarmupAllShaders_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Shader.WarmupAllShaders();
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int SetGlobalFloat_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int),typeof(float))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				System.Single a2;
-				checkType(l,2,out a2);
-				UnityEngine.Shader.SetGlobalFloat(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,1,typeof(string),typeof(float))){
-				System.String a1;
-				checkType(l,1,out a1);
-				System.Single a2;
-				checkType(l,2,out a2);
-				UnityEngine.Shader.SetGlobalFloat(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function SetGlobalFloat to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int SetGlobalInt_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int),typeof(int))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				System.Int32 a2;
-				checkType(l,2,out a2);
-				UnityEngine.Shader.SetGlobalInt(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,1,typeof(string),typeof(int))){
-				System.String a1;
-				checkType(l,1,out a1);
-				System.Int32 a2;
-				checkType(l,2,out a2);
-				UnityEngine.Shader.SetGlobalInt(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function SetGlobalInt to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int SetGlobalVector_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.Vector4))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				UnityEngine.Vector4 a2;
-				checkType(l,2,out a2);
-				UnityEngine.Shader.SetGlobalVector(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Vector4))){
-				System.String a1;
-				checkType(l,1,out a1);
-				UnityEngine.Vector4 a2;
-				checkType(l,2,out a2);
-				UnityEngine.Shader.SetGlobalVector(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function SetGlobalVector to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int SetGlobalColor_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.Color))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				UnityEngine.Color a2;
-				checkType(l,2,out a2);
-				UnityEngine.Shader.SetGlobalColor(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Color))){
-				System.String a1;
-				checkType(l,1,out a1);
-				UnityEngine.Color a2;
-				checkType(l,2,out a2);
-				UnityEngine.Shader.SetGlobalColor(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function SetGlobalColor to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int SetGlobalMatrix_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.Matrix4x4))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				UnityEngine.Matrix4x4 a2;
-				checkValueType(l,2,out a2);
-				UnityEngine.Shader.SetGlobalMatrix(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Matrix4x4))){
-				System.String a1;
-				checkType(l,1,out a1);
-				UnityEngine.Matrix4x4 a2;
-				checkValueType(l,2,out a2);
-				UnityEngine.Shader.SetGlobalMatrix(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function SetGlobalMatrix to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int SetGlobalTexture_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.Texture))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				UnityEngine.Texture a2;
-				checkType(l,2,out a2);
-				UnityEngine.Shader.SetGlobalTexture(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Texture))){
-				System.String a1;
-				checkType(l,1,out a1);
-				UnityEngine.Texture a2;
-				checkType(l,2,out a2);
-				UnityEngine.Shader.SetGlobalTexture(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function SetGlobalTexture to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int SetGlobalBuffer_s(IntPtr l) {
 		try {
 			#if DEBUG
@@ -541,6 +216,363 @@ public class Lua_UnityEngine_Shader : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int PropertyToID_s(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			System.String a1;
+			checkType(l,1,out a1);
+			var ret=UnityEngine.Shader.PropertyToID(a1);
+			pushValue(l,true);
+			pushValue(l,ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int WarmupAllShaders_s(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Shader.WarmupAllShaders();
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int SetGlobalFloat_s(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,1,typeof(string),typeof(float))){
+				System.String a1;
+				checkType(l,1,out a1);
+				System.Single a2;
+				checkType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalFloat(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(int),typeof(float))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				System.Single a2;
+				checkType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalFloat(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function SetGlobalFloat to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int SetGlobalInt_s(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,1,typeof(string),typeof(int))){
+				System.String a1;
+				checkType(l,1,out a1);
+				System.Int32 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalInt(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(int),typeof(int))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				System.Int32 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalInt(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function SetGlobalInt to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int SetGlobalVector_s(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Vector4))){
+				System.String a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector4 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalVector(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.Vector4))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector4 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalVector(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function SetGlobalVector to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int SetGlobalColor_s(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Color))){
+				System.String a1;
+				checkType(l,1,out a1);
+				UnityEngine.Color a2;
+				checkType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalColor(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.Color))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Color a2;
+				checkType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalColor(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function SetGlobalColor to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int SetGlobalMatrix_s(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Matrix4x4))){
+				System.String a1;
+				checkType(l,1,out a1);
+				UnityEngine.Matrix4x4 a2;
+				checkValueType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalMatrix(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.Matrix4x4))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Matrix4x4 a2;
+				checkValueType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalMatrix(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function SetGlobalMatrix to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int SetGlobalTexture_s(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Texture))){
+				System.String a1;
+				checkType(l,1,out a1);
+				UnityEngine.Texture a2;
+				checkType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalTexture(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.Texture))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Texture a2;
+				checkType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalTexture(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function SetGlobalTexture to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int SetGlobalFloatArray_s(IntPtr l) {
 		try {
 			#if DEBUG
@@ -553,25 +585,7 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(string),typeof(System.Single[]))){
-				System.String a1;
-				checkType(l,1,out a1);
-				System.Single[] a2;
-				checkArray(l,2,out a2);
-				UnityEngine.Shader.SetGlobalFloatArray(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,1,typeof(int),typeof(System.Single[]))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				System.Single[] a2;
-				checkArray(l,2,out a2);
-				UnityEngine.Shader.SetGlobalFloatArray(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,1,typeof(string),typeof(List<System.Single>))){
+			if(matchType(l,argc,1,typeof(string),typeof(List<System.Single>))){
 				System.String a1;
 				checkType(l,1,out a1);
 				System.Collections.Generic.List<System.Single> a2;
@@ -585,6 +599,24 @@ public class Lua_UnityEngine_Shader : LuaObject {
 				checkType(l,1,out a1);
 				System.Collections.Generic.List<System.Single> a2;
 				checkType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalFloatArray(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(string),typeof(System.Single[]))){
+				System.String a1;
+				checkType(l,1,out a1);
+				System.Single[] a2;
+				checkArray(l,2,out a2);
+				UnityEngine.Shader.SetGlobalFloatArray(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(int),typeof(System.Single[]))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				System.Single[] a2;
+				checkArray(l,2,out a2);
 				UnityEngine.Shader.SetGlobalFloatArray(a1,a2);
 				pushValue(l,true);
 				return 1;
@@ -620,25 +652,7 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Vector4[]))){
-				System.String a1;
-				checkType(l,1,out a1);
-				UnityEngine.Vector4[] a2;
-				checkArray(l,2,out a2);
-				UnityEngine.Shader.SetGlobalVectorArray(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.Vector4[]))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				UnityEngine.Vector4[] a2;
-				checkArray(l,2,out a2);
-				UnityEngine.Shader.SetGlobalVectorArray(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,1,typeof(string),typeof(List<UnityEngine.Vector4>))){
+			if(matchType(l,argc,1,typeof(string),typeof(List<UnityEngine.Vector4>))){
 				System.String a1;
 				checkType(l,1,out a1);
 				System.Collections.Generic.List<UnityEngine.Vector4> a2;
@@ -652,6 +666,24 @@ public class Lua_UnityEngine_Shader : LuaObject {
 				checkType(l,1,out a1);
 				System.Collections.Generic.List<UnityEngine.Vector4> a2;
 				checkType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalVectorArray(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Vector4[]))){
+				System.String a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector4[] a2;
+				checkArray(l,2,out a2);
+				UnityEngine.Shader.SetGlobalVectorArray(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.Vector4[]))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector4[] a2;
+				checkArray(l,2,out a2);
 				UnityEngine.Shader.SetGlobalVectorArray(a1,a2);
 				pushValue(l,true);
 				return 1;
@@ -687,25 +719,7 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Matrix4x4[]))){
-				System.String a1;
-				checkType(l,1,out a1);
-				UnityEngine.Matrix4x4[] a2;
-				checkArray(l,2,out a2);
-				UnityEngine.Shader.SetGlobalMatrixArray(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.Matrix4x4[]))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				UnityEngine.Matrix4x4[] a2;
-				checkArray(l,2,out a2);
-				UnityEngine.Shader.SetGlobalMatrixArray(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,1,typeof(string),typeof(List<UnityEngine.Matrix4x4>))){
+			if(matchType(l,argc,1,typeof(string),typeof(List<UnityEngine.Matrix4x4>))){
 				System.String a1;
 				checkType(l,1,out a1);
 				System.Collections.Generic.List<UnityEngine.Matrix4x4> a2;
@@ -719,6 +733,24 @@ public class Lua_UnityEngine_Shader : LuaObject {
 				checkType(l,1,out a1);
 				System.Collections.Generic.List<UnityEngine.Matrix4x4> a2;
 				checkType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalMatrixArray(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Matrix4x4[]))){
+				System.String a1;
+				checkType(l,1,out a1);
+				UnityEngine.Matrix4x4[] a2;
+				checkArray(l,2,out a2);
+				UnityEngine.Shader.SetGlobalMatrixArray(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.Matrix4x4[]))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Matrix4x4[] a2;
+				checkArray(l,2,out a2);
 				UnityEngine.Shader.SetGlobalMatrixArray(a1,a2);
 				pushValue(l,true);
 				return 1;
@@ -754,16 +786,16 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int))){
-				System.Int32 a1;
+			if(matchType(l,argc,1,typeof(string))){
+				System.String a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Shader.GetGlobalFloat(a1);
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(string))){
-				System.String a1;
+			else if(matchType(l,argc,1,typeof(int))){
+				System.Int32 a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Shader.GetGlobalFloat(a1);
 				pushValue(l,true);
@@ -801,16 +833,16 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int))){
-				System.Int32 a1;
+			if(matchType(l,argc,1,typeof(string))){
+				System.String a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Shader.GetGlobalInt(a1);
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(string))){
-				System.String a1;
+			else if(matchType(l,argc,1,typeof(int))){
+				System.Int32 a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Shader.GetGlobalInt(a1);
 				pushValue(l,true);
@@ -848,16 +880,16 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int))){
-				System.Int32 a1;
+			if(matchType(l,argc,1,typeof(string))){
+				System.String a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Shader.GetGlobalVector(a1);
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(string))){
-				System.String a1;
+			else if(matchType(l,argc,1,typeof(int))){
+				System.Int32 a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Shader.GetGlobalVector(a1);
 				pushValue(l,true);
@@ -895,16 +927,16 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int))){
-				System.Int32 a1;
+			if(matchType(l,argc,1,typeof(string))){
+				System.String a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Shader.GetGlobalColor(a1);
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(string))){
-				System.String a1;
+			else if(matchType(l,argc,1,typeof(int))){
+				System.Int32 a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Shader.GetGlobalColor(a1);
 				pushValue(l,true);
@@ -942,16 +974,16 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int))){
-				System.Int32 a1;
+			if(matchType(l,argc,1,typeof(string))){
+				System.String a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Shader.GetGlobalMatrix(a1);
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(string))){
-				System.String a1;
+			else if(matchType(l,argc,1,typeof(int))){
+				System.Int32 a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Shader.GetGlobalMatrix(a1);
 				pushValue(l,true);
@@ -989,16 +1021,16 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int))){
-				System.Int32 a1;
+			if(matchType(l,argc,1,typeof(string))){
+				System.String a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Shader.GetGlobalTexture(a1);
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(string))){
-				System.String a1;
+			else if(matchType(l,argc,1,typeof(int))){
+				System.Int32 a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Shader.GetGlobalTexture(a1);
 				pushValue(l,true);
@@ -1036,15 +1068,7 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				var ret=UnityEngine.Shader.GetGlobalFloatArray(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,1,typeof(string))){
+			if(matchType(l,argc,1,typeof(string))){
 				System.String a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Shader.GetGlobalFloatArray(a1);
@@ -1052,8 +1076,16 @@ public class Lua_UnityEngine_Shader : LuaObject {
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(int),typeof(List<System.Single>))){
+			else if(matchType(l,argc,1,typeof(int))){
 				System.Int32 a1;
+				checkType(l,1,out a1);
+				var ret=UnityEngine.Shader.GetGlobalFloatArray(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,1,typeof(string),typeof(List<System.Single>))){
+				System.String a1;
 				checkType(l,1,out a1);
 				System.Collections.Generic.List<System.Single> a2;
 				checkType(l,2,out a2);
@@ -1061,8 +1093,8 @@ public class Lua_UnityEngine_Shader : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,1,typeof(string),typeof(List<System.Single>))){
-				System.String a1;
+			else if(matchType(l,argc,1,typeof(int),typeof(List<System.Single>))){
+				System.Int32 a1;
 				checkType(l,1,out a1);
 				System.Collections.Generic.List<System.Single> a2;
 				checkType(l,2,out a2);
@@ -1101,15 +1133,7 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				var ret=UnityEngine.Shader.GetGlobalVectorArray(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,1,typeof(string))){
+			if(matchType(l,argc,1,typeof(string))){
 				System.String a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Shader.GetGlobalVectorArray(a1);
@@ -1117,8 +1141,16 @@ public class Lua_UnityEngine_Shader : LuaObject {
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(int),typeof(List<UnityEngine.Vector4>))){
+			else if(matchType(l,argc,1,typeof(int))){
 				System.Int32 a1;
+				checkType(l,1,out a1);
+				var ret=UnityEngine.Shader.GetGlobalVectorArray(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,1,typeof(string),typeof(List<UnityEngine.Vector4>))){
+				System.String a1;
 				checkType(l,1,out a1);
 				System.Collections.Generic.List<UnityEngine.Vector4> a2;
 				checkType(l,2,out a2);
@@ -1126,8 +1158,8 @@ public class Lua_UnityEngine_Shader : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,1,typeof(string),typeof(List<UnityEngine.Vector4>))){
-				System.String a1;
+			else if(matchType(l,argc,1,typeof(int),typeof(List<UnityEngine.Vector4>))){
+				System.Int32 a1;
 				checkType(l,1,out a1);
 				System.Collections.Generic.List<UnityEngine.Vector4> a2;
 				checkType(l,2,out a2);
@@ -1166,15 +1198,7 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				var ret=UnityEngine.Shader.GetGlobalMatrixArray(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,1,typeof(string))){
+			if(matchType(l,argc,1,typeof(string))){
 				System.String a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.Shader.GetGlobalMatrixArray(a1);
@@ -1182,14 +1206,13 @@ public class Lua_UnityEngine_Shader : LuaObject {
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(int),typeof(List<UnityEngine.Matrix4x4>))){
+			else if(matchType(l,argc,1,typeof(int))){
 				System.Int32 a1;
 				checkType(l,1,out a1);
-				System.Collections.Generic.List<UnityEngine.Matrix4x4> a2;
-				checkType(l,2,out a2);
-				UnityEngine.Shader.GetGlobalMatrixArray(a1,a2);
+				var ret=UnityEngine.Shader.GetGlobalMatrixArray(a1);
 				pushValue(l,true);
-				return 1;
+				pushValue(l,ret);
+				return 2;
 			}
 			else if(matchType(l,argc,1,typeof(string),typeof(List<UnityEngine.Matrix4x4>))){
 				System.String a1;
@@ -1200,8 +1223,48 @@ public class Lua_UnityEngine_Shader : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
+			else if(matchType(l,argc,1,typeof(int),typeof(List<UnityEngine.Matrix4x4>))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				System.Collections.Generic.List<UnityEngine.Matrix4x4> a2;
+				checkType(l,2,out a2);
+				UnityEngine.Shader.GetGlobalMatrixArray(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
 			pushValue(l,false);
 			LuaDLL.lua_pushstring(l,"No matched override function GetGlobalMatrixArray to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_isSupported(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Shader self=(UnityEngine.Shader)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.isSupported);
 			return 2;
 		}
 		catch(Exception e) {
@@ -1345,37 +1408,6 @@ public class Lua_UnityEngine_Shader : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_isSupported(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Shader self=(UnityEngine.Shader)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.isSupported);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_globalRenderPipeline(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1470,11 +1502,12 @@ public class Lua_UnityEngine_Shader : LuaObject {
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.Shader");
-		addMember(l,PropertyToID_s);
 		addMember(l,Find_s);
 		addMember(l,EnableKeyword_s);
 		addMember(l,DisableKeyword_s);
 		addMember(l,IsKeywordEnabled_s);
+		addMember(l,SetGlobalBuffer_s);
+		addMember(l,PropertyToID_s);
 		addMember(l,WarmupAllShaders_s);
 		addMember(l,SetGlobalFloat_s);
 		addMember(l,SetGlobalInt_s);
@@ -1482,7 +1515,6 @@ public class Lua_UnityEngine_Shader : LuaObject {
 		addMember(l,SetGlobalColor_s);
 		addMember(l,SetGlobalMatrix_s);
 		addMember(l,SetGlobalTexture_s);
-		addMember(l,SetGlobalBuffer_s);
 		addMember(l,SetGlobalFloatArray_s);
 		addMember(l,SetGlobalVectorArray_s);
 		addMember(l,SetGlobalMatrixArray_s);
@@ -1495,11 +1527,11 @@ public class Lua_UnityEngine_Shader : LuaObject {
 		addMember(l,GetGlobalFloatArray_s);
 		addMember(l,GetGlobalVectorArray_s);
 		addMember(l,GetGlobalMatrixArray_s);
+		addMember(l,"isSupported",get_isSupported,null,true);
 		addMember(l,"maximumLOD",get_maximumLOD,set_maximumLOD,true);
 		addMember(l,"globalMaximumLOD",get_globalMaximumLOD,set_globalMaximumLOD,false);
-		addMember(l,"isSupported",get_isSupported,null,true);
 		addMember(l,"globalRenderPipeline",get_globalRenderPipeline,set_globalRenderPipeline,false);
 		addMember(l,"renderQueue",get_renderQueue,null,true);
-		createTypeMetatable(l,null, typeof(UnityEngine.Shader),typeof(UnityEngine.Object));
+		createTypeMetatable(l,constructor, typeof(UnityEngine.Shader),typeof(UnityEngine.Object));
 	}
 }

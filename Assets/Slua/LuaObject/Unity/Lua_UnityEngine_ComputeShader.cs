@@ -5,6 +5,38 @@ using System.Collections.Generic;
 public class Lua_UnityEngine_ComputeShader : LuaObject {
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int constructor(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.ComputeShader o;
+			o=new UnityEngine.ComputeShader();
+			pushValue(l,true);
+			pushValue(l,o);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int FindKernel(IntPtr l) {
 		try {
 			#if DEBUG
@@ -124,9 +156,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(int),typeof(float))){
+			if(matchType(l,argc,2,typeof(string),typeof(float))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.Int32 a1;
+				System.String a1;
 				checkType(l,2,out a1);
 				System.Single a2;
 				checkType(l,3,out a2);
@@ -134,9 +166,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,2,typeof(string),typeof(float))){
+			else if(matchType(l,argc,2,typeof(int),typeof(float))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.String a1;
+				System.Int32 a1;
 				checkType(l,2,out a1);
 				System.Single a2;
 				checkType(l,3,out a2);
@@ -175,9 +207,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(int),typeof(int))){
+			if(matchType(l,argc,2,typeof(string),typeof(int))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.Int32 a1;
+				System.String a1;
 				checkType(l,2,out a1);
 				System.Int32 a2;
 				checkType(l,3,out a2);
@@ -185,9 +217,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,2,typeof(string),typeof(int))){
+			else if(matchType(l,argc,2,typeof(int),typeof(int))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.String a1;
+				System.Int32 a1;
 				checkType(l,2,out a1);
 				System.Int32 a2;
 				checkType(l,3,out a2);
@@ -226,9 +258,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(int),typeof(bool))){
+			if(matchType(l,argc,2,typeof(string),typeof(bool))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.Int32 a1;
+				System.String a1;
 				checkType(l,2,out a1);
 				System.Boolean a2;
 				checkType(l,3,out a2);
@@ -236,9 +268,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,2,typeof(string),typeof(bool))){
+			else if(matchType(l,argc,2,typeof(int),typeof(bool))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.String a1;
+				System.Int32 a1;
 				checkType(l,2,out a1);
 				System.Boolean a2;
 				checkType(l,3,out a2);
@@ -277,9 +309,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(int),typeof(UnityEngine.Vector4))){
+			if(matchType(l,argc,2,typeof(string),typeof(UnityEngine.Vector4))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.Int32 a1;
+				System.String a1;
 				checkType(l,2,out a1);
 				UnityEngine.Vector4 a2;
 				checkType(l,3,out a2);
@@ -287,9 +319,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,2,typeof(string),typeof(UnityEngine.Vector4))){
+			else if(matchType(l,argc,2,typeof(int),typeof(UnityEngine.Vector4))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.String a1;
+				System.Int32 a1;
 				checkType(l,2,out a1);
 				UnityEngine.Vector4 a2;
 				checkType(l,3,out a2);
@@ -328,9 +360,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(int),typeof(UnityEngine.Vector4[]))){
+			if(matchType(l,argc,2,typeof(string),typeof(UnityEngine.Vector4[]))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.Int32 a1;
+				System.String a1;
 				checkType(l,2,out a1);
 				UnityEngine.Vector4[] a2;
 				checkArray(l,3,out a2);
@@ -338,9 +370,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,2,typeof(string),typeof(UnityEngine.Vector4[]))){
+			else if(matchType(l,argc,2,typeof(int),typeof(UnityEngine.Vector4[]))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.String a1;
+				System.Int32 a1;
 				checkType(l,2,out a1);
 				UnityEngine.Vector4[] a2;
 				checkArray(l,3,out a2);
@@ -379,9 +411,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(int),typeof(UnityEngine.Matrix4x4))){
+			if(matchType(l,argc,2,typeof(string),typeof(UnityEngine.Matrix4x4))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.Int32 a1;
+				System.String a1;
 				checkType(l,2,out a1);
 				UnityEngine.Matrix4x4 a2;
 				checkValueType(l,3,out a2);
@@ -389,9 +421,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,2,typeof(string),typeof(UnityEngine.Matrix4x4))){
+			else if(matchType(l,argc,2,typeof(int),typeof(UnityEngine.Matrix4x4))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.String a1;
+				System.Int32 a1;
 				checkType(l,2,out a1);
 				UnityEngine.Matrix4x4 a2;
 				checkValueType(l,3,out a2);
@@ -430,9 +462,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(int),typeof(UnityEngine.Matrix4x4[]))){
+			if(matchType(l,argc,2,typeof(string),typeof(UnityEngine.Matrix4x4[]))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.Int32 a1;
+				System.String a1;
 				checkType(l,2,out a1);
 				UnityEngine.Matrix4x4[] a2;
 				checkArray(l,3,out a2);
@@ -440,9 +472,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,2,typeof(string),typeof(UnityEngine.Matrix4x4[]))){
+			else if(matchType(l,argc,2,typeof(int),typeof(UnityEngine.Matrix4x4[]))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.String a1;
+				System.Int32 a1;
 				checkType(l,2,out a1);
 				UnityEngine.Matrix4x4[] a2;
 				checkArray(l,3,out a2);
@@ -481,9 +513,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(int),typeof(System.Single[]))){
+			if(matchType(l,argc,2,typeof(string),typeof(System.Single[]))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.Int32 a1;
+				System.String a1;
 				checkType(l,2,out a1);
 				System.Single[] a2;
 				checkParams(l,3,out a2);
@@ -491,9 +523,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,2,typeof(string),typeof(System.Single[]))){
+			else if(matchType(l,argc,2,typeof(int),typeof(System.Single[]))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.String a1;
+				System.Int32 a1;
 				checkType(l,2,out a1);
 				System.Single[] a2;
 				checkParams(l,3,out a2);
@@ -532,9 +564,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(int),typeof(System.Int32[]))){
+			if(matchType(l,argc,2,typeof(string),typeof(System.Int32[]))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.Int32 a1;
+				System.String a1;
 				checkType(l,2,out a1);
 				System.Int32[] a2;
 				checkParams(l,3,out a2);
@@ -542,9 +574,9 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,2,typeof(string),typeof(System.Int32[]))){
+			else if(matchType(l,argc,2,typeof(int),typeof(System.Int32[]))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.String a1;
+				System.Int32 a1;
 				checkType(l,2,out a1);
 				System.Int32[] a2;
 				checkParams(l,3,out a2);
@@ -583,11 +615,11 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(int),typeof(int),typeof(UnityEngine.Texture))){
+			if(matchType(l,argc,2,typeof(int),typeof(string),typeof(UnityEngine.Texture))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
 				System.Int32 a1;
 				checkType(l,2,out a1);
-				System.Int32 a2;
+				System.String a2;
 				checkType(l,3,out a2);
 				UnityEngine.Texture a3;
 				checkType(l,4,out a3);
@@ -595,11 +627,11 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,2,typeof(int),typeof(string),typeof(UnityEngine.Texture))){
+			else if(matchType(l,argc,2,typeof(int),typeof(int),typeof(UnityEngine.Texture))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
 				System.Int32 a1;
 				checkType(l,2,out a1);
-				System.String a2;
+				System.Int32 a2;
 				checkType(l,3,out a2);
 				UnityEngine.Texture a3;
 				checkType(l,4,out a3);
@@ -638,25 +670,25 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(int),typeof(int),typeof(int))){
-				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
-				System.Int32 a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.Int32 a3;
-				checkType(l,4,out a3);
-				self.SetTextureFromGlobal(a1,a2,a3);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,2,typeof(int),typeof(string),typeof(string))){
+			if(matchType(l,argc,2,typeof(int),typeof(string),typeof(string))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
 				System.Int32 a1;
 				checkType(l,2,out a1);
 				System.String a2;
 				checkType(l,3,out a2);
 				System.String a3;
+				checkType(l,4,out a3);
+				self.SetTextureFromGlobal(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,2,typeof(int),typeof(int),typeof(int))){
+				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
+				System.Int32 a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				System.Int32 a3;
 				checkType(l,4,out a3);
 				self.SetTextureFromGlobal(a1,a2,a3);
 				pushValue(l,true);
@@ -693,11 +725,11 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(int),typeof(int),typeof(UnityEngine.ComputeBuffer))){
+			if(matchType(l,argc,2,typeof(int),typeof(string),typeof(UnityEngine.ComputeBuffer))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
 				System.Int32 a1;
 				checkType(l,2,out a1);
-				System.Int32 a2;
+				System.String a2;
 				checkType(l,3,out a2);
 				UnityEngine.ComputeBuffer a3;
 				checkType(l,4,out a3);
@@ -705,11 +737,11 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,2,typeof(int),typeof(string),typeof(UnityEngine.ComputeBuffer))){
+			else if(matchType(l,argc,2,typeof(int),typeof(int),typeof(UnityEngine.ComputeBuffer))){
 				UnityEngine.ComputeShader self=(UnityEngine.ComputeShader)checkSelf(l);
 				System.Int32 a1;
 				checkType(l,2,out a1);
-				System.String a2;
+				System.Int32 a2;
 				checkType(l,3,out a2);
 				UnityEngine.ComputeBuffer a3;
 				checkType(l,4,out a3);
@@ -846,6 +878,6 @@ public class Lua_UnityEngine_ComputeShader : LuaObject {
 		addMember(l,SetBuffer);
 		addMember(l,Dispatch);
 		addMember(l,DispatchIndirect);
-		createTypeMetatable(l,null, typeof(UnityEngine.ComputeShader),typeof(UnityEngine.Object));
+		createTypeMetatable(l,constructor, typeof(UnityEngine.ComputeShader),typeof(UnityEngine.Object));
 	}
 }

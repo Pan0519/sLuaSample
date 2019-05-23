@@ -129,8 +129,8 @@ public class Lua_UnityEngine_KeyCode : LuaObject {
 		addMember(l,308,"LeftAlt");
 		addMember(l,309,"RightApple");
 		addMember(l,309,"RightCommand");
-		addMember(l,310,"LeftCommand");
 		addMember(l,310,"LeftApple");
+		addMember(l,310,"LeftCommand");
 		addMember(l,311,"LeftWindows");
 		addMember(l,312,"RightWindows");
 		addMember(l,313,"AltGr");

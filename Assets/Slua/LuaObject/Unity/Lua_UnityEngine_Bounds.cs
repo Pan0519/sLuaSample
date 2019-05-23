@@ -41,7 +41,7 @@ public class Lua_UnityEngine_Bounds : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int SetMinMax(IntPtr l) {
+	static public int Contains(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -56,62 +56,9 @@ public class Lua_UnityEngine_Bounds : LuaObject {
 			checkValueType(l,1,out self);
 			UnityEngine.Vector3 a1;
 			checkType(l,2,out a1);
-			UnityEngine.Vector3 a2;
-			checkType(l,3,out a2);
-			self.SetMinMax(a1,a2);
+			var ret=self.Contains(a1);
 			pushValue(l,true);
-			setBack(l,self);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int Encapsulate(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(UnityEngine.Bounds))){
-				UnityEngine.Bounds self;
-				checkValueType(l,1,out self);
-				UnityEngine.Bounds a1;
-				checkValueType(l,2,out a1);
-				self.Encapsulate(a1);
-				pushValue(l,true);
-				setBack(l,self);
-				return 1;
-			}
-			else if(matchType(l,argc,2,typeof(UnityEngine.Vector3))){
-				UnityEngine.Bounds self;
-				checkValueType(l,1,out self);
-				UnityEngine.Vector3 a1;
-				checkType(l,2,out a1);
-				self.Encapsulate(a1);
-				pushValue(l,true);
-				setBack(l,self);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function Encapsulate to call");
+			pushValue(l,ret);
 			return 2;
 		}
 		catch(Exception e) {
@@ -129,58 +76,7 @@ public class Lua_UnityEngine_Bounds : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int Expand(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(UnityEngine.Vector3))){
-				UnityEngine.Bounds self;
-				checkValueType(l,1,out self);
-				UnityEngine.Vector3 a1;
-				checkType(l,2,out a1);
-				self.Expand(a1);
-				pushValue(l,true);
-				setBack(l,self);
-				return 1;
-			}
-			else if(matchType(l,argc,2,typeof(float))){
-				UnityEngine.Bounds self;
-				checkValueType(l,1,out self);
-				System.Single a1;
-				checkType(l,2,out a1);
-				self.Expand(a1);
-				pushValue(l,true);
-				setBack(l,self);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function Expand to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int Intersects(IntPtr l) {
+	static public int SqrDistance(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -193,9 +89,9 @@ public class Lua_UnityEngine_Bounds : LuaObject {
 			#endif
 			UnityEngine.Bounds self;
 			checkValueType(l,1,out self);
-			UnityEngine.Bounds a1;
-			checkValueType(l,2,out a1);
-			var ret=self.Intersects(a1);
+			UnityEngine.Vector3 a1;
+			checkType(l,2,out a1);
+			var ret=self.SqrDistance(a1);
 			pushValue(l,true);
 			pushValue(l,ret);
 			return 2;
@@ -268,76 +164,6 @@ public class Lua_UnityEngine_Bounds : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int Contains(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Bounds self;
-			checkValueType(l,1,out self);
-			UnityEngine.Vector3 a1;
-			checkType(l,2,out a1);
-			var ret=self.Contains(a1);
-			pushValue(l,true);
-			pushValue(l,ret);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int SqrDistance(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Bounds self;
-			checkValueType(l,1,out self);
-			UnityEngine.Vector3 a1;
-			checkType(l,2,out a1);
-			var ret=self.SqrDistance(a1);
-			pushValue(l,true);
-			pushValue(l,ret);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int ClosestPoint(IntPtr l) {
 		try {
 			#if DEBUG
@@ -354,6 +180,180 @@ public class Lua_UnityEngine_Bounds : LuaObject {
 			UnityEngine.Vector3 a1;
 			checkType(l,2,out a1);
 			var ret=self.ClosestPoint(a1);
+			pushValue(l,true);
+			pushValue(l,ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int SetMinMax(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Bounds self;
+			checkValueType(l,1,out self);
+			UnityEngine.Vector3 a1;
+			checkType(l,2,out a1);
+			UnityEngine.Vector3 a2;
+			checkType(l,3,out a2);
+			self.SetMinMax(a1,a2);
+			pushValue(l,true);
+			setBack(l,self);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int Encapsulate(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,2,typeof(UnityEngine.Vector3))){
+				UnityEngine.Bounds self;
+				checkValueType(l,1,out self);
+				UnityEngine.Vector3 a1;
+				checkType(l,2,out a1);
+				self.Encapsulate(a1);
+				pushValue(l,true);
+				setBack(l,self);
+				return 1;
+			}
+			else if(matchType(l,argc,2,typeof(UnityEngine.Bounds))){
+				UnityEngine.Bounds self;
+				checkValueType(l,1,out self);
+				UnityEngine.Bounds a1;
+				checkValueType(l,2,out a1);
+				self.Encapsulate(a1);
+				pushValue(l,true);
+				setBack(l,self);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function Encapsulate to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int Expand(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,2,typeof(float))){
+				UnityEngine.Bounds self;
+				checkValueType(l,1,out self);
+				System.Single a1;
+				checkType(l,2,out a1);
+				self.Expand(a1);
+				pushValue(l,true);
+				setBack(l,self);
+				return 1;
+			}
+			else if(matchType(l,argc,2,typeof(UnityEngine.Vector3))){
+				UnityEngine.Bounds self;
+				checkValueType(l,1,out self);
+				UnityEngine.Vector3 a1;
+				checkType(l,2,out a1);
+				self.Expand(a1);
+				pushValue(l,true);
+				setBack(l,self);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function Expand to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int Intersects(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Bounds self;
+			checkValueType(l,1,out self);
+			UnityEngine.Bounds a1;
+			checkValueType(l,2,out a1);
+			var ret=self.Intersects(a1);
 			pushValue(l,true);
 			pushValue(l,ret);
 			return 2;
@@ -779,14 +779,14 @@ public class Lua_UnityEngine_Bounds : LuaObject {
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.Bounds");
+		addMember(l,Contains);
+		addMember(l,SqrDistance);
+		addMember(l,IntersectRay);
+		addMember(l,ClosestPoint);
 		addMember(l,SetMinMax);
 		addMember(l,Encapsulate);
 		addMember(l,Expand);
 		addMember(l,Intersects);
-		addMember(l,IntersectRay);
-		addMember(l,Contains);
-		addMember(l,SqrDistance);
-		addMember(l,ClosestPoint);
 		addMember(l,op_Equality);
 		addMember(l,op_Inequality);
 		addMember(l,"center",get_center,set_center,true);

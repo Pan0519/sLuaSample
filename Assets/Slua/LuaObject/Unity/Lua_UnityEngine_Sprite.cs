@@ -5,6 +5,38 @@ using System.Collections.Generic;
 public class Lua_UnityEngine_Sprite : LuaObject {
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int constructor(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Sprite o;
+			o=new UnityEngine.Sprite();
+			pushValue(l,true);
+			pushValue(l,o);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int OverrideGeometry(IntPtr l) {
 		try {
 			#if DEBUG
@@ -795,6 +827,6 @@ public class Lua_UnityEngine_Sprite : LuaObject {
 		addMember(l,"triangles",get_triangles,null,true);
 		addMember(l,"uv",get_uv,null,true);
 		addMember(l,"pixelsPerUnit",get_pixelsPerUnit,null,true);
-		createTypeMetatable(l,null, typeof(UnityEngine.Sprite),typeof(UnityEngine.Object));
+		createTypeMetatable(l,constructor, typeof(UnityEngine.Sprite),typeof(UnityEngine.Object));
 	}
 }

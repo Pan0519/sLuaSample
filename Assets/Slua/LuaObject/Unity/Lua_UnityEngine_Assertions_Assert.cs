@@ -120,23 +120,23 @@ public class Lua_UnityEngine_Assertions_Assert : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,1,typeof(float),typeof(float),typeof(float))){
-				System.Single a1;
-				checkType(l,1,out a1);
-				System.Single a2;
-				checkType(l,2,out a2);
-				System.Single a3;
-				checkType(l,3,out a3);
-				UnityEngine.Assertions.Assert.AreApproximatelyEqual(a1,a2,a3);
-				pushValue(l,true);
-				return 1;
-			}
 			else if(matchType(l,argc,1,typeof(float),typeof(float),typeof(string))){
 				System.Single a1;
 				checkType(l,1,out a1);
 				System.Single a2;
 				checkType(l,2,out a2);
 				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreApproximatelyEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(float),typeof(float),typeof(float))){
+				System.Single a1;
+				checkType(l,1,out a1);
+				System.Single a2;
+				checkType(l,2,out a2);
+				System.Single a3;
 				checkType(l,3,out a3);
 				UnityEngine.Assertions.Assert.AreApproximatelyEqual(a1,a2,a3);
 				pushValue(l,true);
@@ -195,23 +195,23 @@ public class Lua_UnityEngine_Assertions_Assert : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,1,typeof(float),typeof(float),typeof(float))){
-				System.Single a1;
-				checkType(l,1,out a1);
-				System.Single a2;
-				checkType(l,2,out a2);
-				System.Single a3;
-				checkType(l,3,out a3);
-				UnityEngine.Assertions.Assert.AreNotApproximatelyEqual(a1,a2,a3);
-				pushValue(l,true);
-				return 1;
-			}
 			else if(matchType(l,argc,1,typeof(float),typeof(float),typeof(string))){
 				System.Single a1;
 				checkType(l,1,out a1);
 				System.Single a2;
 				checkType(l,2,out a2);
 				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreNotApproximatelyEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(float),typeof(float),typeof(float))){
+				System.Single a1;
+				checkType(l,1,out a1);
+				System.Single a2;
+				checkType(l,2,out a2);
+				System.Single a3;
 				checkType(l,3,out a3);
 				UnityEngine.Assertions.Assert.AreNotApproximatelyEqual(a1,a2,a3);
 				pushValue(l,true);

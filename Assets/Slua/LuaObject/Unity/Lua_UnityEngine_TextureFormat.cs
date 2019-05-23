@@ -62,10 +62,10 @@ public class Lua_UnityEngine_TextureFormat : LuaObject {
 		addMember(l,63,"R8");
 		addMember(l,64,"ETC_RGB4Crunched");
 		addMember(l,65,"ETC2_RGBA8Crunched");
-		addMember(l,-127,"PVRTC_4BPP_RGB");
-		addMember(l,-127,"PVRTC_4BPP_RGBA");
 		addMember(l,-127,"PVRTC_2BPP_RGB");
 		addMember(l,-127,"PVRTC_2BPP_RGBA");
+		addMember(l,-127,"PVRTC_4BPP_RGB");
+		addMember(l,-127,"PVRTC_4BPP_RGBA");
 		LuaDLL.lua_pop(l, 1);
 	}
 }

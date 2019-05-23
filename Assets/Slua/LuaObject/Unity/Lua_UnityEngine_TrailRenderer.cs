@@ -5,6 +5,40 @@ using System.Collections.Generic;
 public class Lua_UnityEngine_TrailRenderer : LuaObject {
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int GetPositions(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.TrailRenderer self=(UnityEngine.TrailRenderer)checkSelf(l);
+			UnityEngine.Vector3[] a1;
+			checkArray(l,2,out a1);
+			var ret=self.GetPositions(a1);
+			pushValue(l,true);
+			pushValue(l,ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int GetPosition(IntPtr l) {
 		try {
 			#if DEBUG
@@ -70,7 +104,7 @@ public class Lua_UnityEngine_TrailRenderer : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int GetPositions(IntPtr l) {
+	static public int get_widthCurve(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -82,12 +116,106 @@ public class Lua_UnityEngine_TrailRenderer : LuaObject {
 			#endif
 			#endif
 			UnityEngine.TrailRenderer self=(UnityEngine.TrailRenderer)checkSelf(l);
-			UnityEngine.Vector3[] a1;
-			checkArray(l,2,out a1);
-			var ret=self.GetPositions(a1);
 			pushValue(l,true);
-			pushValue(l,ret);
+			pushValue(l,self.widthCurve);
 			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int set_widthCurve(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.TrailRenderer self=(UnityEngine.TrailRenderer)checkSelf(l);
+			UnityEngine.AnimationCurve v;
+			checkType(l,2,out v);
+			self.widthCurve=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_colorGradient(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.TrailRenderer self=(UnityEngine.TrailRenderer)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.colorGradient);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int set_colorGradient(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.TrailRenderer self=(UnityEngine.TrailRenderer)checkSelf(l);
+			UnityEngine.Gradient v;
+			checkType(l,2,out v);
+			self.colorGradient=v;
+			pushValue(l,true);
+			return 1;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -965,140 +1093,14 @@ public class Lua_UnityEngine_TrailRenderer : LuaObject {
 		}
 		#endif
 	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_widthCurve(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.TrailRenderer self=(UnityEngine.TrailRenderer)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.widthCurve);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int set_widthCurve(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.TrailRenderer self=(UnityEngine.TrailRenderer)checkSelf(l);
-			UnityEngine.AnimationCurve v;
-			checkType(l,2,out v);
-			self.widthCurve=v;
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_colorGradient(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.TrailRenderer self=(UnityEngine.TrailRenderer)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.colorGradient);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int set_colorGradient(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.TrailRenderer self=(UnityEngine.TrailRenderer)checkSelf(l);
-			UnityEngine.Gradient v;
-			checkType(l,2,out v);
-			self.colorGradient=v;
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.TrailRenderer");
+		addMember(l,GetPositions);
 		addMember(l,GetPosition);
 		addMember(l,Clear);
-		addMember(l,GetPositions);
+		addMember(l,"widthCurve",get_widthCurve,set_widthCurve,true);
+		addMember(l,"colorGradient",get_colorGradient,set_colorGradient,true);
 		addMember(l,"time",get_time,set_time,true);
 		addMember(l,"startWidth",get_startWidth,set_startWidth,true);
 		addMember(l,"endWidth",get_endWidth,set_endWidth,true);
@@ -1113,8 +1115,6 @@ public class Lua_UnityEngine_TrailRenderer : LuaObject {
 		addMember(l,"generateLightingData",get_generateLightingData,set_generateLightingData,true);
 		addMember(l,"textureMode",get_textureMode,set_textureMode,true);
 		addMember(l,"alignment",get_alignment,set_alignment,true);
-		addMember(l,"widthCurve",get_widthCurve,set_widthCurve,true);
-		addMember(l,"colorGradient",get_colorGradient,set_colorGradient,true);
 		createTypeMetatable(l,null, typeof(UnityEngine.TrailRenderer),typeof(UnityEngine.Renderer));
 	}
 }

@@ -45,6 +45,80 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int ToAngleAxis(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Quaternion self;
+			checkType(l,1,out self);
+			System.Single a1;
+			UnityEngine.Vector3 a2;
+			self.ToAngleAxis(out a1,out a2);
+			pushValue(l,true);
+			pushValue(l,a1);
+			pushValue(l,a2);
+			setBack(l,self);
+			return 3;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int SetFromToRotation(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Quaternion self;
+			checkType(l,1,out self);
+			UnityEngine.Vector3 a1;
+			checkType(l,2,out a1);
+			UnityEngine.Vector3 a2;
+			checkType(l,3,out a2);
+			self.SetFromToRotation(a1,a2);
+			pushValue(l,true);
+			setBack(l,self);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int Set(IntPtr l) {
 		try {
 			#if DEBUG
@@ -139,7 +213,7 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int ToAngleAxis(IntPtr l) {
+	static public int AngleAxis_s(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -150,53 +224,14 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Quaternion self;
-			checkType(l,1,out self);
 			System.Single a1;
+			checkType(l,1,out a1);
 			UnityEngine.Vector3 a2;
-			self.ToAngleAxis(out a1,out a2);
+			checkType(l,2,out a2);
+			var ret=UnityEngine.Quaternion.AngleAxis(a1,a2);
 			pushValue(l,true);
-			pushValue(l,a1);
-			pushValue(l,a2);
-			setBack(l,self);
-			return 3;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int SetFromToRotation(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Quaternion self;
-			checkType(l,1,out self);
-			UnityEngine.Vector3 a1;
-			checkType(l,2,out a1);
-			UnityEngine.Vector3 a2;
-			checkType(l,3,out a2);
-			self.SetFromToRotation(a1,a2);
-			pushValue(l,true);
-			setBack(l,self);
-			return 1;
+			pushValue(l,ret);
+			return 2;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -248,7 +283,7 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int Inverse_s(IntPtr l) {
+	static public int LookRotation_s(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -259,11 +294,27 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Quaternion a1;
-			checkType(l,1,out a1);
-			var ret=UnityEngine.Quaternion.Inverse(a1);
-			pushValue(l,true);
-			pushValue(l,ret);
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==1){
+				UnityEngine.Vector3 a1;
+				checkType(l,1,out a1);
+				var ret=UnityEngine.Quaternion.LookRotation(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==2){
+				UnityEngine.Vector3 a1;
+				checkType(l,1,out a1);
+				UnityEngine.Vector3 a2;
+				checkType(l,2,out a2);
+				var ret=UnityEngine.Quaternion.LookRotation(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function LookRotation to call");
 			return 2;
 		}
 		catch(Exception e) {
@@ -429,7 +480,7 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int AngleAxis_s(IntPtr l) {
+	static public int RotateTowards_s(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -440,11 +491,13 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			System.Single a1;
+			UnityEngine.Quaternion a1;
 			checkType(l,1,out a1);
-			UnityEngine.Vector3 a2;
+			UnityEngine.Quaternion a2;
 			checkType(l,2,out a2);
-			var ret=UnityEngine.Quaternion.AngleAxis(a1,a2);
+			System.Single a3;
+			checkType(l,3,out a3);
+			var ret=UnityEngine.Quaternion.RotateTowards(a1,a2,a3);
 			pushValue(l,true);
 			pushValue(l,ret);
 			return 2;
@@ -464,7 +517,40 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int LookRotation_s(IntPtr l) {
+	static public int Inverse_s(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Quaternion a1;
+			checkType(l,1,out a1);
+			var ret=UnityEngine.Quaternion.Inverse(a1);
+			pushValue(l,true);
+			pushValue(l,ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int Euler_s(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -479,23 +565,25 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 			if(argc==1){
 				UnityEngine.Vector3 a1;
 				checkType(l,1,out a1);
-				var ret=UnityEngine.Quaternion.LookRotation(a1);
+				var ret=UnityEngine.Quaternion.Euler(a1);
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(argc==2){
-				UnityEngine.Vector3 a1;
+			else if(argc==3){
+				System.Single a1;
 				checkType(l,1,out a1);
-				UnityEngine.Vector3 a2;
+				System.Single a2;
 				checkType(l,2,out a2);
-				var ret=UnityEngine.Quaternion.LookRotation(a1,a2);
+				System.Single a3;
+				checkType(l,3,out a3);
+				var ret=UnityEngine.Quaternion.Euler(a1,a2,a3);
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
 			}
 			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function LookRotation to call");
+			LuaDLL.lua_pushstring(l,"No matched override function Euler to call");
 			return 2;
 		}
 		catch(Exception e) {
@@ -525,20 +613,20 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(UnityEngine.Quaternion),typeof(UnityEngine.Vector3))){
+			if(matchType(l,argc,1,typeof(UnityEngine.Quaternion),typeof(UnityEngine.Quaternion))){
 				UnityEngine.Quaternion a1;
 				checkType(l,1,out a1);
-				UnityEngine.Vector3 a2;
+				UnityEngine.Quaternion a2;
 				checkType(l,2,out a2);
 				var ret=a1*a2;
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(UnityEngine.Quaternion),typeof(UnityEngine.Quaternion))){
+			else if(matchType(l,argc,1,typeof(UnityEngine.Quaternion),typeof(UnityEngine.Vector3))){
 				UnityEngine.Quaternion a1;
 				checkType(l,1,out a1);
-				UnityEngine.Quaternion a2;
+				UnityEngine.Vector3 a2;
 				checkType(l,2,out a2);
 				var ret=a1*a2;
 				pushValue(l,true);
@@ -685,94 +773,6 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 			UnityEngine.Quaternion a2;
 			checkType(l,2,out a2);
 			var ret=UnityEngine.Quaternion.Angle(a1,a2);
-			pushValue(l,true);
-			pushValue(l,ret);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int Euler_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(argc==1){
-				UnityEngine.Vector3 a1;
-				checkType(l,1,out a1);
-				var ret=UnityEngine.Quaternion.Euler(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(argc==3){
-				System.Single a1;
-				checkType(l,1,out a1);
-				System.Single a2;
-				checkType(l,2,out a2);
-				System.Single a3;
-				checkType(l,3,out a3);
-				var ret=UnityEngine.Quaternion.Euler(a1,a2,a3);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function Euler to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int RotateTowards_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Quaternion a1;
-			checkType(l,1,out a1);
-			UnityEngine.Quaternion a2;
-			checkType(l,2,out a2);
-			System.Single a3;
-			checkType(l,3,out a3);
-			var ret=UnityEngine.Quaternion.RotateTowards(a1,a2,a3);
 			pushValue(l,true);
 			pushValue(l,ret);
 			return 2;
@@ -1090,36 +1090,6 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_identity(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			pushValue(l,true);
-			pushValue(l,UnityEngine.Quaternion.identity);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_eulerAngles(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1171,6 +1141,36 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 			setBack(l,self);
 			pushValue(l,true);
 			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_identity(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			pushValue(l,true);
+			pushValue(l,UnityEngine.Quaternion.identity);
+			return 2;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -1259,25 +1259,25 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.Quaternion");
-		addMember(l,Set);
-		addMember(l,SetLookRotation);
 		addMember(l,ToAngleAxis);
 		addMember(l,SetFromToRotation);
+		addMember(l,Set);
+		addMember(l,SetLookRotation);
+		addMember(l,AngleAxis_s);
 		addMember(l,FromToRotation_s);
-		addMember(l,Inverse_s);
+		addMember(l,LookRotation_s);
 		addMember(l,Slerp_s);
 		addMember(l,SlerpUnclamped_s);
 		addMember(l,Lerp_s);
 		addMember(l,LerpUnclamped_s);
-		addMember(l,AngleAxis_s);
-		addMember(l,LookRotation_s);
+		addMember(l,RotateTowards_s);
+		addMember(l,Inverse_s);
+		addMember(l,Euler_s);
 		addMember(l,op_Multiply);
 		addMember(l,op_Equality);
 		addMember(l,op_Inequality);
 		addMember(l,Dot_s);
 		addMember(l,Angle_s);
-		addMember(l,Euler_s);
-		addMember(l,RotateTowards_s);
 		addMember(l,getItem);
 		addMember(l,setItem);
 		addMember(l,"x",get_x,set_x,true);
@@ -1285,8 +1285,8 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 		addMember(l,"z",get_z,set_z,true);
 		addMember(l,"w",get_w,set_w,true);
 		addMember(l,"kEpsilon",get_kEpsilon,null,false);
-		addMember(l,"identity",get_identity,null,false);
 		addMember(l,"eulerAngles",get_eulerAngles,set_eulerAngles,true);
+		addMember(l,"identity",get_identity,null,false);
 		createTypeMetatable(l,constructor, typeof(UnityEngine.Quaternion),typeof(System.ValueType));
 	}
 }

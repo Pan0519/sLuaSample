@@ -245,22 +245,22 @@ public class Lua_UnityEngine_SceneManagement_SceneManager : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				UnityEngine.SceneManagement.SceneManager.LoadScene(a1);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,1,typeof(string))){
+			if(matchType(l,argc,1,typeof(string))){
 				System.String a1;
 				checkType(l,1,out a1);
 				UnityEngine.SceneManagement.SceneManager.LoadScene(a1);
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.SceneManagement.LoadSceneMode))){
+			else if(matchType(l,argc,1,typeof(int))){
 				System.Int32 a1;
+				checkType(l,1,out a1);
+				UnityEngine.SceneManagement.SceneManager.LoadScene(a1);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.SceneManagement.LoadSceneMode))){
+				System.String a1;
 				checkType(l,1,out a1);
 				UnityEngine.SceneManagement.LoadSceneMode a2;
 				a2 = (UnityEngine.SceneManagement.LoadSceneMode)LuaDLL.luaL_checkinteger(l, 2);
@@ -268,8 +268,8 @@ public class Lua_UnityEngine_SceneManagement_SceneManager : LuaObject {
 				pushValue(l,true);
 				return 1;
 			}
-			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.SceneManagement.LoadSceneMode))){
-				System.String a1;
+			else if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.SceneManagement.LoadSceneMode))){
+				System.Int32 a1;
 				checkType(l,1,out a1);
 				UnityEngine.SceneManagement.LoadSceneMode a2;
 				a2 = (UnityEngine.SceneManagement.LoadSceneMode)LuaDLL.luaL_checkinteger(l, 2);
@@ -308,15 +308,7 @@ public class Lua_UnityEngine_SceneManagement_SceneManager : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(int))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				var ret=UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,1,typeof(string))){
+			if(matchType(l,argc,1,typeof(string))){
 				System.String a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(a1);
@@ -324,8 +316,16 @@ public class Lua_UnityEngine_SceneManagement_SceneManager : LuaObject {
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.SceneManagement.LoadSceneMode))){
+			else if(matchType(l,argc,1,typeof(int))){
 				System.Int32 a1;
+				checkType(l,1,out a1);
+				var ret=UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.SceneManagement.LoadSceneMode))){
+				System.String a1;
 				checkType(l,1,out a1);
 				UnityEngine.SceneManagement.LoadSceneMode a2;
 				a2 = (UnityEngine.SceneManagement.LoadSceneMode)LuaDLL.luaL_checkinteger(l, 2);
@@ -334,8 +334,8 @@ public class Lua_UnityEngine_SceneManagement_SceneManager : LuaObject {
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.SceneManagement.LoadSceneMode))){
-				System.String a1;
+			else if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.SceneManagement.LoadSceneMode))){
+				System.Int32 a1;
 				checkType(l,1,out a1);
 				UnityEngine.SceneManagement.LoadSceneMode a2;
 				a2 = (UnityEngine.SceneManagement.LoadSceneMode)LuaDLL.luaL_checkinteger(l, 2);
@@ -408,9 +408,9 @@ public class Lua_UnityEngine_SceneManagement_SceneManager : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(UnityEngine.SceneManagement.Scene))){
-				UnityEngine.SceneManagement.Scene a1;
-				checkValueType(l,1,out a1);
+			if(matchType(l,argc,1,typeof(int))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
 				var ret=UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(a1);
 				pushValue(l,true);
 				pushValue(l,ret);
@@ -424,9 +424,9 @@ public class Lua_UnityEngine_SceneManagement_SceneManager : LuaObject {
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(int))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
+			else if(matchType(l,argc,1,typeof(UnityEngine.SceneManagement.Scene))){
+				UnityEngine.SceneManagement.Scene a1;
+				checkValueType(l,1,out a1);
 				var ret=UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(a1);
 				pushValue(l,true);
 				pushValue(l,ret);

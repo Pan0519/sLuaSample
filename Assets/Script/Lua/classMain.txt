@@ -1,0 +1,13 @@
+local function class(name,parent)
+	local  tempClass = {}
+	parent = parent and parent or {}
+
+	parent.__index =function (table,key)
+		return parent[key]
+	end
+
+	setmetatable(tempClass,parent)
+	tempClass.__name = name
+	tempClass.__super = parent
+	return tempClass
+end 

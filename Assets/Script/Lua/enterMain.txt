@@ -1,0 +1,11 @@
+require "childMain"
+
+function main()
+	print("lua--- run enter main function")
+	local x = childMain:new()
+	return x
+end
+
+-- function start_run()
+	
+-- end

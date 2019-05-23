@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CustomLuaClass]
 public class LuaBehavior : MonoBehaviour
@@ -27,6 +28,8 @@ public class LuaBehavior : MonoBehaviour
 
     Action initCompleteAction;
 
+    public Text ShowProgressText;
+
     public virtual void Awake()
     {
         svr = new LuaSvr();
@@ -38,18 +41,23 @@ public class LuaBehavior : MonoBehaviour
 
     void tick(int p)
     {
-        Debug.Log($"Lua init Progress {p}");
+        //Debug.Log($"Lua init Progress {p}");
+
+        if (null == ShowProgressText)
+            return;
+
+        ShowProgressText.text = p.ToString();
     }
 
-    void InitComplete()
+    public virtual void InitComplete()
     {
         self = svr.start(fileName) as LuaTable;
 
-        ud = functionCast<UpdateDelegate>("update");
+        //ud = functionCast<UpdateDelegate>("update");
 
-        sd = functionCast<StartDelegate>("start");
+        //sd = functionCast<StartDelegate>("start");
 
-        destoryDele = functionCast<DestoryDelegate>("destory");
+        //destoryDele = functionCast<DestoryDelegate>("destory");
 
         initComplete();
     }
@@ -101,6 +109,12 @@ public class LuaBehavior : MonoBehaviour
 
     T functionCast<T>(string tableName) where T : class
     {
+        if (null == self)
+        {
+            Debug.LogError($"Get {tableName} Lua Self is null");
+            return null;
+        }
+
         LuaFunction luaFunction = (LuaFunction)self[tableName];
 
         if (luaFunction == null)

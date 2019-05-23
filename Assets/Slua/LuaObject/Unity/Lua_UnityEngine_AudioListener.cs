@@ -269,6 +269,6 @@ public class Lua_UnityEngine_AudioListener : LuaObject {
 		addMember(l,"volume",get_volume,set_volume,false);
 		addMember(l,"pause",get_pause,set_pause,false);
 		addMember(l,"velocityUpdateMode",get_velocityUpdateMode,set_velocityUpdateMode,true);
-		createTypeMetatable(l,null, typeof(UnityEngine.AudioListener),typeof(UnityEngine.AudioBehaviour));
+		createTypeMetatable(l,null, typeof(UnityEngine.AudioListener),typeof(UnityEngine.Behaviour));
 	}
 }

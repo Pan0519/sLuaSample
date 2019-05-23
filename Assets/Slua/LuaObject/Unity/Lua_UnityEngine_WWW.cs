@@ -410,17 +410,7 @@ public class Lua_UnityEngine_WWW : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Hash128))){
-				System.String a1;
-				checkType(l,1,out a1);
-				UnityEngine.Hash128 a2;
-				checkValueType(l,2,out a2);
-				var ret=UnityEngine.WWW.LoadFromCacheOrDownload(a1,a2);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,1,typeof(string),typeof(int))){
+			if(matchType(l,argc,1,typeof(string),typeof(int))){
 				System.String a1;
 				checkType(l,1,out a1);
 				System.Int32 a2;
@@ -430,11 +420,21 @@ public class Lua_UnityEngine_WWW : LuaObject {
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.CachedAssetBundle),typeof(System.UInt32))){
+			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Hash128))){
 				System.String a1;
 				checkType(l,1,out a1);
-				UnityEngine.CachedAssetBundle a2;
+				UnityEngine.Hash128 a2;
 				checkValueType(l,2,out a2);
+				var ret=UnityEngine.WWW.LoadFromCacheOrDownload(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,1,typeof(string),typeof(int),typeof(System.UInt32))){
+				System.String a1;
+				checkType(l,1,out a1);
+				System.Int32 a2;
+				checkType(l,2,out a2);
 				System.UInt32 a3;
 				checkType(l,3,out a3);
 				var ret=UnityEngine.WWW.LoadFromCacheOrDownload(a1,a2,a3);
@@ -454,11 +454,11 @@ public class Lua_UnityEngine_WWW : LuaObject {
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(string),typeof(int),typeof(System.UInt32))){
+			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.CachedAssetBundle),typeof(System.UInt32))){
 				System.String a1;
 				checkType(l,1,out a1);
-				System.Int32 a2;
-				checkType(l,2,out a2);
+				UnityEngine.CachedAssetBundle a2;
+				checkValueType(l,2,out a2);
 				System.UInt32 a3;
 				checkType(l,3,out a3);
 				var ret=UnityEngine.WWW.LoadFromCacheOrDownload(a1,a2,a3);
