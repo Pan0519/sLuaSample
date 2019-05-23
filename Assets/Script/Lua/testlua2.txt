@@ -19,6 +19,8 @@ function main()
    -- custom.qq()
 
    custom.tt()
+
+   enterMain.start_run()
     
     return class
 end

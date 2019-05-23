@@ -1,12 +1,15 @@
+require "enterMain"
 
-local t ={}
+module("custom",package.seeall)
 
-function t.qq()
+-- local t ={}
+
+function qq()
 	print("Get QQ")
 end
 
-function t.tt()
+function tt()
 	print("Get TT")
 end
 
-return t
+-- return t

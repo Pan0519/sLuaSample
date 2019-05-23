@@ -1,11 +1,5 @@
-require "childMain"
+module("enterMain",package.seeall)
 
-function main()
-	print("lua--- run enter main function")
-	local x = childMain:new()
-	return x
+function start_run()
+	print("start_run")
 end
-
--- function start_run()
-	
--- end

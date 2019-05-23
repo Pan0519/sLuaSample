@@ -46,7 +46,7 @@ public class TestMain : LuaBehavior
 
     public override void initComplete()
     {
-        LuaSvr.mainState.getFunction("testBaseMain").call();
+        //LuaSvr.mainState.getFunction("testBaseMain").call();
 
         //int isPrime =.convertToInt();
 
