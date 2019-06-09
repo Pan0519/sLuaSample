@@ -7,20 +7,7 @@ namespace SLua {
 			Action<IntPtr>[] list= {
 				Lua_LuaBehavior.reg,
 				Lua_TestMain.reg,
-				Lua_Custom.reg,
-				Lua_Custom_IFoo.reg,
-				Lua_Deleg.reg,
-				Lua_foostruct.reg,
-				Lua_FloatEvent.reg,
-				Lua_ListViewEvent.reg,
-				Lua_SLuaTest.reg,
 				Lua_System_Collections_Generic_List_1_int.reg,
-				Lua_XXList.reg,
-				Lua_AbsClass.reg,
-				Lua_HelloWorld.reg,
-				Lua_NewCoroutine.reg,
-				Lua_HHHuman.reg,
-				Lua_Testinteraction.reg,
 				Lua_System_String.reg,
 			};
 			return list;

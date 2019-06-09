@@ -260,15 +260,201 @@ public class Lua_UnityEngine_Assertions_Assert : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Object a1;
-			checkType(l,1,out a1);
-			UnityEngine.Object a2;
-			checkType(l,2,out a2);
-			System.String a3;
-			checkType(l,3,out a3);
-			UnityEngine.Assertions.Assert.AreEqual(a1,a2,a3);
-			pushValue(l,true);
-			return 1;
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,1,typeof(System.UInt16),typeof(System.UInt16))){
+				System.UInt16 a1;
+				checkType(l,1,out a1);
+				System.UInt16 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.SByte),typeof(System.SByte))){
+				System.SByte a1;
+				checkType(l,1,out a1);
+				System.SByte a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Byte),typeof(System.Byte))){
+				System.Byte a1;
+				checkType(l,1,out a1);
+				System.Byte a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Int64),typeof(System.Int64))){
+				System.Int64 a1;
+				checkType(l,1,out a1);
+				System.Int64 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Char),typeof(System.Char))){
+				System.Char a1;
+				checkType(l,1,out a1);
+				System.Char a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Int16),typeof(System.Int16))){
+				System.Int16 a1;
+				checkType(l,1,out a1);
+				System.Int16 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.UInt32),typeof(System.UInt32))){
+				System.UInt32 a1;
+				checkType(l,1,out a1);
+				System.UInt32 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.UInt64),typeof(System.UInt64))){
+				System.UInt64 a1;
+				checkType(l,1,out a1);
+				System.UInt64 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(int),typeof(int))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				System.Int32 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Int64),typeof(System.Int64),typeof(string))){
+				System.Int64 a1;
+				checkType(l,1,out a1);
+				System.Int64 a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.UInt32),typeof(System.UInt32),typeof(string))){
+				System.UInt32 a1;
+				checkType(l,1,out a1);
+				System.UInt32 a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(int),typeof(int),typeof(string))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				System.Int32 a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(UnityEngine.Object),typeof(UnityEngine.Object),typeof(string))){
+				UnityEngine.Object a1;
+				checkType(l,1,out a1);
+				UnityEngine.Object a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Int16),typeof(System.Int16),typeof(string))){
+				System.Int16 a1;
+				checkType(l,1,out a1);
+				System.Int16 a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Char),typeof(System.Char),typeof(string))){
+				System.Char a1;
+				checkType(l,1,out a1);
+				System.Char a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Byte),typeof(System.Byte),typeof(string))){
+				System.Byte a1;
+				checkType(l,1,out a1);
+				System.Byte a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.SByte),typeof(System.SByte),typeof(string))){
+				System.SByte a1;
+				checkType(l,1,out a1);
+				System.SByte a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.UInt16),typeof(System.UInt16),typeof(string))){
+				System.UInt16 a1;
+				checkType(l,1,out a1);
+				System.UInt16 a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.UInt64),typeof(System.UInt64),typeof(string))){
+				System.UInt64 a1;
+				checkType(l,1,out a1);
+				System.UInt64 a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function AreEqual to call");
+			return 2;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -296,15 +482,201 @@ public class Lua_UnityEngine_Assertions_Assert : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Object a1;
-			checkType(l,1,out a1);
-			UnityEngine.Object a2;
-			checkType(l,2,out a2);
-			System.String a3;
-			checkType(l,3,out a3);
-			UnityEngine.Assertions.Assert.AreNotEqual(a1,a2,a3);
-			pushValue(l,true);
-			return 1;
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,1,typeof(System.UInt16),typeof(System.UInt16))){
+				System.UInt16 a1;
+				checkType(l,1,out a1);
+				System.UInt16 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.SByte),typeof(System.SByte))){
+				System.SByte a1;
+				checkType(l,1,out a1);
+				System.SByte a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Byte),typeof(System.Byte))){
+				System.Byte a1;
+				checkType(l,1,out a1);
+				System.Byte a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Int64),typeof(System.Int64))){
+				System.Int64 a1;
+				checkType(l,1,out a1);
+				System.Int64 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Char),typeof(System.Char))){
+				System.Char a1;
+				checkType(l,1,out a1);
+				System.Char a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Int16),typeof(System.Int16))){
+				System.Int16 a1;
+				checkType(l,1,out a1);
+				System.Int16 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.UInt32),typeof(System.UInt32))){
+				System.UInt32 a1;
+				checkType(l,1,out a1);
+				System.UInt32 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.UInt64),typeof(System.UInt64))){
+				System.UInt64 a1;
+				checkType(l,1,out a1);
+				System.UInt64 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(int),typeof(int))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				System.Int32 a2;
+				checkType(l,2,out a2);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Int64),typeof(System.Int64),typeof(string))){
+				System.Int64 a1;
+				checkType(l,1,out a1);
+				System.Int64 a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.UInt32),typeof(System.UInt32),typeof(string))){
+				System.UInt32 a1;
+				checkType(l,1,out a1);
+				System.UInt32 a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(int),typeof(int),typeof(string))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				System.Int32 a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(UnityEngine.Object),typeof(UnityEngine.Object),typeof(string))){
+				UnityEngine.Object a1;
+				checkType(l,1,out a1);
+				UnityEngine.Object a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Int16),typeof(System.Int16),typeof(string))){
+				System.Int16 a1;
+				checkType(l,1,out a1);
+				System.Int16 a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Char),typeof(System.Char),typeof(string))){
+				System.Char a1;
+				checkType(l,1,out a1);
+				System.Char a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.Byte),typeof(System.Byte),typeof(string))){
+				System.Byte a1;
+				checkType(l,1,out a1);
+				System.Byte a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.SByte),typeof(System.SByte),typeof(string))){
+				System.SByte a1;
+				checkType(l,1,out a1);
+				System.SByte a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.UInt16),typeof(System.UInt16),typeof(string))){
+				System.UInt16 a1;
+				checkType(l,1,out a1);
+				System.UInt16 a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(System.UInt64),typeof(System.UInt64),typeof(string))){
+				System.UInt64 a1;
+				checkType(l,1,out a1);
+				System.UInt64 a2;
+				checkType(l,2,out a2);
+				System.String a3;
+				checkType(l,3,out a3);
+				UnityEngine.Assertions.Assert.AreNotEqual(a1,a2,a3);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function AreNotEqual to call");
+			return 2;
 		}
 		catch(Exception e) {
 			return error(l,e);

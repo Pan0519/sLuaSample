@@ -18,7 +18,37 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
 			UnityEngine.RenderTexture o;
-			if(argc==6){
+			if(matchType(l,argc,2,typeof(UnityEngine.RenderTextureDescriptor))){
+				UnityEngine.RenderTextureDescriptor a1;
+				checkValueType(l,2,out a1);
+				o=new UnityEngine.RenderTexture(a1);
+				pushValue(l,true);
+				pushValue(l,o);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(UnityEngine.RenderTexture))){
+				UnityEngine.RenderTexture a1;
+				checkType(l,2,out a1);
+				o=new UnityEngine.RenderTexture(a1);
+				pushValue(l,true);
+				pushValue(l,o);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(int),typeof(int),typeof(int),typeof(UnityEngine.Experimental.Rendering.GraphicsFormat))){
+				System.Int32 a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				System.Int32 a3;
+				checkType(l,4,out a3);
+				UnityEngine.Experimental.Rendering.GraphicsFormat a4;
+				a4 = (UnityEngine.Experimental.Rendering.GraphicsFormat)LuaDLL.luaL_checkinteger(l, 5);
+				o=new UnityEngine.RenderTexture(a1,a2,a3,a4);
+				pushValue(l,true);
+				pushValue(l,o);
+				return 2;
+			}
+			else if(argc==6){
 				System.Int32 a1;
 				checkType(l,2,out a1);
 				System.Int32 a2;
@@ -34,7 +64,7 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 				pushValue(l,o);
 				return 2;
 			}
-			else if(argc==5){
+			else if(matchType(l,argc,2,typeof(int),typeof(int),typeof(int),typeof(UnityEngine.RenderTextureFormat))){
 				System.Int32 a1;
 				checkType(l,2,out a1);
 				System.Int32 a2;
@@ -60,23 +90,117 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 				pushValue(l,o);
 				return 2;
 			}
-			else if(matchType(l,argc,2,typeof(UnityEngine.RenderTextureDescriptor))){
-				UnityEngine.RenderTextureDescriptor a1;
-				checkValueType(l,2,out a1);
-				o=new UnityEngine.RenderTexture(a1);
-				pushValue(l,true);
-				pushValue(l,o);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(UnityEngine.RenderTexture))){
-				UnityEngine.RenderTexture a1;
-				checkType(l,2,out a1);
-				o=new UnityEngine.RenderTexture(a1);
-				pushValue(l,true);
-				pushValue(l,o);
-				return 2;
-			}
 			return error(l,"New object failed.");
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int GetNativeDepthBufferPtr(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
+			var ret=self.GetNativeDepthBufferPtr();
+			pushValue(l,true);
+			pushValue(l,ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int DiscardContents(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==1){
+				UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
+				self.DiscardContents();
+				pushValue(l,true);
+				return 1;
+			}
+			else if(argc==3){
+				UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
+				System.Boolean a1;
+				checkType(l,2,out a1);
+				System.Boolean a2;
+				checkType(l,3,out a2);
+				self.DiscardContents(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function DiscardContents to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int MarkRestoreExpected(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
+			self.MarkRestoreExpected();
+			pushValue(l,true);
+			return 1;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -122,6 +246,39 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 			pushValue(l,false);
 			LuaDLL.lua_pushstring(l,"No matched override function ResolveAntiAliasedSurface to call");
 			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int SetGlobalShaderProperty(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
+			System.String a1;
+			checkType(l,2,out a1);
+			self.SetGlobalShaderProperty(a1);
+			pushValue(l,true);
+			return 1;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -233,84 +390,6 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int DiscardContents(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(argc==1){
-				UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
-				self.DiscardContents();
-				pushValue(l,true);
-				return 1;
-			}
-			else if(argc==3){
-				UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
-				System.Boolean a1;
-				checkType(l,2,out a1);
-				System.Boolean a2;
-				checkType(l,3,out a2);
-				self.DiscardContents(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function DiscardContents to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int MarkRestoreExpected(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
-			self.MarkRestoreExpected();
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int GenerateMips(IntPtr l) {
 		try {
 			#if DEBUG
@@ -342,7 +421,7 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int GetNativeDepthBufferPtr(IntPtr l) {
+	static public int ConvertToEquirect(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -354,7 +433,43 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 			#endif
 			#endif
 			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
-			var ret=self.GetNativeDepthBufferPtr();
+			UnityEngine.RenderTexture a1;
+			checkType(l,2,out a1);
+			UnityEngine.Camera.MonoOrStereoscopicEye a2;
+			a2 = (UnityEngine.Camera.MonoOrStereoscopicEye)LuaDLL.luaL_checkinteger(l, 3);
+			self.ConvertToEquirect(a1,a2);
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int SupportsStencil_s(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.RenderTexture a1;
+			checkType(l,1,out a1);
+			var ret=UnityEngine.RenderTexture.SupportsStencil(a1);
 			pushValue(l,true);
 			pushValue(l,ret);
 			return 2;
@@ -374,7 +489,7 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int SetGlobalShaderProperty(IntPtr l) {
+	static public int ReleaseTemporary_s(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -385,10 +500,9 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
-			System.String a1;
-			checkType(l,2,out a1);
-			self.SetGlobalShaderProperty(a1);
+			UnityEngine.RenderTexture a1;
+			checkType(l,1,out a1);
+			UnityEngine.RenderTexture.ReleaseTemporary(a1);
 			pushValue(l,true);
 			return 1;
 		}
@@ -582,71 +696,6 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int ReleaseTemporary_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.RenderTexture a1;
-			checkType(l,1,out a1);
-			UnityEngine.RenderTexture.ReleaseTemporary(a1);
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int SupportsStencil_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.RenderTexture a1;
-			checkType(l,1,out a1);
-			var ret=UnityEngine.RenderTexture.SupportsStencil(a1);
-			pushValue(l,true);
-			pushValue(l,ret);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_width(IntPtr l) {
 		try {
 			#if DEBUG
@@ -775,7 +824,7 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_vrUsage(IntPtr l) {
+	static public int get_dimension(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -788,7 +837,7 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 			#endif
 			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
 			pushValue(l,true);
-			pushEnum(l,(int)self.vrUsage);
+			pushEnum(l,(int)self.dimension);
 			return 2;
 		}
 		catch(Exception e) {
@@ -806,7 +855,7 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_vrUsage(IntPtr l) {
+	static public int set_dimension(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -818,9 +867,9 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 			#endif
 			#endif
 			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
-			UnityEngine.VRTextureUsage v;
-			v = (UnityEngine.VRTextureUsage)LuaDLL.luaL_checkinteger(l, 2);
-			self.vrUsage=v;
+			UnityEngine.Rendering.TextureDimension v;
+			v = (UnityEngine.Rendering.TextureDimension)LuaDLL.luaL_checkinteger(l, 2);
+			self.dimension=v;
 			pushValue(l,true);
 			return 1;
 		}
@@ -839,7 +888,7 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_depth(IntPtr l) {
+	static public int get_useMipMap(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -852,7 +901,7 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 			#endif
 			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
 			pushValue(l,true);
-			pushValue(l,self.depth);
+			pushValue(l,self.useMipMap);
 			return 2;
 		}
 		catch(Exception e) {
@@ -870,71 +919,7 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_depth(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
-			int v;
-			checkType(l,2,out v);
-			self.depth=v;
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_isPowerOfTwo(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.isPowerOfTwo);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int set_isPowerOfTwo(IntPtr l) {
+	static public int set_useMipMap(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -948,7 +933,7 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
 			bool v;
 			checkType(l,2,out v);
-			self.isPowerOfTwo=v;
+			self.useMipMap=v;
 			pushValue(l,true);
 			return 1;
 		}
@@ -1062,7 +1047,7 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_useMipMap(IntPtr l) {
+	static public int get_vrUsage(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -1075,7 +1060,7 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 			#endif
 			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
 			pushValue(l,true);
-			pushValue(l,self.useMipMap);
+			pushEnum(l,(int)self.vrUsage);
 			return 2;
 		}
 		catch(Exception e) {
@@ -1093,7 +1078,7 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_useMipMap(IntPtr l) {
+	static public int set_vrUsage(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -1105,9 +1090,73 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 			#endif
 			#endif
 			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
-			bool v;
-			checkType(l,2,out v);
-			self.useMipMap=v;
+			UnityEngine.VRTextureUsage v;
+			v = (UnityEngine.VRTextureUsage)LuaDLL.luaL_checkinteger(l, 2);
+			self.vrUsage=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_memorylessMode(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
+			pushValue(l,true);
+			pushEnum(l,(int)self.memorylessMode);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int set_memorylessMode(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
+			UnityEngine.RenderTextureMemoryless v;
+			v = (UnityEngine.RenderTextureMemoryless)LuaDLL.luaL_checkinteger(l, 2);
+			self.memorylessMode=v;
 			pushValue(l,true);
 			return 1;
 		}
@@ -1190,70 +1239,6 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_dimension(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
-			pushValue(l,true);
-			pushEnum(l,(int)self.dimension);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int set_dimension(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
-			UnityEngine.Rendering.TextureDimension v;
-			v = (UnityEngine.Rendering.TextureDimension)LuaDLL.luaL_checkinteger(l, 2);
-			self.dimension=v;
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_volumeDepth(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1300,70 +1285,6 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 			int v;
 			checkType(l,2,out v);
 			self.volumeDepth=v;
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_memorylessMode(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
-			pushValue(l,true);
-			pushEnum(l,(int)self.memorylessMode);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int set_memorylessMode(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
-			UnityEngine.RenderTextureMemoryless v;
-			v = (UnityEngine.RenderTextureMemoryless)LuaDLL.luaL_checkinteger(l, 2);
-			self.memorylessMode=v;
 			pushValue(l,true);
 			return 1;
 		}
@@ -1638,6 +1559,132 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int get_isPowerOfTwo(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.isPowerOfTwo);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int set_isPowerOfTwo(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
+			bool v;
+			checkType(l,2,out v);
+			self.isPowerOfTwo=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_active(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			pushValue(l,true);
+			pushValue(l,UnityEngine.RenderTexture.active);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int set_active(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.RenderTexture v;
+			checkType(l,2,out v);
+			UnityEngine.RenderTexture.active=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int get_colorBuffer(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1700,7 +1747,7 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_active(IntPtr l) {
+	static public int get_depth(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -1711,8 +1758,9 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
+			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
 			pushValue(l,true);
-			pushValue(l,UnityEngine.RenderTexture.active);
+			pushValue(l,self.depth);
 			return 2;
 		}
 		catch(Exception e) {
@@ -1730,7 +1778,7 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_active(IntPtr l) {
+	static public int set_depth(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -1741,9 +1789,10 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.RenderTexture v;
+			UnityEngine.RenderTexture self=(UnityEngine.RenderTexture)checkSelf(l);
+			int v;
 			checkType(l,2,out v);
-			UnityEngine.RenderTexture.active=v;
+			self.depth=v;
 			pushValue(l,true);
 			return 1;
 		}
@@ -1827,37 +1876,38 @@ public class Lua_UnityEngine_RenderTexture : LuaObject {
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.RenderTexture");
+		addMember(l,GetNativeDepthBufferPtr);
+		addMember(l,DiscardContents);
+		addMember(l,MarkRestoreExpected);
 		addMember(l,ResolveAntiAliasedSurface);
+		addMember(l,SetGlobalShaderProperty);
 		addMember(l,Create);
 		addMember(l,Release);
 		addMember(l,IsCreated);
-		addMember(l,DiscardContents);
-		addMember(l,MarkRestoreExpected);
 		addMember(l,GenerateMips);
-		addMember(l,GetNativeDepthBufferPtr);
-		addMember(l,SetGlobalShaderProperty);
-		addMember(l,GetTemporary_s);
-		addMember(l,ReleaseTemporary_s);
+		addMember(l,ConvertToEquirect);
 		addMember(l,SupportsStencil_s);
+		addMember(l,ReleaseTemporary_s);
+		addMember(l,GetTemporary_s);
 		addMember(l,"width",get_width,set_width,true);
 		addMember(l,"height",get_height,set_height,true);
-		addMember(l,"vrUsage",get_vrUsage,set_vrUsage,true);
-		addMember(l,"depth",get_depth,set_depth,true);
-		addMember(l,"isPowerOfTwo",get_isPowerOfTwo,set_isPowerOfTwo,true);
+		addMember(l,"dimension",get_dimension,set_dimension,true);
+		addMember(l,"useMipMap",get_useMipMap,set_useMipMap,true);
 		addMember(l,"sRGB",get_sRGB,null,true);
 		addMember(l,"format",get_format,set_format,true);
-		addMember(l,"useMipMap",get_useMipMap,set_useMipMap,true);
-		addMember(l,"autoGenerateMips",get_autoGenerateMips,set_autoGenerateMips,true);
-		addMember(l,"dimension",get_dimension,set_dimension,true);
-		addMember(l,"volumeDepth",get_volumeDepth,set_volumeDepth,true);
+		addMember(l,"vrUsage",get_vrUsage,set_vrUsage,true);
 		addMember(l,"memorylessMode",get_memorylessMode,set_memorylessMode,true);
+		addMember(l,"autoGenerateMips",get_autoGenerateMips,set_autoGenerateMips,true);
+		addMember(l,"volumeDepth",get_volumeDepth,set_volumeDepth,true);
 		addMember(l,"antiAliasing",get_antiAliasing,set_antiAliasing,true);
 		addMember(l,"bindTextureMS",get_bindTextureMS,set_bindTextureMS,true);
 		addMember(l,"enableRandomWrite",get_enableRandomWrite,set_enableRandomWrite,true);
 		addMember(l,"useDynamicScale",get_useDynamicScale,set_useDynamicScale,true);
+		addMember(l,"isPowerOfTwo",get_isPowerOfTwo,set_isPowerOfTwo,true);
+		addMember(l,"active",get_active,set_active,false);
 		addMember(l,"colorBuffer",get_colorBuffer,null,true);
 		addMember(l,"depthBuffer",get_depthBuffer,null,true);
-		addMember(l,"active",get_active,set_active,false);
+		addMember(l,"depth",get_depth,set_depth,true);
 		addMember(l,"descriptor",get_descriptor,set_descriptor,true);
 		createTypeMetatable(l,constructor, typeof(UnityEngine.RenderTexture),typeof(UnityEngine.Texture));
 	}

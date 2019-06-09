@@ -70,6 +70,20 @@ public class Lua_UnityEngine_Rendering_RenderTargetIdentifier : LuaObject {
 				pushValue(l,o);
 				return 2;
 			}
+			else if(matchType(l,argc,2,typeof(UnityEngine.Rendering.RenderTargetIdentifier),typeof(int),typeof(UnityEngine.CubemapFace),typeof(int))){
+				UnityEngine.Rendering.RenderTargetIdentifier a1;
+				checkValueType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				UnityEngine.CubemapFace a3;
+				a3 = (UnityEngine.CubemapFace)LuaDLL.luaL_checkinteger(l, 4);
+				System.Int32 a4;
+				checkType(l,5,out a4);
+				o=new UnityEngine.Rendering.RenderTargetIdentifier(a1,a2,a3,a4);
+				pushValue(l,true);
+				pushValue(l,o);
+				return 2;
+			}
 			else if(matchType(l,argc,2,typeof(UnityEngine.Texture))){
 				UnityEngine.Texture a1;
 				checkType(l,2,out a1);
