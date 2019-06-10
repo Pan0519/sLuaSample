@@ -189,38 +189,6 @@ public class Lua_UnityEngine_SceneManagement_Scene : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_handle(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.SceneManagement.Scene self;
-			checkValueType(l,1,out self);
-			pushValue(l,true);
-			pushValue(l,self.handle);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_path(IntPtr l) {
 		try {
 			#if DEBUG
@@ -269,41 +237,6 @@ public class Lua_UnityEngine_SceneManagement_Scene : LuaObject {
 			pushValue(l,true);
 			pushValue(l,self.name);
 			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int set_name(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.SceneManagement.Scene self;
-			checkValueType(l,1,out self);
-			string v;
-			checkType(l,2,out v);
-			self.name=v;
-			setBack(l,self);
-			pushValue(l,true);
-			return 1;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -453,9 +386,8 @@ public class Lua_UnityEngine_SceneManagement_Scene : LuaObject {
 		addMember(l,GetRootGameObjects);
 		addMember(l,op_Equality);
 		addMember(l,op_Inequality);
-		addMember(l,"handle",get_handle,null,true);
 		addMember(l,"path",get_path,null,true);
-		addMember(l,"name",get_name,set_name,true);
+		addMember(l,"name",get_name,null,true);
 		addMember(l,"isLoaded",get_isLoaded,null,true);
 		addMember(l,"buildIndex",get_buildIndex,null,true);
 		addMember(l,"isDirty",get_isDirty,null,true);

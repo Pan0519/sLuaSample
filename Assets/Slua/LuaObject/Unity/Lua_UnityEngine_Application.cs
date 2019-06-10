@@ -48,22 +48,39 @@ public class Lua_UnityEngine_Application : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(argc==0){
-				UnityEngine.Application.Quit();
-				pushValue(l,true);
-				return 1;
-			}
-			else if(argc==1){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				UnityEngine.Application.Quit(a1);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function Quit to call");
-			return 2;
+			UnityEngine.Application.Quit();
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int CancelQuit_s(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Application.CancelQuit();
+			pushValue(l,true);
+			return 1;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -110,6 +127,53 @@ public class Lua_UnityEngine_Application : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int GetStreamProgressForLevel_s(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,1,typeof(int))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				var ret=UnityEngine.Application.GetStreamProgressForLevel(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,1,typeof(string))){
+				System.String a1;
+				checkType(l,1,out a1);
+				var ret=UnityEngine.Application.GetStreamProgressForLevel(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function GetStreamProgressForLevel to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int CanStreamedLevelBeLoaded_s(IntPtr l) {
 		try {
 			#if DEBUG
@@ -140,39 +204,6 @@ public class Lua_UnityEngine_Application : LuaObject {
 			}
 			pushValue(l,false);
 			LuaDLL.lua_pushstring(l,"No matched override function CanStreamedLevelBeLoaded to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int IsPlaying_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Object a1;
-			checkType(l,1,out a1);
-			var ret=UnityEngine.Application.IsPlaying(a1);
-			pushValue(l,true);
-			pushValue(l,ret);
 			return 2;
 		}
 		catch(Exception e) {
@@ -482,6 +513,36 @@ public class Lua_UnityEngine_Application : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int get_streamedBytes(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			pushValue(l,true);
+			pushValue(l,UnityEngine.Application.streamedBytes);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int get_isPlaying(IntPtr l) {
 		try {
 			#if DEBUG
@@ -525,6 +586,36 @@ public class Lua_UnityEngine_Application : LuaObject {
 			#endif
 			pushValue(l,true);
 			pushValue(l,UnityEngine.Application.isFocused);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_isEditor(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			pushValue(l,true);
+			pushValue(l,UnityEngine.Application.isEditor);
 			return 2;
 		}
 		catch(Exception e) {
@@ -708,36 +799,6 @@ public class Lua_UnityEngine_Application : LuaObject {
 			UnityEngine.Application.runInBackground=v;
 			pushValue(l,true);
 			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_isBatchMode(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			pushValue(l,true);
-			pushValue(l,UnityEngine.Application.isBatchMode);
-			return 2;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -1266,36 +1327,6 @@ public class Lua_UnityEngine_Application : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_consoleLogPath(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			pushValue(l,true);
-			pushValue(l,UnityEngine.Application.consoleLogPath);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_backgroundLoadingPriority(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1446,43 +1477,14 @@ public class Lua_UnityEngine_Application : LuaObject {
 		}
 		#endif
 	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_isEditor(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			pushValue(l,true);
-			pushValue(l,UnityEngine.Application.isEditor);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.Application");
 		addMember(l,Quit_s);
+		addMember(l,CancelQuit_s);
 		addMember(l,Unload_s);
+		addMember(l,GetStreamProgressForLevel_s);
 		addMember(l,CanStreamedLevelBeLoaded_s);
-		addMember(l,IsPlaying_s);
 		addMember(l,GetBuildTags_s);
 		addMember(l,SetBuildTags_s);
 		addMember(l,HasProLicense_s);
@@ -1492,14 +1494,15 @@ public class Lua_UnityEngine_Application : LuaObject {
 		addMember(l,SetStackTraceLogType_s);
 		addMember(l,RequestUserAuthorization_s);
 		addMember(l,HasUserAuthorization_s);
+		addMember(l,"streamedBytes",get_streamedBytes,null,false);
 		addMember(l,"isPlaying",get_isPlaying,null,false);
 		addMember(l,"isFocused",get_isFocused,null,false);
+		addMember(l,"isEditor",get_isEditor,null,false);
 		addMember(l,"platform",get_platform,null,false);
 		addMember(l,"buildGUID",get_buildGUID,null,false);
 		addMember(l,"isMobilePlatform",get_isMobilePlatform,null,false);
 		addMember(l,"isConsolePlatform",get_isConsolePlatform,null,false);
 		addMember(l,"runInBackground",get_runInBackground,set_runInBackground,false);
-		addMember(l,"isBatchMode",get_isBatchMode,null,false);
 		addMember(l,"dataPath",get_dataPath,null,false);
 		addMember(l,"streamingAssetsPath",get_streamingAssetsPath,null,false);
 		addMember(l,"persistentDataPath",get_persistentDataPath,null,false);
@@ -1516,12 +1519,10 @@ public class Lua_UnityEngine_Application : LuaObject {
 		addMember(l,"cloudProjectId",get_cloudProjectId,null,false);
 		addMember(l,"targetFrameRate",get_targetFrameRate,set_targetFrameRate,false);
 		addMember(l,"systemLanguage",get_systemLanguage,null,false);
-		addMember(l,"consoleLogPath",get_consoleLogPath,null,false);
 		addMember(l,"backgroundLoadingPriority",get_backgroundLoadingPriority,set_backgroundLoadingPriority,false);
 		addMember(l,"internetReachability",get_internetReachability,null,false);
 		addMember(l,"genuine",get_genuine,null,false);
 		addMember(l,"genuineCheckAvailable",get_genuineCheckAvailable,null,false);
-		addMember(l,"isEditor",get_isEditor,null,false);
 		createTypeMetatable(l,constructor, typeof(UnityEngine.Application));
 	}
 }

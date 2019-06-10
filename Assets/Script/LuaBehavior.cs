@@ -1,12 +1,14 @@
-﻿using SLua;
+﻿using Binding;
+using SLua;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
 [CustomLuaClass]
-public class LuaBehavior : MonoBehaviour
+public class LuaBehavior : MonoBase
 {
     LuaSvr svr;
     LuaTable self;
@@ -49,7 +51,7 @@ public class LuaBehavior : MonoBehaviour
         ShowProgressText.text = p.ToString();
     }
 
-    public virtual void InitComplete()
+    void InitComplete()
     {
         self = svr.start(fileName) as LuaTable;
 
@@ -62,8 +64,16 @@ public class LuaBehavior : MonoBehaviour
         initComplete();
     }
 
+    public object callLuaFunction(string functionName, params object[] args)
+    {
+        return LuaSvr.mainState.getFunction(functionName).call(args);
+    }
+
     [DoNotToLua]
-    public virtual void initComplete() { }
+    public virtual void initComplete()
+    {
+        setBindingDataMaps();
+    }
 
     [DoNotToLua]
     public byte[] LuaLoader(string fn, ref string absoluteFn)
@@ -123,5 +133,63 @@ public class LuaBehavior : MonoBehaviour
         }
 
         return luaFunction.cast<T>();
+    }
+    #region setBindingDataMaps
+
+    Dictionary<string, BindingMapsData> bindingDataMaps = new Dictionary<string, BindingMapsData>();
+
+    void setBindingDataMaps()
+    {
+        var bindingDataList = GetComponent<BindingNode>().getBindings();
+
+        for (int i = 0; i < bindingDataList.Count; ++i)
+        {
+            var bindingData = bindingDataList[i];
+
+            string identifier = bindingData.getIdentifier().getIdentifier();
+
+            if (bindingDataMaps.ContainsKey(identifier))
+                continue;
+
+            BindingMapsData bindingMapData = new BindingMapsData()
+            {
+                theObject = bindingData.getObject()
+            };
+
+            bindingDataMaps.Add(identifier, bindingMapData);
+        }
+    }
+
+    public Component getBindingComponent(string identifiter, string type)
+    {
+        BindingMapsData returnValue;
+
+        if (bindingDataMaps.TryGetValue(identifiter, out returnValue))
+        {
+            return returnValue.getComponent(type);
+        }
+
+        return null;
+    }
+
+    #endregion
+}
+
+public class BindingMapsData
+{
+    public object theObject;
+
+    Component theCompoent;
+
+    public Component getComponent(string componentName)
+    {
+        if (null == theCompoent)
+        {
+            var obj = theObject as GameObject;
+
+            theCompoent = obj.GetComponent(componentName);
+        }
+
+        return theCompoent;
     }
 }

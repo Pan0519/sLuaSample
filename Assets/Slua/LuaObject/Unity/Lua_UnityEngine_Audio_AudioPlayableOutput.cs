@@ -138,74 +138,6 @@ public class Lua_UnityEngine_Audio_AudioPlayableOutput : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int GetEvaluateOnSeek(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Audio.AudioPlayableOutput self;
-			checkValueType(l,1,out self);
-			var ret=self.GetEvaluateOnSeek();
-			pushValue(l,true);
-			pushValue(l,ret);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int SetEvaluateOnSeek(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Audio.AudioPlayableOutput self;
-			checkValueType(l,1,out self);
-			System.Boolean a1;
-			checkType(l,2,out a1);
-			self.SetEvaluateOnSeek(a1);
-			pushValue(l,true);
-			setBack(l,self);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int Create_s(IntPtr l) {
 		try {
 			#if DEBUG
@@ -277,8 +209,6 @@ public class Lua_UnityEngine_Audio_AudioPlayableOutput : LuaObject {
 		addMember(l,GetHandle);
 		addMember(l,GetTarget);
 		addMember(l,SetTarget);
-		addMember(l,GetEvaluateOnSeek);
-		addMember(l,SetEvaluateOnSeek);
 		addMember(l,Create_s);
 		addMember(l,"Null",get_Null,null,false);
 		createTypeMetatable(l,constructor, typeof(UnityEngine.Audio.AudioPlayableOutput),typeof(System.ValueType));

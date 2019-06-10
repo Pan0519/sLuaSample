@@ -5,38 +5,6 @@ using System.Collections.Generic;
 public class Lua_UnityEngine_U2D_SpriteAtlas : LuaObject {
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int constructor(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.U2D.SpriteAtlas o;
-			o=new UnityEngine.U2D.SpriteAtlas();
-			pushValue(l,true);
-			pushValue(l,o);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int CanBindTo(IntPtr l) {
 		try {
 			#if DEBUG
@@ -52,40 +20,6 @@ public class Lua_UnityEngine_U2D_SpriteAtlas : LuaObject {
 			UnityEngine.Sprite a1;
 			checkType(l,2,out a1);
 			var ret=self.CanBindTo(a1);
-			pushValue(l,true);
-			pushValue(l,ret);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int GetSprite(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.U2D.SpriteAtlas self=(UnityEngine.U2D.SpriteAtlas)checkSelf(l);
-			System.String a1;
-			checkType(l,2,out a1);
-			var ret=self.GetSprite(a1);
 			pushValue(l,true);
 			pushValue(l,ret);
 			return 2;
@@ -139,6 +73,40 @@ public class Lua_UnityEngine_U2D_SpriteAtlas : LuaObject {
 			}
 			pushValue(l,false);
 			LuaDLL.lua_pushstring(l,"No matched override function GetSprites to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int GetSprite(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.U2D.SpriteAtlas self=(UnityEngine.U2D.SpriteAtlas)checkSelf(l);
+			System.String a1;
+			checkType(l,2,out a1);
+			var ret=self.GetSprite(a1);
+			pushValue(l,true);
+			pushValue(l,ret);
 			return 2;
 		}
 		catch(Exception e) {
@@ -251,11 +219,11 @@ public class Lua_UnityEngine_U2D_SpriteAtlas : LuaObject {
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.U2D.SpriteAtlas");
 		addMember(l,CanBindTo);
-		addMember(l,GetSprite);
 		addMember(l,GetSprites);
+		addMember(l,GetSprite);
 		addMember(l,"isVariant",get_isVariant,null,true);
 		addMember(l,"tag",get_tag,null,true);
 		addMember(l,"spriteCount",get_spriteCount,null,true);
-		createTypeMetatable(l,constructor, typeof(UnityEngine.U2D.SpriteAtlas),typeof(UnityEngine.Object));
+		createTypeMetatable(l,null, typeof(UnityEngine.U2D.SpriteAtlas),typeof(UnityEngine.Object));
 	}
 }

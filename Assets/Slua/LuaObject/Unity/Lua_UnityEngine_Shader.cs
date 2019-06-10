@@ -5,6 +5,38 @@ using System.Collections.Generic;
 public class Lua_UnityEngine_Shader : LuaObject {
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int constructor(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Shader o;
+			o=new UnityEngine.Shader();
+			pushValue(l,true);
+			pushValue(l,o);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int Find_s(IntPtr l) {
 		try {
 			#if DEBUG
@@ -135,7 +167,7 @@ public class Lua_UnityEngine_Shader : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int WarmupAllShaders_s(IntPtr l) {
+	static public int SetGlobalBuffer_s(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -146,9 +178,28 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Shader.WarmupAllShaders();
-			pushValue(l,true);
-			return 1;
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.ComputeBuffer))){
+				System.Int32 a1;
+				checkType(l,1,out a1);
+				UnityEngine.ComputeBuffer a2;
+				checkType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalBuffer(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.ComputeBuffer))){
+				System.String a1;
+				checkType(l,1,out a1);
+				UnityEngine.ComputeBuffer a2;
+				checkType(l,2,out a2);
+				UnityEngine.Shader.SetGlobalBuffer(a1,a2);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function SetGlobalBuffer to call");
+			return 2;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -182,6 +233,36 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			pushValue(l,true);
 			pushValue(l,ret);
 			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int WarmupAllShaders_s(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Shader.WarmupAllShaders();
+			pushValue(l,true);
+			return 1;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -475,55 +556,6 @@ public class Lua_UnityEngine_Shader : LuaObject {
 			}
 			pushValue(l,false);
 			LuaDLL.lua_pushstring(l,"No matched override function SetGlobalTexture to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int SetGlobalBuffer_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.ComputeBuffer))){
-				System.String a1;
-				checkType(l,1,out a1);
-				UnityEngine.ComputeBuffer a2;
-				checkType(l,2,out a2);
-				UnityEngine.Shader.SetGlobalBuffer(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,1,typeof(int),typeof(UnityEngine.ComputeBuffer))){
-				System.Int32 a1;
-				checkType(l,1,out a1);
-				UnityEngine.ComputeBuffer a2;
-				checkType(l,2,out a2);
-				UnityEngine.Shader.SetGlobalBuffer(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function SetGlobalBuffer to call");
 			return 2;
 		}
 		catch(Exception e) {
@@ -1219,6 +1251,37 @@ public class Lua_UnityEngine_Shader : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int get_isSupported(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Shader self=(UnityEngine.Shader)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.isSupported);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int get_maximumLOD(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1345,37 +1408,6 @@ public class Lua_UnityEngine_Shader : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_isSupported(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Shader self=(UnityEngine.Shader)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.isSupported);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_globalRenderPipeline(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1474,15 +1506,15 @@ public class Lua_UnityEngine_Shader : LuaObject {
 		addMember(l,EnableKeyword_s);
 		addMember(l,DisableKeyword_s);
 		addMember(l,IsKeywordEnabled_s);
-		addMember(l,WarmupAllShaders_s);
+		addMember(l,SetGlobalBuffer_s);
 		addMember(l,PropertyToID_s);
+		addMember(l,WarmupAllShaders_s);
 		addMember(l,SetGlobalFloat_s);
 		addMember(l,SetGlobalInt_s);
 		addMember(l,SetGlobalVector_s);
 		addMember(l,SetGlobalColor_s);
 		addMember(l,SetGlobalMatrix_s);
 		addMember(l,SetGlobalTexture_s);
-		addMember(l,SetGlobalBuffer_s);
 		addMember(l,SetGlobalFloatArray_s);
 		addMember(l,SetGlobalVectorArray_s);
 		addMember(l,SetGlobalMatrixArray_s);
@@ -1495,11 +1527,11 @@ public class Lua_UnityEngine_Shader : LuaObject {
 		addMember(l,GetGlobalFloatArray_s);
 		addMember(l,GetGlobalVectorArray_s);
 		addMember(l,GetGlobalMatrixArray_s);
+		addMember(l,"isSupported",get_isSupported,null,true);
 		addMember(l,"maximumLOD",get_maximumLOD,set_maximumLOD,true);
 		addMember(l,"globalMaximumLOD",get_globalMaximumLOD,set_globalMaximumLOD,false);
-		addMember(l,"isSupported",get_isSupported,null,true);
 		addMember(l,"globalRenderPipeline",get_globalRenderPipeline,set_globalRenderPipeline,false);
 		addMember(l,"renderQueue",get_renderQueue,null,true);
-		createTypeMetatable(l,null, typeof(UnityEngine.Shader),typeof(UnityEngine.Object));
+		createTypeMetatable(l,constructor, typeof(UnityEngine.Shader),typeof(UnityEngine.Object));
 	}
 }

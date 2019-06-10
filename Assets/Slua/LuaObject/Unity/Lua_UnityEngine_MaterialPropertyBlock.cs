@@ -119,57 +119,6 @@ public class Lua_UnityEngine_MaterialPropertyBlock : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int SetInt(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(string),typeof(int))){
-				UnityEngine.MaterialPropertyBlock self=(UnityEngine.MaterialPropertyBlock)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				self.SetInt(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,2,typeof(int),typeof(int))){
-				UnityEngine.MaterialPropertyBlock self=(UnityEngine.MaterialPropertyBlock)checkSelf(l);
-				System.Int32 a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				self.SetInt(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function SetInt to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int SetVector(IntPtr l) {
 		try {
 			#if DEBUG
@@ -687,55 +636,6 @@ public class Lua_UnityEngine_MaterialPropertyBlock : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int GetInt(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(string))){
-				UnityEngine.MaterialPropertyBlock self=(UnityEngine.MaterialPropertyBlock)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				var ret=self.GetInt(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(int))){
-				UnityEngine.MaterialPropertyBlock self=(UnityEngine.MaterialPropertyBlock)checkSelf(l);
-				System.Int32 a1;
-				checkType(l,2,out a1);
-				var ret=self.GetInt(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function GetInt to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int GetVector(IntPtr l) {
 		try {
 			#if DEBUG
@@ -866,55 +766,6 @@ public class Lua_UnityEngine_MaterialPropertyBlock : LuaObject {
 			}
 			pushValue(l,false);
 			LuaDLL.lua_pushstring(l,"No matched override function GetMatrix to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int GetTexture(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(string))){
-				UnityEngine.MaterialPropertyBlock self=(UnityEngine.MaterialPropertyBlock)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				var ret=self.GetTexture(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(int))){
-				UnityEngine.MaterialPropertyBlock self=(UnityEngine.MaterialPropertyBlock)checkSelf(l);
-				System.Int32 a1;
-				checkType(l,2,out a1);
-				var ret=self.GetTexture(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function GetTexture to call");
 			return 2;
 		}
 		catch(Exception e) {
@@ -1139,7 +990,7 @@ public class Lua_UnityEngine_MaterialPropertyBlock : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int CopySHCoefficientArraysFrom(IntPtr l) {
+	static public int GetTexture(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -1151,127 +1002,26 @@ public class Lua_UnityEngine_MaterialPropertyBlock : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(List<UnityEngine.Rendering.SphericalHarmonicsL2>))){
+			if(matchType(l,argc,2,typeof(string))){
 				UnityEngine.MaterialPropertyBlock self=(UnityEngine.MaterialPropertyBlock)checkSelf(l);
-				System.Collections.Generic.List<UnityEngine.Rendering.SphericalHarmonicsL2> a1;
+				System.String a1;
 				checkType(l,2,out a1);
-				self.CopySHCoefficientArraysFrom(a1);
+				var ret=self.GetTexture(a1);
 				pushValue(l,true);
-				return 1;
+				pushValue(l,ret);
+				return 2;
 			}
-			else if(matchType(l,argc,2,typeof(UnityEngine.Rendering.SphericalHarmonicsL2[]))){
+			else if(matchType(l,argc,2,typeof(int))){
 				UnityEngine.MaterialPropertyBlock self=(UnityEngine.MaterialPropertyBlock)checkSelf(l);
-				UnityEngine.Rendering.SphericalHarmonicsL2[] a1;
-				checkArray(l,2,out a1);
-				self.CopySHCoefficientArraysFrom(a1);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,2,typeof(List<UnityEngine.Rendering.SphericalHarmonicsL2>),typeof(int),typeof(int),typeof(int))){
-				UnityEngine.MaterialPropertyBlock self=(UnityEngine.MaterialPropertyBlock)checkSelf(l);
-				System.Collections.Generic.List<UnityEngine.Rendering.SphericalHarmonicsL2> a1;
+				System.Int32 a1;
 				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.Int32 a3;
-				checkType(l,4,out a3);
-				System.Int32 a4;
-				checkType(l,5,out a4);
-				self.CopySHCoefficientArraysFrom(a1,a2,a3,a4);
+				var ret=self.GetTexture(a1);
 				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,2,typeof(UnityEngine.Rendering.SphericalHarmonicsL2[]),typeof(int),typeof(int),typeof(int))){
-				UnityEngine.MaterialPropertyBlock self=(UnityEngine.MaterialPropertyBlock)checkSelf(l);
-				UnityEngine.Rendering.SphericalHarmonicsL2[] a1;
-				checkArray(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.Int32 a3;
-				checkType(l,4,out a3);
-				System.Int32 a4;
-				checkType(l,5,out a4);
-				self.CopySHCoefficientArraysFrom(a1,a2,a3,a4);
-				pushValue(l,true);
-				return 1;
+				pushValue(l,ret);
+				return 2;
 			}
 			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function CopySHCoefficientArraysFrom to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int CopyProbeOcclusionArrayFrom(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(List<UnityEngine.Vector4>))){
-				UnityEngine.MaterialPropertyBlock self=(UnityEngine.MaterialPropertyBlock)checkSelf(l);
-				System.Collections.Generic.List<UnityEngine.Vector4> a1;
-				checkType(l,2,out a1);
-				self.CopyProbeOcclusionArrayFrom(a1);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,2,typeof(UnityEngine.Vector4[]))){
-				UnityEngine.MaterialPropertyBlock self=(UnityEngine.MaterialPropertyBlock)checkSelf(l);
-				UnityEngine.Vector4[] a1;
-				checkArray(l,2,out a1);
-				self.CopyProbeOcclusionArrayFrom(a1);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,2,typeof(List<UnityEngine.Vector4>),typeof(int),typeof(int),typeof(int))){
-				UnityEngine.MaterialPropertyBlock self=(UnityEngine.MaterialPropertyBlock)checkSelf(l);
-				System.Collections.Generic.List<UnityEngine.Vector4> a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.Int32 a3;
-				checkType(l,4,out a3);
-				System.Int32 a4;
-				checkType(l,5,out a4);
-				self.CopyProbeOcclusionArrayFrom(a1,a2,a3,a4);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,2,typeof(UnityEngine.Vector4[]),typeof(int),typeof(int),typeof(int))){
-				UnityEngine.MaterialPropertyBlock self=(UnityEngine.MaterialPropertyBlock)checkSelf(l);
-				UnityEngine.Vector4[] a1;
-				checkArray(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.Int32 a3;
-				checkType(l,4,out a3);
-				System.Int32 a4;
-				checkType(l,5,out a4);
-				self.CopyProbeOcclusionArrayFrom(a1,a2,a3,a4);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function CopyProbeOcclusionArrayFrom to call");
+			LuaDLL.lua_pushstring(l,"No matched override function GetTexture to call");
 			return 2;
 		}
 		catch(Exception e) {
@@ -1323,7 +1073,6 @@ public class Lua_UnityEngine_MaterialPropertyBlock : LuaObject {
 		getTypeTable(l,"UnityEngine.MaterialPropertyBlock");
 		addMember(l,Clear);
 		addMember(l,SetFloat);
-		addMember(l,SetInt);
 		addMember(l,SetVector);
 		addMember(l,SetColor);
 		addMember(l,SetMatrix);
@@ -1333,16 +1082,13 @@ public class Lua_UnityEngine_MaterialPropertyBlock : LuaObject {
 		addMember(l,SetVectorArray);
 		addMember(l,SetMatrixArray);
 		addMember(l,GetFloat);
-		addMember(l,GetInt);
 		addMember(l,GetVector);
 		addMember(l,GetColor);
 		addMember(l,GetMatrix);
-		addMember(l,GetTexture);
 		addMember(l,GetFloatArray);
 		addMember(l,GetVectorArray);
 		addMember(l,GetMatrixArray);
-		addMember(l,CopySHCoefficientArraysFrom);
-		addMember(l,CopyProbeOcclusionArrayFrom);
+		addMember(l,GetTexture);
 		addMember(l,"isEmpty",get_isEmpty,null,true);
 		createTypeMetatable(l,constructor, typeof(UnityEngine.MaterialPropertyBlock));
 	}

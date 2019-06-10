@@ -141,7 +141,7 @@ public class Lua_UnityEngine_AudioRenderer : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			Unity.Collections.NativeArray<System.Single> a1;
+			UnityEngine.Collections.NativeArray<System.Single> a1;
 			checkValueType(l,1,out a1);
 			var ret=UnityEngine.AudioRenderer.Render(a1);
 			pushValue(l,true);

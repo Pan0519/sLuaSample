@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class Knife : Singleton<Knife>
 {
@@ -9,9 +9,7 @@ public class Knife : Singleton<Knife>
     {
         get
         {
-            return BindingFlags.Public | BindingFlags.NonPublic |
-                         BindingFlags.Static | BindingFlags.Instance |
-                         BindingFlags.DeclaredOnly;
+            return BindingFlags.Public;
         }
     }
 
@@ -49,7 +47,7 @@ public class Knife : Singleton<Knife>
 
             Type infoType = info.FieldType;
 
-            Debug.Log($"Info  Type {infoType}");
+            Debug.Log($"Info  Type {infoType}-name {info.Name}");
         }
     }
 }

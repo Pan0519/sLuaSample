@@ -17,7 +17,6 @@ public class Lua_UnityEngine_KeyCode : LuaObject {
 		addMember(l,34,"DoubleQuote");
 		addMember(l,35,"Hash");
 		addMember(l,36,"Dollar");
-		addMember(l,37,"Percent");
 		addMember(l,38,"Ampersand");
 		addMember(l,39,"Quote");
 		addMember(l,40,"LeftParen");
@@ -77,10 +76,6 @@ public class Lua_UnityEngine_KeyCode : LuaObject {
 		addMember(l,120,"X");
 		addMember(l,121,"Y");
 		addMember(l,122,"Z");
-		addMember(l,123,"LeftCurlyBracket");
-		addMember(l,124,"Pipe");
-		addMember(l,125,"RightCurlyBracket");
-		addMember(l,126,"Tilde");
 		addMember(l,127,"Delete");
 		addMember(l,256,"Keypad0");
 		addMember(l,257,"Keypad1");
@@ -132,10 +127,10 @@ public class Lua_UnityEngine_KeyCode : LuaObject {
 		addMember(l,306,"LeftControl");
 		addMember(l,307,"RightAlt");
 		addMember(l,308,"LeftAlt");
-		addMember(l,309,"RightCommand");
 		addMember(l,309,"RightApple");
-		addMember(l,310,"LeftCommand");
+		addMember(l,309,"RightCommand");
 		addMember(l,310,"LeftApple");
+		addMember(l,310,"LeftCommand");
 		addMember(l,311,"LeftWindows");
 		addMember(l,312,"RightWindows");
 		addMember(l,313,"AltGr");

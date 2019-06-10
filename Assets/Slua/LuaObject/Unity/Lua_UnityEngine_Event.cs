@@ -250,7 +250,7 @@ public class Lua_UnityEngine_Event : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_mousePosition(IntPtr l) {
+	static public int get_type(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -263,7 +263,7 @@ public class Lua_UnityEngine_Event : LuaObject {
 			#endif
 			UnityEngine.Event self=(UnityEngine.Event)checkSelf(l);
 			pushValue(l,true);
-			pushValue(l,self.mousePosition);
+			pushEnum(l,(int)self.type);
 			return 2;
 		}
 		catch(Exception e) {
@@ -281,7 +281,7 @@ public class Lua_UnityEngine_Event : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_mousePosition(IntPtr l) {
+	static public int set_type(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -293,73 +293,9 @@ public class Lua_UnityEngine_Event : LuaObject {
 			#endif
 			#endif
 			UnityEngine.Event self=(UnityEngine.Event)checkSelf(l);
-			UnityEngine.Vector2 v;
-			checkType(l,2,out v);
-			self.mousePosition=v;
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_delta(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Event self=(UnityEngine.Event)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.delta);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int set_delta(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Event self=(UnityEngine.Event)checkSelf(l);
-			UnityEngine.Vector2 v;
-			checkType(l,2,out v);
-			self.delta=v;
+			UnityEngine.EventType v;
+			v = (UnityEngine.EventType)LuaDLL.luaL_checkinteger(l, 2);
+			self.type=v;
 			pushValue(l,true);
 			return 1;
 		}
@@ -698,6 +634,70 @@ public class Lua_UnityEngine_Event : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int get_commandName(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Event self=(UnityEngine.Event)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.commandName);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int set_commandName(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Event self=(UnityEngine.Event)checkSelf(l);
+			string v;
+			checkType(l,2,out v);
+			self.commandName=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int get_keyCode(IntPtr l) {
 		try {
 			#if DEBUG
@@ -826,7 +826,7 @@ public class Lua_UnityEngine_Event : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_type(IntPtr l) {
+	static public int get_mousePosition(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -839,7 +839,7 @@ public class Lua_UnityEngine_Event : LuaObject {
 			#endif
 			UnityEngine.Event self=(UnityEngine.Event)checkSelf(l);
 			pushValue(l,true);
-			pushEnum(l,(int)self.type);
+			pushValue(l,self.mousePosition);
 			return 2;
 		}
 		catch(Exception e) {
@@ -857,7 +857,7 @@ public class Lua_UnityEngine_Event : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_type(IntPtr l) {
+	static public int set_mousePosition(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -869,9 +869,9 @@ public class Lua_UnityEngine_Event : LuaObject {
 			#endif
 			#endif
 			UnityEngine.Event self=(UnityEngine.Event)checkSelf(l);
-			UnityEngine.EventType v;
-			v = (UnityEngine.EventType)LuaDLL.luaL_checkinteger(l, 2);
-			self.type=v;
+			UnityEngine.Vector2 v;
+			checkType(l,2,out v);
+			self.mousePosition=v;
 			pushValue(l,true);
 			return 1;
 		}
@@ -890,7 +890,7 @@ public class Lua_UnityEngine_Event : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_commandName(IntPtr l) {
+	static public int get_delta(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -903,7 +903,7 @@ public class Lua_UnityEngine_Event : LuaObject {
 			#endif
 			UnityEngine.Event self=(UnityEngine.Event)checkSelf(l);
 			pushValue(l,true);
-			pushValue(l,self.commandName);
+			pushValue(l,self.delta);
 			return 2;
 		}
 		catch(Exception e) {
@@ -921,7 +921,7 @@ public class Lua_UnityEngine_Event : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_commandName(IntPtr l) {
+	static public int set_delta(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -933,9 +933,9 @@ public class Lua_UnityEngine_Event : LuaObject {
 			#endif
 			#endif
 			UnityEngine.Event self=(UnityEngine.Event)checkSelf(l);
-			string v;
+			UnityEngine.Vector2 v;
 			checkType(l,2,out v);
-			self.commandName=v;
+			self.delta=v;
 			pushValue(l,true);
 			return 1;
 		}
@@ -1531,17 +1531,17 @@ public class Lua_UnityEngine_Event : LuaObject {
 		addMember(l,GetEventCount_s);
 		addMember(l,KeyboardEvent_s);
 		addMember(l,"rawType",get_rawType,null,true);
-		addMember(l,"mousePosition",get_mousePosition,set_mousePosition,true);
-		addMember(l,"delta",get_delta,set_delta,true);
+		addMember(l,"type",get_type,set_type,true);
 		addMember(l,"button",get_button,set_button,true);
 		addMember(l,"modifiers",get_modifiers,set_modifiers,true);
 		addMember(l,"pressure",get_pressure,set_pressure,true);
 		addMember(l,"clickCount",get_clickCount,set_clickCount,true);
 		addMember(l,"character",get_character,set_character,true);
+		addMember(l,"commandName",get_commandName,set_commandName,true);
 		addMember(l,"keyCode",get_keyCode,set_keyCode,true);
 		addMember(l,"displayIndex",get_displayIndex,set_displayIndex,true);
-		addMember(l,"type",get_type,set_type,true);
-		addMember(l,"commandName",get_commandName,set_commandName,true);
+		addMember(l,"mousePosition",get_mousePosition,set_mousePosition,true);
+		addMember(l,"delta",get_delta,set_delta,true);
 		addMember(l,"shift",get_shift,set_shift,true);
 		addMember(l,"control",get_control,set_control,true);
 		addMember(l,"alt",get_alt,set_alt,true);

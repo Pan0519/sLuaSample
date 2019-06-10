@@ -5,98 +5,6 @@ using System.Collections.Generic;
 public class Lua_UnityEngine_MonoBehaviour : LuaObject {
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int IsInvoking(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(argc==1){
-				UnityEngine.MonoBehaviour self=(UnityEngine.MonoBehaviour)checkSelf(l);
-				var ret=self.IsInvoking();
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(argc==2){
-				UnityEngine.MonoBehaviour self=(UnityEngine.MonoBehaviour)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				var ret=self.IsInvoking(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function IsInvoking to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int CancelInvoke(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(argc==1){
-				UnityEngine.MonoBehaviour self=(UnityEngine.MonoBehaviour)checkSelf(l);
-				self.CancelInvoke();
-				pushValue(l,true);
-				return 1;
-			}
-			else if(argc==2){
-				UnityEngine.MonoBehaviour self=(UnityEngine.MonoBehaviour)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				self.CancelInvoke(a1);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function CancelInvoke to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int Invoke(IntPtr l) {
 		try {
 			#if DEBUG
@@ -169,6 +77,98 @@ public class Lua_UnityEngine_MonoBehaviour : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int CancelInvoke(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==1){
+				UnityEngine.MonoBehaviour self=(UnityEngine.MonoBehaviour)checkSelf(l);
+				self.CancelInvoke();
+				pushValue(l,true);
+				return 1;
+			}
+			else if(argc==2){
+				UnityEngine.MonoBehaviour self=(UnityEngine.MonoBehaviour)checkSelf(l);
+				System.String a1;
+				checkType(l,2,out a1);
+				self.CancelInvoke(a1);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function CancelInvoke to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int IsInvoking(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==1){
+				UnityEngine.MonoBehaviour self=(UnityEngine.MonoBehaviour)checkSelf(l);
+				var ret=self.IsInvoking();
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==2){
+				UnityEngine.MonoBehaviour self=(UnityEngine.MonoBehaviour)checkSelf(l);
+				System.String a1;
+				checkType(l,2,out a1);
+				var ret=self.IsInvoking(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function IsInvoking to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int StartCoroutine(IntPtr l) {
 		try {
 			#if DEBUG
@@ -181,18 +181,18 @@ public class Lua_UnityEngine_MonoBehaviour : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(string))){
+			if(matchType(l,argc,2,typeof(System.Collections.IEnumerator))){
 				UnityEngine.MonoBehaviour self=(UnityEngine.MonoBehaviour)checkSelf(l);
-				System.String a1;
+				System.Collections.IEnumerator a1;
 				checkType(l,2,out a1);
 				var ret=self.StartCoroutine(a1);
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,2,typeof(System.Collections.IEnumerator))){
+			else if(matchType(l,argc,2,typeof(string))){
 				UnityEngine.MonoBehaviour self=(UnityEngine.MonoBehaviour)checkSelf(l);
-				System.Collections.IEnumerator a1;
+				System.String a1;
 				checkType(l,2,out a1);
 				var ret=self.StartCoroutine(a1);
 				pushValue(l,true);
@@ -250,7 +250,15 @@ public class Lua_UnityEngine_MonoBehaviour : LuaObject {
 			#endif
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(System.Collections.IEnumerator))){
+			if(matchType(l,argc,2,typeof(string))){
+				UnityEngine.MonoBehaviour self=(UnityEngine.MonoBehaviour)checkSelf(l);
+				System.String a1;
+				checkType(l,2,out a1);
+				self.StopCoroutine(a1);
+				pushValue(l,true);
+				return 1;
+			}
+			else if(matchType(l,argc,2,typeof(System.Collections.IEnumerator))){
 				UnityEngine.MonoBehaviour self=(UnityEngine.MonoBehaviour)checkSelf(l);
 				System.Collections.IEnumerator a1;
 				checkType(l,2,out a1);
@@ -261,14 +269,6 @@ public class Lua_UnityEngine_MonoBehaviour : LuaObject {
 			else if(matchType(l,argc,2,typeof(UnityEngine.Coroutine))){
 				UnityEngine.MonoBehaviour self=(UnityEngine.MonoBehaviour)checkSelf(l);
 				UnityEngine.Coroutine a1;
-				checkType(l,2,out a1);
-				self.StopCoroutine(a1);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(matchType(l,argc,2,typeof(string))){
-				UnityEngine.MonoBehaviour self=(UnityEngine.MonoBehaviour)checkSelf(l);
-				System.String a1;
 				checkType(l,2,out a1);
 				self.StopCoroutine(a1);
 				pushValue(l,true);
@@ -357,10 +357,10 @@ public class Lua_UnityEngine_MonoBehaviour : LuaObject {
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.MonoBehaviour");
-		addMember(l,IsInvoking);
-		addMember(l,CancelInvoke);
 		addMember(l,Invoke);
 		addMember(l,InvokeRepeating);
+		addMember(l,CancelInvoke);
+		addMember(l,IsInvoking);
 		addMember(l,StartCoroutine);
 		addMember(l,StopCoroutine);
 		addMember(l,StopAllCoroutines);

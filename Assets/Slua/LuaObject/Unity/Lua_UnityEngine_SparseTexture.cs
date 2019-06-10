@@ -18,21 +18,7 @@ public class Lua_UnityEngine_SparseTexture : LuaObject {
 			#endif
 			int argc = LuaDLL.lua_gettop(l);
 			UnityEngine.SparseTexture o;
-			if(matchType(l,argc,2,typeof(int),typeof(int),typeof(UnityEngine.Experimental.Rendering.GraphicsFormat),typeof(int))){
-				System.Int32 a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				UnityEngine.Experimental.Rendering.GraphicsFormat a3;
-				a3 = (UnityEngine.Experimental.Rendering.GraphicsFormat)LuaDLL.luaL_checkinteger(l, 4);
-				System.Int32 a4;
-				checkType(l,5,out a4);
-				o=new UnityEngine.SparseTexture(a1,a2,a3,a4);
-				pushValue(l,true);
-				pushValue(l,o);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(int),typeof(int),typeof(UnityEngine.TextureFormat),typeof(int))){
+			if(argc==5){
 				System.Int32 a1;
 				checkType(l,2,out a1);
 				System.Int32 a2;
