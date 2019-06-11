@@ -1,0 +1,18 @@
+import "UnityEngine"
+if not UnityEngine.GameObject then
+    error("Click Make/All to generate lua wrap file")
+end
+
+module("pusher_base",package.seeall)
+
+local behaverBase = {}
+
+function getGameobjectClass(gameObjectName,className)
+	behaverBase = GameObject.Find(gameObjectName):GetComponent(className)
+	print("GameObject Name "..gameObjectName..",Class Name "..className)
+	return behaverBase
+end
+
+function getComponent(identifiter)
+	return behaverBase:getBindingComponent(identifiter)
+end

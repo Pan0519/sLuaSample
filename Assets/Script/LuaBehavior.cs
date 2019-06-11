@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 [CustomLuaClass]
 public class LuaBehavior : MonoBase
@@ -25,8 +26,7 @@ public class LuaBehavior : MonoBase
     public delegate void DestoryDelegate(object self);
     DestoryDelegate destoryDele;
 
-    [SerializeField]
-    string fileName;
+    public virtual string fileName { get { return string.Empty; } }
 
     Action initCompleteAction;
 
@@ -34,6 +34,12 @@ public class LuaBehavior : MonoBase
 
     public virtual void Awake()
     {
+        if (string.IsNullOrEmpty(fileName))
+        {
+            Debug.LogError("Get Lua File Name is Empty");
+            return;
+        }
+
         svr = new LuaSvr();
 
         svr.init(tick, InitComplete);
@@ -90,6 +96,12 @@ public class LuaBehavior : MonoBase
 
     public virtual void Start()
     {
+        if (string.IsNullOrEmpty(fileName))
+        {
+            Debug.LogError("Get Lua File Name is Empty");
+            return;
+        }
+
         StartCoroutine(waitStart());
     }
 
@@ -138,9 +150,18 @@ public class LuaBehavior : MonoBase
 
     Dictionary<string, BindingMapsData> bindingDataMaps = new Dictionary<string, BindingMapsData>();
 
-    void setBindingDataMaps()
+    public void setBindingDataMaps(BindingNode bindingNodeGO = null)
     {
-        var bindingDataList = GetComponent<BindingNode>().getBindings();
+        List<BindingData> bindingDataList;
+
+        if (null != bindingNodeGO)
+        {
+            bindingDataList = bindingNodeGO.getBindings();
+        }
+        else
+        {
+            bindingDataList = GetComponent<BindingNode>().getBindings();
+        }
 
         for (int i = 0; i < bindingDataList.Count; ++i)
         {
@@ -160,13 +181,13 @@ public class LuaBehavior : MonoBase
         }
     }
 
-    public Component getBindingComponent(string identifiter, string type)
+    public Object getBindingComponent(string identifiter)
     {
         BindingMapsData returnValue;
 
         if (bindingDataMaps.TryGetValue(identifiter, out returnValue))
         {
-            return returnValue.getComponent(type);
+            return returnValue.getComponent();
         }
 
         return null;
@@ -179,17 +200,22 @@ public class BindingMapsData
 {
     public object theObject;
 
-    Component theCompoent;
+    Object theComponent;
 
-    public Component getComponent(string componentName)
+    public Object getComponent()
     {
-        if (null == theCompoent)
+        if (null == theComponent)
         {
-            var obj = theObject as GameObject;
-
-            theCompoent = obj.GetComponent(componentName);
+            if (theObject is Component)
+            {
+                theComponent = theObject as Component;
+            }
+            else if(theObject is GameObject)
+            {
+                theComponent = theObject as GameObject;
+            }
         }
 
-        return theCompoent;
+        return theComponent;
     }
 }

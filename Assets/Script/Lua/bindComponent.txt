@@ -1,18 +1,20 @@
-import "UnityEngine"
-if not UnityEngine.GameObject then
-    error("Click Make/All to generate lua wrap file")
-end
+require "script@pusher_base"
+
+-- import "UnityEngine"
+-- if not UnityEngine.GameObject then
+--     error("Click Make/All to generate lua wrap file")
+-- end
 
 local  class ={}
 
 function main()
 	print("Run Binding Component")
-	class.main = GameObject.Find("Main"):GetComponent("KnifeType")
+	class.main = pusher_base.getGameobjectClass("Main","KnifeType")
 	return class
 end
 
 function setUIInit()
-	class.resultText = class.main:getBindingComponent("ResultText","Text")
+	class.resultText = pusher_base.getComponent("ResultText")
 end
 
 function setResultText()

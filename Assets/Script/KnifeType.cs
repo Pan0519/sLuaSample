@@ -15,6 +15,8 @@ public class KnifeType : LuaBehavior
     [SerializeField]
     GameObject parentGo;
 
+    public override string fileName => "bindComponent";
+
     public override void initComplete()
     {
         base.initComplete();
