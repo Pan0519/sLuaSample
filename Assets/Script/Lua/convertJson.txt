@@ -1,0 +1,55 @@
+function main()
+    print("run Convert Json Main")
+end
+
+function getJson(jsonValue)
+    local jsonTable = json2table(jsonValue)
+    --local tableCount = 0
+    --for k, v in ipairs(jsonTable) do
+    --    tableCount = tableCount + 1
+    --end
+    -- print(tableCount)
+end
+local tableCount = 0
+function json2table(str, from, to)
+    local result = {}
+    local resultArray = {}
+    from = from or 1
+    local pos = from + 1
+    local to = to or string.len(str)
+    local key
+    local startCut = 2
+    local arrayIndex = 1
+    while (pos <= to) do
+        local char = string.sub(str, pos, pos)
+        if char == ':' then
+            key = string.sub(str, startCut, pos - 1)
+            resultArray[arrayIndex] = key
+            arrayIndex = arrayIndex + 1
+            startCut = pos + 1
+        elseif char == ',' then
+            value = string.sub(str, startCut, pos - 1)
+            result[key] = value
+            startCut = pos + 1
+        elseif (char == 'f' or char == 'F') then
+            result[key] = false
+            startCut = pos + 1
+        elseif (char == 't' or char == 'T') then
+            result[key] = true
+            startCut = pos + 1
+        end
+
+        --print(key, result[key], type(key))
+        pos = pos + 1
+    end
+
+    for i = 0, #resultArray do
+        print(result[resultArray[i]])
+    end
+    for k, v in ipairs(result) do
+        tableCount = tableCount + 1
+    end
+    print(tableCount)
+
+    return result
+end

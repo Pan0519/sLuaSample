@@ -5,42 +5,6 @@ using System.Collections.Generic;
 public class Lua_UnityEngine_CompositeCollider2D : LuaObject {
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int GetPath(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.CompositeCollider2D self=(UnityEngine.CompositeCollider2D)checkSelf(l);
-			System.Int32 a1;
-			checkType(l,2,out a1);
-			UnityEngine.Vector2[] a2;
-			checkArray(l,3,out a2);
-			var ret=self.GetPath(a1,a2);
-			pushValue(l,true);
-			pushValue(l,ret);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int GenerateGeometry(IntPtr l) {
 		try {
 			#if DEBUG
@@ -87,6 +51,42 @@ public class Lua_UnityEngine_CompositeCollider2D : LuaObject {
 			System.Int32 a1;
 			checkType(l,2,out a1);
 			var ret=self.GetPathPointCount(a1);
+			pushValue(l,true);
+			pushValue(l,ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int GetPath(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.CompositeCollider2D self=(UnityEngine.CompositeCollider2D)checkSelf(l);
+			System.Int32 a1;
+			checkType(l,2,out a1);
+			UnityEngine.Vector2[] a2;
+			checkArray(l,3,out a2);
+			var ret=self.GetPath(a1,a2);
 			pushValue(l,true);
 			pushValue(l,ret);
 			return 2;
@@ -425,9 +425,9 @@ public class Lua_UnityEngine_CompositeCollider2D : LuaObject {
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.CompositeCollider2D");
-		addMember(l,GetPath);
 		addMember(l,GenerateGeometry);
 		addMember(l,GetPathPointCount);
+		addMember(l,GetPath);
 		addMember(l,"geometryType",get_geometryType,set_geometryType,true);
 		addMember(l,"generationType",get_generationType,set_generationType,true);
 		addMember(l,"vertexDistance",get_vertexDistance,set_vertexDistance,true);

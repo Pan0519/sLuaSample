@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{776FF427-3BA6-8C5F-41F0-52B4E0CE555D}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Knife.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/TestMain.cs">
     <Files>
-      <File FileName="Assets/Script/Singleton.cs" Line="12" Column="10" />
-      <File FileName="Assets/Script/Knife.cs" Line="30" Column="1" />
-      <File FileName="Assets/Script/KnifeType.cs" Line="23" Column="6" />
+      <File FileName="Assets/Script/Knife.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/ConvertJsonClass.cs" Line="31" Column="1" />
+      <File FileName="Assets/Script/LuaBehavior.cs" />
+      <File FileName="Assets/Script/TestMain.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,7 +13,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Script" expanded="True">
                 <Node name="Lua" expanded="True" />
-                <Node name="Knife.cs" selected="True" />
+                <Node name="TestMain.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -22,7 +23,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6a73ba9b-4eb2-4636-956f-85afafa5aea9" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="757cef70-43c3-4e2d-b42d-a8c6b1c61cc1" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

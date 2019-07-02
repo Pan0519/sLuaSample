@@ -42,6 +42,24 @@ public class Lua_UnityEngine_Keyframe : LuaObject {
 				pushValue(l,o);
 				return 2;
 			}
+			else if(argc==7){
+				System.Single a1;
+				checkType(l,2,out a1);
+				System.Single a2;
+				checkType(l,3,out a2);
+				System.Single a3;
+				checkType(l,4,out a3);
+				System.Single a4;
+				checkType(l,5,out a4);
+				System.Single a5;
+				checkType(l,6,out a5);
+				System.Single a6;
+				checkType(l,7,out a6);
+				o=new UnityEngine.Keyframe(a1,a2,a3,a4,a5,a6);
+				pushValue(l,true);
+				pushValue(l,o);
+				return 2;
+			}
 			else if(argc==0){
 				o=new UnityEngine.Keyframe();
 				pushValue(l,true);
@@ -333,7 +351,7 @@ public class Lua_UnityEngine_Keyframe : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_tangentMode(IntPtr l) {
+	static public int get_inWeight(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -347,7 +365,7 @@ public class Lua_UnityEngine_Keyframe : LuaObject {
 			UnityEngine.Keyframe self;
 			checkValueType(l,1,out self);
 			pushValue(l,true);
-			pushValue(l,self.tangentMode);
+			pushValue(l,self.inWeight);
 			return 2;
 		}
 		catch(Exception e) {
@@ -365,7 +383,7 @@ public class Lua_UnityEngine_Keyframe : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_tangentMode(IntPtr l) {
+	static public int set_inWeight(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -378,9 +396,143 @@ public class Lua_UnityEngine_Keyframe : LuaObject {
 			#endif
 			UnityEngine.Keyframe self;
 			checkValueType(l,1,out self);
-			int v;
+			float v;
 			checkType(l,2,out v);
-			self.tangentMode=v;
+			self.inWeight=v;
+			setBack(l,self);
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_outWeight(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Keyframe self;
+			checkValueType(l,1,out self);
+			pushValue(l,true);
+			pushValue(l,self.outWeight);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int set_outWeight(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Keyframe self;
+			checkValueType(l,1,out self);
+			float v;
+			checkType(l,2,out v);
+			self.outWeight=v;
+			setBack(l,self);
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_weightedMode(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Keyframe self;
+			checkValueType(l,1,out self);
+			pushValue(l,true);
+			pushEnum(l,(int)self.weightedMode);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int set_weightedMode(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Keyframe self;
+			checkValueType(l,1,out self);
+			UnityEngine.WeightedMode v;
+			v = (UnityEngine.WeightedMode)LuaDLL.luaL_checkinteger(l, 2);
+			self.weightedMode=v;
 			setBack(l,self);
 			pushValue(l,true);
 			return 1;
@@ -405,7 +557,9 @@ public class Lua_UnityEngine_Keyframe : LuaObject {
 		addMember(l,"value",get_value,set_value,true);
 		addMember(l,"inTangent",get_inTangent,set_inTangent,true);
 		addMember(l,"outTangent",get_outTangent,set_outTangent,true);
-		addMember(l,"tangentMode",get_tangentMode,set_tangentMode,true);
+		addMember(l,"inWeight",get_inWeight,set_inWeight,true);
+		addMember(l,"outWeight",get_outWeight,set_outWeight,true);
+		addMember(l,"weightedMode",get_weightedMode,set_weightedMode,true);
 		createTypeMetatable(l,constructor, typeof(UnityEngine.Keyframe),typeof(System.ValueType));
 	}
 }

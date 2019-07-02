@@ -15,13 +15,13 @@ function main()
     -- class.testMain = TestMain.instanceTestMain
     class.testMain = GameObject.Find("Main"):GetComponent(TestMain)
     
-    print(class.testMain == nill)
+   --  print(class.testMain == nill)
     
    -- custom.qq()
 
-   custom.tt()
+   -- custom.tt()
 
-   enterMain.start_run()
+   -- enterMain.start_run()
     
     return class
 end

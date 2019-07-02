@@ -5,230 +5,6 @@ using System.Collections.Generic;
 public class Lua_UnityEngine_Rigidbody2D : LuaObject {
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int GetAttachedColliders(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
-			UnityEngine.Collider2D[] a1;
-			checkArray(l,2,out a1);
-			var ret=self.GetAttachedColliders(a1);
-			pushValue(l,true);
-			pushValue(l,ret);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int OverlapCollider(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
-			UnityEngine.ContactFilter2D a1;
-			checkValueType(l,2,out a1);
-			UnityEngine.Collider2D[] a2;
-			checkArray(l,3,out a2);
-			var ret=self.OverlapCollider(a1,a2);
-			pushValue(l,true);
-			pushValue(l,ret);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int Cast(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(argc==3){
-				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
-				UnityEngine.Vector2 a1;
-				checkType(l,2,out a1);
-				UnityEngine.RaycastHit2D[] a2;
-				checkArray(l,3,out a2);
-				var ret=self.Cast(a1,a2);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(UnityEngine.Vector2),typeof(UnityEngine.RaycastHit2D[]),typeof(float))){
-				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
-				UnityEngine.Vector2 a1;
-				checkType(l,2,out a1);
-				UnityEngine.RaycastHit2D[] a2;
-				checkArray(l,3,out a2);
-				System.Single a3;
-				checkType(l,4,out a3);
-				var ret=self.Cast(a1,a2,a3);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(UnityEngine.Vector2),typeof(UnityEngine.ContactFilter2D),typeof(UnityEngine.RaycastHit2D[]))){
-				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
-				UnityEngine.Vector2 a1;
-				checkType(l,2,out a1);
-				UnityEngine.ContactFilter2D a2;
-				checkValueType(l,3,out a2);
-				UnityEngine.RaycastHit2D[] a3;
-				checkArray(l,4,out a3);
-				var ret=self.Cast(a1,a2,a3);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(argc==5){
-				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
-				UnityEngine.Vector2 a1;
-				checkType(l,2,out a1);
-				UnityEngine.ContactFilter2D a2;
-				checkValueType(l,3,out a2);
-				UnityEngine.RaycastHit2D[] a3;
-				checkArray(l,4,out a3);
-				System.Single a4;
-				checkType(l,5,out a4);
-				var ret=self.Cast(a1,a2,a3,a4);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function Cast to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int GetContacts(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(UnityEngine.ContactPoint2D[]))){
-				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
-				UnityEngine.ContactPoint2D[] a1;
-				checkArray(l,2,out a1);
-				var ret=self.GetContacts(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(UnityEngine.Collider2D[]))){
-				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
-				UnityEngine.Collider2D[] a1;
-				checkArray(l,2,out a1);
-				var ret=self.GetContacts(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(UnityEngine.ContactFilter2D),typeof(UnityEngine.ContactPoint2D[]))){
-				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
-				UnityEngine.ContactFilter2D a1;
-				checkValueType(l,2,out a1);
-				UnityEngine.ContactPoint2D[] a2;
-				checkArray(l,3,out a2);
-				var ret=self.GetContacts(a1,a2);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(UnityEngine.ContactFilter2D),typeof(UnityEngine.Collider2D[]))){
-				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
-				UnityEngine.ContactFilter2D a1;
-				checkValueType(l,2,out a1);
-				UnityEngine.Collider2D[] a2;
-				checkArray(l,3,out a2);
-				var ret=self.GetContacts(a1,a2);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function GetContacts to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int MovePosition(IntPtr l) {
 		try {
 			#if DEBUG
@@ -983,6 +759,230 @@ public class Lua_UnityEngine_Rigidbody2D : LuaObject {
 			var ret=self.GetRelativePointVelocity(a1);
 			pushValue(l,true);
 			pushValue(l,ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int OverlapCollider(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
+			UnityEngine.ContactFilter2D a1;
+			checkValueType(l,2,out a1);
+			UnityEngine.Collider2D[] a2;
+			checkArray(l,3,out a2);
+			var ret=self.OverlapCollider(a1,a2);
+			pushValue(l,true);
+			pushValue(l,ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int GetContacts(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,2,typeof(UnityEngine.ContactPoint2D[]))){
+				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
+				UnityEngine.ContactPoint2D[] a1;
+				checkArray(l,2,out a1);
+				var ret=self.GetContacts(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(UnityEngine.Collider2D[]))){
+				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
+				UnityEngine.Collider2D[] a1;
+				checkArray(l,2,out a1);
+				var ret=self.GetContacts(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(UnityEngine.ContactFilter2D),typeof(UnityEngine.ContactPoint2D[]))){
+				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
+				UnityEngine.ContactFilter2D a1;
+				checkValueType(l,2,out a1);
+				UnityEngine.ContactPoint2D[] a2;
+				checkArray(l,3,out a2);
+				var ret=self.GetContacts(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(UnityEngine.ContactFilter2D),typeof(UnityEngine.Collider2D[]))){
+				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
+				UnityEngine.ContactFilter2D a1;
+				checkValueType(l,2,out a1);
+				UnityEngine.Collider2D[] a2;
+				checkArray(l,3,out a2);
+				var ret=self.GetContacts(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function GetContacts to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int GetAttachedColliders(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
+			UnityEngine.Collider2D[] a1;
+			checkArray(l,2,out a1);
+			var ret=self.GetAttachedColliders(a1);
+			pushValue(l,true);
+			pushValue(l,ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int Cast(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==3){
+				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
+				UnityEngine.Vector2 a1;
+				checkType(l,2,out a1);
+				UnityEngine.RaycastHit2D[] a2;
+				checkArray(l,3,out a2);
+				var ret=self.Cast(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(UnityEngine.Vector2),typeof(UnityEngine.RaycastHit2D[]),typeof(float))){
+				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
+				UnityEngine.Vector2 a1;
+				checkType(l,2,out a1);
+				UnityEngine.RaycastHit2D[] a2;
+				checkArray(l,3,out a2);
+				System.Single a3;
+				checkType(l,4,out a3);
+				var ret=self.Cast(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(UnityEngine.Vector2),typeof(UnityEngine.ContactFilter2D),typeof(UnityEngine.RaycastHit2D[]))){
+				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
+				UnityEngine.Vector2 a1;
+				checkType(l,2,out a1);
+				UnityEngine.ContactFilter2D a2;
+				checkValueType(l,3,out a2);
+				UnityEngine.RaycastHit2D[] a3;
+				checkArray(l,4,out a3);
+				var ret=self.Cast(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==5){
+				UnityEngine.Rigidbody2D self=(UnityEngine.Rigidbody2D)checkSelf(l);
+				UnityEngine.Vector2 a1;
+				checkType(l,2,out a1);
+				UnityEngine.ContactFilter2D a2;
+				checkValueType(l,3,out a2);
+				UnityEngine.RaycastHit2D[] a3;
+				checkArray(l,4,out a3);
+				System.Single a4;
+				checkType(l,5,out a4);
+				var ret=self.Cast(a1,a2,a3,a4);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function Cast to call");
 			return 2;
 		}
 		catch(Exception e) {
@@ -2407,10 +2407,6 @@ public class Lua_UnityEngine_Rigidbody2D : LuaObject {
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.Rigidbody2D");
-		addMember(l,GetAttachedColliders);
-		addMember(l,OverlapCollider);
-		addMember(l,Cast);
-		addMember(l,GetContacts);
 		addMember(l,MovePosition);
 		addMember(l,MoveRotation);
 		addMember(l,IsSleeping);
@@ -2431,6 +2427,10 @@ public class Lua_UnityEngine_Rigidbody2D : LuaObject {
 		addMember(l,GetRelativeVector);
 		addMember(l,GetPointVelocity);
 		addMember(l,GetRelativePointVelocity);
+		addMember(l,OverlapCollider);
+		addMember(l,GetContacts);
+		addMember(l,GetAttachedColliders);
+		addMember(l,Cast);
 		addMember(l,"position",get_position,set_position,true);
 		addMember(l,"rotation",get_rotation,set_rotation,true);
 		addMember(l,"velocity",get_velocity,set_velocity,true);

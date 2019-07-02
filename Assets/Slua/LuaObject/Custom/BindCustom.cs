@@ -6,6 +6,7 @@ namespace SLua {
 		public static Action<IntPtr>[] GetBindList() {
 			Action<IntPtr>[] list= {
 				Lua_LuaBehavior.reg,
+				Lua_ConvertJsonClass.reg,
 				Lua_TestMain.reg,
 				Lua_System_Collections_Generic_List_1_int.reg,
 				Lua_System_String.reg,

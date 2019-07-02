@@ -55,16 +55,16 @@ public class Lua_UnityEngine_ScriptableObject : LuaObject {
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(string))){
-				System.String a1;
+			else if(matchType(l,argc,1,typeof(System.Type))){
+				System.Type a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.ScriptableObject.CreateInstance(a1);
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(System.Type))){
-				System.Type a1;
+			else if(matchType(l,argc,1,typeof(string))){
+				System.String a1;
 				checkType(l,1,out a1);
 				var ret=UnityEngine.ScriptableObject.CreateInstance(a1);
 				pushValue(l,true);

@@ -21,11 +21,17 @@ public class TestMain : LuaBehavior
     public delegate void newClassDelegate(object self);
     newClassDelegate newClassDele;
 
+
+
+    public override string fileName => "testlua2";
+
     public override void Awake()
     {
         selfClass = this;
 
         ShowProgressText = ProgressText;
+
+
 
         base.Awake();
     }
@@ -37,11 +43,6 @@ public class TestMain : LuaBehavior
         LuaObject.pushValue(l, true);
         LuaObject.pushObject(l, selfClass);
         return 2;
-    }
-
-    public override void Start()
-    {
-
     }
 
     public override void initComplete()

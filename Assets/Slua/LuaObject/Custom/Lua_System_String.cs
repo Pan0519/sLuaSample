@@ -65,406 +65,6 @@ public class Lua_System_String : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int IndexOf(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(System.Char))){
-				System.String self=(System.String)checkSelf(l);
-				System.Char a1;
-				checkType(l,2,out a1);
-				var ret=self.IndexOf(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(string))){
-				System.String self=(System.String)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				var ret=self.IndexOf(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(string),typeof(int))){
-				System.String self=(System.String)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				var ret=self.IndexOf(a1,a2);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(System.Char),typeof(int))){
-				System.String self=(System.String)checkSelf(l);
-				System.Char a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				var ret=self.IndexOf(a1,a2);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(string),typeof(System.StringComparison))){
-				System.String self=(System.String)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				System.StringComparison a2;
-				a2 = (System.StringComparison)LuaDLL.luaL_checkinteger(l, 3);
-				var ret=self.IndexOf(a1,a2);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(string),typeof(int),typeof(System.StringComparison))){
-				System.String self=(System.String)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.StringComparison a3;
-				a3 = (System.StringComparison)LuaDLL.luaL_checkinteger(l, 4);
-				var ret=self.IndexOf(a1,a2,a3);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(string),typeof(int),typeof(int))){
-				System.String self=(System.String)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.Int32 a3;
-				checkType(l,4,out a3);
-				var ret=self.IndexOf(a1,a2,a3);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(System.Char),typeof(int),typeof(int))){
-				System.String self=(System.String)checkSelf(l);
-				System.Char a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.Int32 a3;
-				checkType(l,4,out a3);
-				var ret=self.IndexOf(a1,a2,a3);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(argc==5){
-				System.String self=(System.String)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.Int32 a3;
-				checkType(l,4,out a3);
-				System.StringComparison a4;
-				a4 = (System.StringComparison)LuaDLL.luaL_checkinteger(l, 5);
-				var ret=self.IndexOf(a1,a2,a3,a4);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function IndexOf to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int IndexOfAny(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(argc==2){
-				System.String self=(System.String)checkSelf(l);
-				System.Char[] a1;
-				checkArray(l,2,out a1);
-				var ret=self.IndexOfAny(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(argc==3){
-				System.String self=(System.String)checkSelf(l);
-				System.Char[] a1;
-				checkArray(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				var ret=self.IndexOfAny(a1,a2);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(argc==4){
-				System.String self=(System.String)checkSelf(l);
-				System.Char[] a1;
-				checkArray(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.Int32 a3;
-				checkType(l,4,out a3);
-				var ret=self.IndexOfAny(a1,a2,a3);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function IndexOfAny to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int LastIndexOf(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(matchType(l,argc,2,typeof(System.Char))){
-				System.String self=(System.String)checkSelf(l);
-				System.Char a1;
-				checkType(l,2,out a1);
-				var ret=self.LastIndexOf(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(string))){
-				System.String self=(System.String)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				var ret=self.LastIndexOf(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(string),typeof(int))){
-				System.String self=(System.String)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				var ret=self.LastIndexOf(a1,a2);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(System.Char),typeof(int))){
-				System.String self=(System.String)checkSelf(l);
-				System.Char a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				var ret=self.LastIndexOf(a1,a2);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(string),typeof(System.StringComparison))){
-				System.String self=(System.String)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				System.StringComparison a2;
-				a2 = (System.StringComparison)LuaDLL.luaL_checkinteger(l, 3);
-				var ret=self.LastIndexOf(a1,a2);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(string),typeof(int),typeof(System.StringComparison))){
-				System.String self=(System.String)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.StringComparison a3;
-				a3 = (System.StringComparison)LuaDLL.luaL_checkinteger(l, 4);
-				var ret=self.LastIndexOf(a1,a2,a3);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(string),typeof(int),typeof(int))){
-				System.String self=(System.String)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.Int32 a3;
-				checkType(l,4,out a3);
-				var ret=self.LastIndexOf(a1,a2,a3);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(System.Char),typeof(int),typeof(int))){
-				System.String self=(System.String)checkSelf(l);
-				System.Char a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.Int32 a3;
-				checkType(l,4,out a3);
-				var ret=self.LastIndexOf(a1,a2,a3);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(argc==5){
-				System.String self=(System.String)checkSelf(l);
-				System.String a1;
-				checkType(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.Int32 a3;
-				checkType(l,4,out a3);
-				System.StringComparison a4;
-				a4 = (System.StringComparison)LuaDLL.luaL_checkinteger(l, 5);
-				var ret=self.LastIndexOf(a1,a2,a3,a4);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function LastIndexOf to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int LastIndexOfAny(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(argc==2){
-				System.String self=(System.String)checkSelf(l);
-				System.Char[] a1;
-				checkArray(l,2,out a1);
-				var ret=self.LastIndexOfAny(a1);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(argc==3){
-				System.String self=(System.String)checkSelf(l);
-				System.Char[] a1;
-				checkArray(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				var ret=self.LastIndexOfAny(a1,a2);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			else if(argc==4){
-				System.String self=(System.String)checkSelf(l);
-				System.Char[] a1;
-				checkArray(l,2,out a1);
-				System.Int32 a2;
-				checkType(l,3,out a2);
-				System.Int32 a3;
-				checkType(l,4,out a3);
-				var ret=self.LastIndexOfAny(a1,a2,a3);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function LastIndexOfAny to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int ToCharArray(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1003,6 +603,406 @@ public class Lua_System_String : LuaObject {
 			}
 			pushValue(l,false);
 			LuaDLL.lua_pushstring(l,"No matched override function EndsWith to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int IndexOf(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,2,typeof(System.Char))){
+				System.String self=(System.String)checkSelf(l);
+				System.Char a1;
+				checkType(l,2,out a1);
+				var ret=self.IndexOf(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(string))){
+				System.String self=(System.String)checkSelf(l);
+				System.String a1;
+				checkType(l,2,out a1);
+				var ret=self.IndexOf(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(System.Char),typeof(int))){
+				System.String self=(System.String)checkSelf(l);
+				System.Char a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				var ret=self.IndexOf(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(string),typeof(int))){
+				System.String self=(System.String)checkSelf(l);
+				System.String a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				var ret=self.IndexOf(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(string),typeof(System.StringComparison))){
+				System.String self=(System.String)checkSelf(l);
+				System.String a1;
+				checkType(l,2,out a1);
+				System.StringComparison a2;
+				a2 = (System.StringComparison)LuaDLL.luaL_checkinteger(l, 3);
+				var ret=self.IndexOf(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(string),typeof(int),typeof(int))){
+				System.String self=(System.String)checkSelf(l);
+				System.String a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				System.Int32 a3;
+				checkType(l,4,out a3);
+				var ret=self.IndexOf(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(string),typeof(int),typeof(System.StringComparison))){
+				System.String self=(System.String)checkSelf(l);
+				System.String a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				System.StringComparison a3;
+				a3 = (System.StringComparison)LuaDLL.luaL_checkinteger(l, 4);
+				var ret=self.IndexOf(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(System.Char),typeof(int),typeof(int))){
+				System.String self=(System.String)checkSelf(l);
+				System.Char a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				System.Int32 a3;
+				checkType(l,4,out a3);
+				var ret=self.IndexOf(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==5){
+				System.String self=(System.String)checkSelf(l);
+				System.String a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				System.Int32 a3;
+				checkType(l,4,out a3);
+				System.StringComparison a4;
+				a4 = (System.StringComparison)LuaDLL.luaL_checkinteger(l, 5);
+				var ret=self.IndexOf(a1,a2,a3,a4);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function IndexOf to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int IndexOfAny(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==2){
+				System.String self=(System.String)checkSelf(l);
+				System.Char[] a1;
+				checkArray(l,2,out a1);
+				var ret=self.IndexOfAny(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==3){
+				System.String self=(System.String)checkSelf(l);
+				System.Char[] a1;
+				checkArray(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				var ret=self.IndexOfAny(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==4){
+				System.String self=(System.String)checkSelf(l);
+				System.Char[] a1;
+				checkArray(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				System.Int32 a3;
+				checkType(l,4,out a3);
+				var ret=self.IndexOfAny(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function IndexOfAny to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int LastIndexOf(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,2,typeof(System.Char))){
+				System.String self=(System.String)checkSelf(l);
+				System.Char a1;
+				checkType(l,2,out a1);
+				var ret=self.LastIndexOf(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(string))){
+				System.String self=(System.String)checkSelf(l);
+				System.String a1;
+				checkType(l,2,out a1);
+				var ret=self.LastIndexOf(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(System.Char),typeof(int))){
+				System.String self=(System.String)checkSelf(l);
+				System.Char a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				var ret=self.LastIndexOf(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(string),typeof(int))){
+				System.String self=(System.String)checkSelf(l);
+				System.String a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				var ret=self.LastIndexOf(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(string),typeof(System.StringComparison))){
+				System.String self=(System.String)checkSelf(l);
+				System.String a1;
+				checkType(l,2,out a1);
+				System.StringComparison a2;
+				a2 = (System.StringComparison)LuaDLL.luaL_checkinteger(l, 3);
+				var ret=self.LastIndexOf(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(string),typeof(int),typeof(int))){
+				System.String self=(System.String)checkSelf(l);
+				System.String a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				System.Int32 a3;
+				checkType(l,4,out a3);
+				var ret=self.LastIndexOf(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(string),typeof(int),typeof(System.StringComparison))){
+				System.String self=(System.String)checkSelf(l);
+				System.String a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				System.StringComparison a3;
+				a3 = (System.StringComparison)LuaDLL.luaL_checkinteger(l, 4);
+				var ret=self.LastIndexOf(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(System.Char),typeof(int),typeof(int))){
+				System.String self=(System.String)checkSelf(l);
+				System.Char a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				System.Int32 a3;
+				checkType(l,4,out a3);
+				var ret=self.LastIndexOf(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==5){
+				System.String self=(System.String)checkSelf(l);
+				System.String a1;
+				checkType(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				System.Int32 a3;
+				checkType(l,4,out a3);
+				System.StringComparison a4;
+				a4 = (System.StringComparison)LuaDLL.luaL_checkinteger(l, 5);
+				var ret=self.LastIndexOf(a1,a2,a3,a4);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function LastIndexOf to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int LastIndexOfAny(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==2){
+				System.String self=(System.String)checkSelf(l);
+				System.Char[] a1;
+				checkArray(l,2,out a1);
+				var ret=self.LastIndexOfAny(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==3){
+				System.String self=(System.String)checkSelf(l);
+				System.Char[] a1;
+				checkArray(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				var ret=self.LastIndexOfAny(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==4){
+				System.String self=(System.String)checkSelf(l);
+				System.Char[] a1;
+				checkArray(l,2,out a1);
+				System.Int32 a2;
+				checkType(l,3,out a2);
+				System.Int32 a3;
+				checkType(l,4,out a3);
+				var ret=self.LastIndexOfAny(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function LastIndexOfAny to call");
 			return 2;
 		}
 		catch(Exception e) {
@@ -1773,20 +1773,6 @@ public class Lua_System_String : LuaObject {
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(string),typeof(string),typeof(bool),typeof(System.Globalization.CultureInfo))){
-				System.String a1;
-				checkType(l,1,out a1);
-				System.String a2;
-				checkType(l,2,out a2);
-				System.Boolean a3;
-				checkType(l,3,out a3);
-				System.Globalization.CultureInfo a4;
-				checkType(l,4,out a4);
-				var ret=System.String.Compare(a1,a2,a3,a4);
-				pushValue(l,true);
-				pushValue(l,ret);
-				return 2;
-			}
 			else if(matchType(l,argc,1,typeof(string),typeof(string),typeof(System.Globalization.CultureInfo),typeof(System.Globalization.CompareOptions))){
 				System.String a1;
 				checkType(l,1,out a1);
@@ -1796,6 +1782,20 @@ public class Lua_System_String : LuaObject {
 				checkType(l,3,out a3);
 				System.Globalization.CompareOptions a4;
 				a4 = (System.Globalization.CompareOptions)LuaDLL.luaL_checkinteger(l, 4);
+				var ret=System.String.Compare(a1,a2,a3,a4);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,1,typeof(string),typeof(string),typeof(bool),typeof(System.Globalization.CultureInfo))){
+				System.String a1;
+				checkType(l,1,out a1);
+				System.String a2;
+				checkType(l,2,out a2);
+				System.Boolean a3;
+				checkType(l,3,out a3);
+				System.Globalization.CultureInfo a4;
+				checkType(l,4,out a4);
 				var ret=System.String.Compare(a1,a2,a3,a4);
 				pushValue(l,true);
 				pushValue(l,ret);
@@ -2153,17 +2153,17 @@ public class Lua_System_String : LuaObject {
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(IEnumerable<System.String>))){
-				System.Collections.Generic.IEnumerable<System.String> a1;
-				checkType(l,1,out a1);
+			else if(matchType(l,argc,1,typeof(object[]))){
+				System.Object[] a1;
+				checkParams(l,1,out a1);
 				var ret=System.String.Concat(a1);
 				pushValue(l,true);
 				pushValue(l,ret);
 				return 2;
 			}
-			else if(matchType(l,argc,1,typeof(object[]))){
-				System.Object[] a1;
-				checkParams(l,1,out a1);
+			else if(matchType(l,argc,1,typeof(IEnumerable<System.String>))){
+				System.Collections.Generic.IEnumerable<System.String> a1;
+				checkType(l,1,out a1);
 				var ret=System.String.Concat(a1);
 				pushValue(l,true);
 				pushValue(l,ret);
@@ -2430,10 +2430,6 @@ public class Lua_System_String : LuaObject {
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"String");
-		addMember(l,IndexOf);
-		addMember(l,IndexOfAny);
-		addMember(l,LastIndexOf);
-		addMember(l,LastIndexOfAny);
 		addMember(l,ToCharArray);
 		addMember(l,Split);
 		addMember(l,Substring);
@@ -2445,6 +2441,10 @@ public class Lua_System_String : LuaObject {
 		addMember(l,CompareTo);
 		addMember(l,Contains);
 		addMember(l,EndsWith);
+		addMember(l,IndexOf);
+		addMember(l,IndexOfAny);
+		addMember(l,LastIndexOf);
+		addMember(l,LastIndexOfAny);
 		addMember(l,PadLeft);
 		addMember(l,PadRight);
 		addMember(l,StartsWith);

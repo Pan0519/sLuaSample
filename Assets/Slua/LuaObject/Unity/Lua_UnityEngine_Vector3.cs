@@ -1342,6 +1342,36 @@ public class Lua_UnityEngine_Vector3 : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int get_kEpsilonNormalSqrt(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			pushValue(l,true);
+			pushValue(l,UnityEngine.Vector3.kEpsilonNormalSqrt);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int get_x(IntPtr l) {
 		try {
 			#if DEBUG
@@ -2047,6 +2077,7 @@ public class Lua_UnityEngine_Vector3 : LuaObject {
 		addMember(l,getItem);
 		addMember(l,setItem);
 		addMember(l,"kEpsilon",get_kEpsilon,null,false);
+		addMember(l,"kEpsilonNormalSqrt",get_kEpsilonNormalSqrt,null,false);
 		addMember(l,"x",get_x,set_x,true);
 		addMember(l,"y",get_y,set_y,true);
 		addMember(l,"z",get_z,set_z,true);

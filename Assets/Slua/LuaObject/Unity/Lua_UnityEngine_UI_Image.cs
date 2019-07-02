@@ -836,6 +836,70 @@ public class Lua_UnityEngine_UI_Image : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int get_useSpriteMesh(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.UI.Image self=(UnityEngine.UI.Image)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.useSpriteMesh);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int set_useSpriteMesh(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.UI.Image self=(UnityEngine.UI.Image)checkSelf(l);
+			bool v;
+			checkType(l,2,out v);
+			self.useSpriteMesh=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int get_defaultETC1GraphicMaterial(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1257,6 +1321,7 @@ public class Lua_UnityEngine_UI_Image : LuaObject {
 		addMember(l,"fillClockwise",get_fillClockwise,set_fillClockwise,true);
 		addMember(l,"fillOrigin",get_fillOrigin,set_fillOrigin,true);
 		addMember(l,"alphaHitTestMinimumThreshold",get_alphaHitTestMinimumThreshold,set_alphaHitTestMinimumThreshold,true);
+		addMember(l,"useSpriteMesh",get_useSpriteMesh,set_useSpriteMesh,true);
 		addMember(l,"defaultETC1GraphicMaterial",get_defaultETC1GraphicMaterial,null,false);
 		addMember(l,"mainTexture",get_mainTexture,null,true);
 		addMember(l,"hasBorder",get_hasBorder,null,true);

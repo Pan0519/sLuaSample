@@ -152,15 +152,16 @@ public class LuaBehavior : MonoBase
 
     public void setBindingDataMaps(BindingNode bindingNodeGO = null)
     {
-        List<BindingData> bindingDataList;
+        List<BindingData> bindingDataList = new List<BindingData>();
+
+        if (null == bindingNodeGO)
+        {
+            bindingNodeGO = GetComponent<BindingNode>();
+        }
 
         if (null != bindingNodeGO)
         {
             bindingDataList = bindingNodeGO.getBindings();
-        }
-        else
-        {
-            bindingDataList = GetComponent<BindingNode>().getBindings();
         }
 
         for (int i = 0; i < bindingDataList.Count; ++i)
@@ -210,7 +211,7 @@ public class BindingMapsData
             {
                 theComponent = theObject as Component;
             }
-            else if(theObject is GameObject)
+            else if (theObject is GameObject)
             {
                 theComponent = theObject as GameObject;
             }
