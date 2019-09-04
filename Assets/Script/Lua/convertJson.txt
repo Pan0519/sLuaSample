@@ -8,6 +8,9 @@ end
 
 function jsonToTable(str)
     local result = {}
+    if stringIsEmpty(str) then
+        return result
+    end
     str = string.sub(str, 2, #str - 1)
     local jsonSplite = string.split(str, ',')
     for _, s in ipairs(jsonSplite) do
@@ -24,6 +27,14 @@ function jsonToTable(str)
         result[key] = value
     end
     return result
+end
+
+function stringIsEmpty(value)
+    if type(value) ~= "string" then
+        return true
+    else
+        return value == nil or value == ''
+    end
 end
 
 string.split = function(s, p)

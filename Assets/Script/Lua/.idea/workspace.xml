@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="22fcdc57-76db-4bab-8001-be68e0dc17f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../../.vs/sLuaSample/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.vs/sLuaSample/v15/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../.vs/sLuaSample/v15/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.vs/sLuaSample/v15/Server/sqlite3/storage.ide" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../.vs/sLuaSample/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.vs/sLuaSample/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../.vs/sLuaSample/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.vs/sLuaSample/v15/Server/sqlite3/storage.ide-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Assembly-CSharp-Editor-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Assembly-CSharp-Editor-firstpass.csproj" afterDir="false" />
@@ -13,225 +12,10 @@
       <change beforePath="$PROJECT_DIR$/../ConvertJsonClass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ConvertJsonClass.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/convertJson.txt" beforeDir="false" afterPath="$PROJECT_DIR$/convertJson.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestMain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TestMain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Custom/Lua_ConvertJsonClass.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Custom/Lua_ConvertJsonClass.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/BindUnity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/BindUnity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/BindUnityUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/BindUnityUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/LuaSystem_Action_1_UnityEngine_Rendering_AsyncGPUReadbackRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/LuaSystem_Action_1_UnityEngine_Rendering_AsyncGPUReadbackRequest.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/LuaSystem_Action_2_string_bool.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/LuaSystem_Action_2_string_bool.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_AnimationClip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_AnimationClip.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_AimConstraint.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_AimConstraint.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_AimConstraint_WorldUpType.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_AimConstraint_WorldUpType.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_AnimationMixerPlayable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_AnimationMixerPlayable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_AnimationPlayableBinding.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_AnimationPlayableBinding.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_Axis.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_Axis.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_ConstraintSource.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_ConstraintSource.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_IConstraint.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_IConstraint.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_LookAtConstraint.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_LookAtConstraint.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_ParentConstraint.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_ParentConstraint.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_PositionConstraint.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_PositionConstraint.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_RotationConstraint.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_RotationConstraint.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_ScaleConstraint.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animations_ScaleConstraint.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Animator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Application.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Application.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_ArmDof.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_ArmDof.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Assertions_Assert.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Assertions_Assert.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Audio_AudioPlayableBinding.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Audio_AudioPlayableBinding.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Audio_AudioPlayableOutput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Audio_AudioPlayableOutput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_BodyDof.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_BodyDof.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_BoxcastCommand.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_BoxcastCommand.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Camera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Camera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Camera_GateFitMode.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Camera_GateFitMode.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Camera_GateFitParameters.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Camera_GateFitParameters.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Canvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Canvas.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_CanvasGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_CanvasGroup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_CanvasRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_CanvasRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_CapsulecastCommand.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_CapsulecastCommand.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_CharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_CharacterController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Collider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Collider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Collision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Collision.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Collision2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Collision2D.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_CollisionDetectionMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_CollisionDetectionMode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_ComputeShader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_ComputeShader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Cubemap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Cubemap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_CubemapArray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_CubemapArray.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_CustomRenderTexture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_CustomRenderTexture.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Diagnostics_ForcedCrashCategory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Diagnostics_ForcedCrashCategory.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Diagnostics_Utils.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Diagnostics_Utils.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_DynamicGI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_DynamicGI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Event.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_ExecuteAlways.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_ExecuteAlways.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_FingerDof.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_FingerDof.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Font.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Font.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_FullScreenMode.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_FullScreenMode.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_GameObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_GameObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Graphics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Graphics.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Hash128.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Hash128.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_HashUnsafeUtilities.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_HashUnsafeUtilities.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_HashUtilities.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_HashUtilities.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_HeadDof.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_HeadDof.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_HumanPartDof.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_HumanPartDof.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_HumanTrait.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_HumanTrait.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_IAnimationClipSource.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_IAnimationClipSource.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Input.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Jobs_IJobParallelForTransform.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Jobs_IJobParallelForTransform.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Jobs_IJobParallelForTransformExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Jobs_IJobParallelForTransformExtensions.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Jobs_TransformAccess.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Jobs_TransformAccess.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Jobs_TransformAccessArray.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Jobs_TransformAccessArray.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Joint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Joint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_KeyCode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_KeyCode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_LegDof.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_LegDof.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_LineAlignment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_LineAlignment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_LineRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_LineRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Material.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Material.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_MaterialPropertyBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_MaterialPropertyBlock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Mesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Mesh.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_MeshCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_MeshCollider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_PhysicMaterial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_PhysicMaterial.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Physics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Physics.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Physics2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Physics2D.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_PhysicsJobOptions2D.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_PhysicsJobOptions2D.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_PhysicsScene.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_PhysicsScene.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_PhysicsScene2D.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_PhysicsScene2D.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_PhysicsSceneExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_PhysicsSceneExtensions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_PhysicsSceneExtensions2D.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_PhysicsSceneExtensions2D.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Pose.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Pose.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Profiling_Memory_Experimental_CaptureFlags.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Profiling_Memory_Experimental_CaptureFlags.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Profiling_Memory_Experimental_MemoryProfiler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Profiling_Memory_Experimental_MemoryProfiler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Profiling_Memory_Experimental_MetaData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Profiling_Memory_Experimental_MetaData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Profiling_Profiler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Profiling_Profiler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Profiling_ProfilerArea.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Profiling_ProfilerArea.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Profiling_Recorder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Profiling_Recorder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_QualitySettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_QualitySettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Quaternion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Quaternion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RaycastCommand.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RaycastCommand.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RaycastHit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RaycastHit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RectTransform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RectTransform.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RectTransformUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RectTransformUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_ReflectionProbe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_ReflectionProbe.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_ReflectionProbe_ReflectionProbeEvent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_ReflectionProbe_ReflectionProbeEvent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RenderTexture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RenderTexture.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RenderTextureCreationFlags.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RenderTextureCreationFlags.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RenderTextureDescriptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RenderTextureDescriptor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RenderTextureFormat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RenderTextureFormat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Renderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Renderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_AsyncGPUReadback.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_AsyncGPUReadback.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_AsyncGPUReadbackRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_AsyncGPUReadbackRequest.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_CommandBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_CommandBuffer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_GraphicsSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_GraphicsSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_PassType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_PassType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_PlatformKeywordSet.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_PlatformKeywordSet.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_RenderTargetBinding.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_RenderTargetBinding.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_RenderTargetIdentifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_RenderTargetIdentifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_ShaderKeyword.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_ShaderKeyword.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_ShaderKeywordSet.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_ShaderKeywordSet.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_ShaderKeywordType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rendering_ShaderKeywordType.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rigidbody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Rigidbody.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RuntimePlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_RuntimePlatform.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SceneManagement_CreateSceneParameters.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SceneManagement_CreateSceneParameters.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SceneManagement_LoadSceneParameters.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SceneManagement_LoadSceneParameters.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SceneManagement_LocalPhysicsMode.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SceneManagement_LocalPhysicsMode.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SceneManagement_Scene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SceneManagement_Scene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SceneManagement_SceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SceneManagement_SceneManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SceneManagement_UnloadSceneOptions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SceneManagement_UnloadSceneOptions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Scripting_GarbageCollector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Scripting_GarbageCollector.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Scripting_GarbageCollector_Mode.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Scripting_GarbageCollector_Mode.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Shader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Shader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SkinnedMeshRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SkinnedMeshRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SparseTexture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SparseTexture.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SpherecastCommand.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SpherecastCommand.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Sprite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Sprite.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SpritePackingRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SpritePackingRotation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SpriteRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SpriteRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SpriteSortPoint.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SpriteSortPoint.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SystemInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_SystemInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Texture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Texture.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Texture2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Texture2D.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Texture2DArray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Texture2DArray.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Texture3D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Texture3D.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_TextureFormat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_TextureFormat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_TrailRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_TrailRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_U2D_SpriteAtlas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_U2D_SpriteAtlas.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_UISystemProfilerApi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_UISystemProfilerApi.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_UI_Image.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_UI_Image.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_UI_VertexHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_UI_VertexHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Vector2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Vector2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Vector3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_Vector3.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_WaitForSecondsRealtime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_WaitForSecondsRealtime.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_WebCamDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_WebCamDevice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_WebCamFlags.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_WebCamFlags.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_WebCamKind.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_WebCamKind.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_WebCamTexture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_WebCamTexture.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_WeightedMode.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_UnityEngine_WeightedMode.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_Unity_Profiling_ProfilerMarker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_Unity_Profiling_ProfilerMarker.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_Unity_Profiling_ProfilerMarker_AutoScope.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/LuaObject/Unity/Lua_Unity_Profiling_ProfilerMarker_AutoScope.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Slua/example/test.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnityLuaInterfaceTest.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnityLuaInterfaceTest/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnityLuaInterfaceTest/Scripts/LuaInterface.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UnityLuaInterfaceTest/Scripts/LuaScripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-Editor-firstpass.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-Editor-firstpass.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Slua/example.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-Editor-firstpass.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-Editor-firstpass.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-Editor.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-Editor.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-firstpass.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-firstpass.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-firstpass.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp-firstpass.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../sLuaSample.Editor.Plugins.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sLuaSample.Editor.Plugins.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../sLuaSample.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sLuaSample.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../sLuaSample.Plugins.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sLuaSample.Plugins.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../sLuaSample.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sLuaSample.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../sLuaSample.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sLuaSample.sln" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -248,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/convertJson.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+            <state relative-caret-position="374">
+              <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -296,7 +80,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -308,11 +91,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Pusher/Assets/Resources/pusher" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
@@ -344,7 +129,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13646056" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.141258" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -387,8 +172,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/convertJson.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="374">
+          <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
         </state>
       </provider>
     </entry>
