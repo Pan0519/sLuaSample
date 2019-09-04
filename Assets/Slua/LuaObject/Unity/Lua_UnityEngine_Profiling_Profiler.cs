@@ -5,73 +5,6 @@ using System.Collections.Generic;
 public class Lua_UnityEngine_Profiling_Profiler : LuaObject {
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int SetAreaEnabled_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Profiling.ProfilerArea a1;
-			a1 = (UnityEngine.Profiling.ProfilerArea)LuaDLL.luaL_checkinteger(l, 1);
-			System.Boolean a2;
-			checkType(l,2,out a2);
-			UnityEngine.Profiling.Profiler.SetAreaEnabled(a1,a2);
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int GetAreaEnabled_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Profiling.ProfilerArea a1;
-			a1 = (UnityEngine.Profiling.ProfilerArea)LuaDLL.luaL_checkinteger(l, 1);
-			var ret=UnityEngine.Profiling.Profiler.GetAreaEnabled(a1);
-			pushValue(l,true);
-			pushValue(l,ret);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int AddFramesFromFile_s(IntPtr l) {
 		try {
 			#if DEBUG
@@ -682,68 +615,6 @@ public class Lua_UnityEngine_Profiling_Profiler : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_maxUsedMemory(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			pushValue(l,true);
-			pushValue(l,UnityEngine.Profiling.Profiler.maxUsedMemory);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int set_maxUsedMemory(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int v;
-			checkType(l,2,out v);
-			UnityEngine.Profiling.Profiler.maxUsedMemory=v;
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_enabled(IntPtr l) {
 		try {
 			#if DEBUG
@@ -806,36 +677,6 @@ public class Lua_UnityEngine_Profiling_Profiler : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_areaCount(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			pushValue(l,true);
-			pushValue(l,UnityEngine.Profiling.Profiler.areaCount);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_usedHeapSizeLong(IntPtr l) {
 		try {
 			#if DEBUG
@@ -867,8 +708,6 @@ public class Lua_UnityEngine_Profiling_Profiler : LuaObject {
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.Profiling.Profiler");
-		addMember(l,SetAreaEnabled_s);
-		addMember(l,GetAreaEnabled_s);
 		addMember(l,AddFramesFromFile_s);
 		addMember(l,BeginThreadProfiling_s);
 		addMember(l,EndThreadProfiling_s);
@@ -886,9 +725,7 @@ public class Lua_UnityEngine_Profiling_Profiler : LuaObject {
 		addMember(l,"supported",get_supported,null,false);
 		addMember(l,"logFile",get_logFile,set_logFile,false);
 		addMember(l,"enableBinaryLog",get_enableBinaryLog,set_enableBinaryLog,false);
-		addMember(l,"maxUsedMemory",get_maxUsedMemory,set_maxUsedMemory,false);
 		addMember(l,"enabled",get_enabled,set_enabled,false);
-		addMember(l,"areaCount",get_areaCount,null,false);
 		addMember(l,"usedHeapSizeLong",get_usedHeapSizeLong,null,false);
 		createTypeMetatable(l,null, typeof(UnityEngine.Profiling.Profiler));
 	}

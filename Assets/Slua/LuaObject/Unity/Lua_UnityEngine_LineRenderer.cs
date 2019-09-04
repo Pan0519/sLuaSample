@@ -107,59 +107,6 @@ public class Lua_UnityEngine_LineRenderer : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int BakeMesh(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(argc==3){
-				UnityEngine.LineRenderer self=(UnityEngine.LineRenderer)checkSelf(l);
-				UnityEngine.Mesh a1;
-				checkType(l,2,out a1);
-				System.Boolean a2;
-				checkType(l,3,out a2);
-				self.BakeMesh(a1,a2);
-				pushValue(l,true);
-				return 1;
-			}
-			else if(argc==4){
-				UnityEngine.LineRenderer self=(UnityEngine.LineRenderer)checkSelf(l);
-				UnityEngine.Mesh a1;
-				checkType(l,2,out a1);
-				UnityEngine.Camera a2;
-				checkType(l,3,out a2);
-				System.Boolean a3;
-				checkType(l,4,out a3);
-				self.BakeMesh(a1,a2,a3);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function BakeMesh to call");
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int GetPositions(IntPtr l) {
 		try {
 			#if DEBUG
@@ -867,70 +814,6 @@ public class Lua_UnityEngine_LineRenderer : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_shadowBias(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.LineRenderer self=(UnityEngine.LineRenderer)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.shadowBias);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int set_shadowBias(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.LineRenderer self=(UnityEngine.LineRenderer)checkSelf(l);
-			float v;
-			checkType(l,2,out v);
-			self.shadowBias=v;
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_generateLightingData(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1255,7 +1138,6 @@ public class Lua_UnityEngine_LineRenderer : LuaObject {
 		addMember(l,SetPosition);
 		addMember(l,GetPosition);
 		addMember(l,Simplify);
-		addMember(l,BakeMesh);
 		addMember(l,GetPositions);
 		addMember(l,SetPositions);
 		addMember(l,"startWidth",get_startWidth,set_startWidth,true);
@@ -1268,7 +1150,6 @@ public class Lua_UnityEngine_LineRenderer : LuaObject {
 		addMember(l,"startColor",get_startColor,set_startColor,true);
 		addMember(l,"endColor",get_endColor,set_endColor,true);
 		addMember(l,"positionCount",get_positionCount,set_positionCount,true);
-		addMember(l,"shadowBias",get_shadowBias,set_shadowBias,true);
 		addMember(l,"generateLightingData",get_generateLightingData,set_generateLightingData,true);
 		addMember(l,"textureMode",get_textureMode,set_textureMode,true);
 		addMember(l,"alignment",get_alignment,set_alignment,true);

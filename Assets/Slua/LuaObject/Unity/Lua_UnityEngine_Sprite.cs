@@ -5,6 +5,41 @@ using System.Collections.Generic;
 public class Lua_UnityEngine_Sprite : LuaObject {
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int OverrideGeometry(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Sprite self=(UnityEngine.Sprite)checkSelf(l);
+			UnityEngine.Vector2[] a1;
+			checkArray(l,2,out a1);
+			System.UInt16[] a2;
+			checkArray(l,3,out a2);
+			self.OverrideGeometry(a1,a2);
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int GetPhysicsShapeCount(IntPtr l) {
 		try {
 			#if DEBUG
@@ -122,41 +157,6 @@ public class Lua_UnityEngine_Sprite : LuaObject {
 			System.Collections.Generic.IList<UnityEngine.Vector2[]> a1;
 			checkType(l,2,out a1);
 			self.OverridePhysicsShape(a1);
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int OverrideGeometry(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Sprite self=(UnityEngine.Sprite)checkSelf(l);
-			UnityEngine.Vector2[] a1;
-			checkArray(l,2,out a1);
-			System.UInt16[] a2;
-			checkArray(l,3,out a2);
-			self.OverrideGeometry(a1,a2);
 			pushValue(l,true);
 			return 1;
 		}
@@ -370,37 +370,6 @@ public class Lua_UnityEngine_Sprite : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_border(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Sprite self=(UnityEngine.Sprite)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.border);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_texture(IntPtr l) {
 		try {
 			#if DEBUG
@@ -415,37 +384,6 @@ public class Lua_UnityEngine_Sprite : LuaObject {
 			UnityEngine.Sprite self=(UnityEngine.Sprite)checkSelf(l);
 			pushValue(l,true);
 			pushValue(l,self.texture);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_pixelsPerUnit(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Sprite self=(UnityEngine.Sprite)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.pixelsPerUnit);
 			return 2;
 		}
 		catch(Exception e) {
@@ -494,7 +432,7 @@ public class Lua_UnityEngine_Sprite : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_pivot(IntPtr l) {
+	static public int get_textureRect(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -507,7 +445,38 @@ public class Lua_UnityEngine_Sprite : LuaObject {
 			#endif
 			UnityEngine.Sprite self=(UnityEngine.Sprite)checkSelf(l);
 			pushValue(l,true);
-			pushValue(l,self.pivot);
+			pushValue(l,self.textureRect);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_textureRectOffset(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Sprite self=(UnityEngine.Sprite)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.textureRectOffset);
 			return 2;
 		}
 		catch(Exception e) {
@@ -618,7 +587,7 @@ public class Lua_UnityEngine_Sprite : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_textureRect(IntPtr l) {
+	static public int get_pivot(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -631,7 +600,7 @@ public class Lua_UnityEngine_Sprite : LuaObject {
 			#endif
 			UnityEngine.Sprite self=(UnityEngine.Sprite)checkSelf(l);
 			pushValue(l,true);
-			pushValue(l,self.textureRect);
+			pushValue(l,self.pivot);
 			return 2;
 		}
 		catch(Exception e) {
@@ -649,7 +618,7 @@ public class Lua_UnityEngine_Sprite : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_textureRectOffset(IntPtr l) {
+	static public int get_border(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -662,7 +631,7 @@ public class Lua_UnityEngine_Sprite : LuaObject {
 			#endif
 			UnityEngine.Sprite self=(UnityEngine.Sprite)checkSelf(l);
 			pushValue(l,true);
-			pushValue(l,self.textureRectOffset);
+			pushValue(l,self.border);
 			return 2;
 		}
 		catch(Exception e) {
@@ -771,30 +740,61 @@ public class Lua_UnityEngine_Sprite : LuaObject {
 		}
 		#endif
 	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_pixelsPerUnit(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Sprite self=(UnityEngine.Sprite)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.pixelsPerUnit);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.Sprite");
+		addMember(l,OverrideGeometry);
 		addMember(l,GetPhysicsShapeCount);
 		addMember(l,GetPhysicsShapePointCount);
 		addMember(l,GetPhysicsShape);
 		addMember(l,OverridePhysicsShape);
-		addMember(l,OverrideGeometry);
 		addMember(l,Create_s);
 		addMember(l,"bounds",get_bounds,null,true);
 		addMember(l,"rect",get_rect,null,true);
-		addMember(l,"border",get_border,null,true);
 		addMember(l,"texture",get_texture,null,true);
-		addMember(l,"pixelsPerUnit",get_pixelsPerUnit,null,true);
 		addMember(l,"associatedAlphaSplitTexture",get_associatedAlphaSplitTexture,null,true);
-		addMember(l,"pivot",get_pivot,null,true);
+		addMember(l,"textureRect",get_textureRect,null,true);
+		addMember(l,"textureRectOffset",get_textureRectOffset,null,true);
 		addMember(l,"packed",get_packed,null,true);
 		addMember(l,"packingMode",get_packingMode,null,true);
 		addMember(l,"packingRotation",get_packingRotation,null,true);
-		addMember(l,"textureRect",get_textureRect,null,true);
-		addMember(l,"textureRectOffset",get_textureRectOffset,null,true);
+		addMember(l,"pivot",get_pivot,null,true);
+		addMember(l,"border",get_border,null,true);
 		addMember(l,"vertices",get_vertices,null,true);
 		addMember(l,"triangles",get_triangles,null,true);
 		addMember(l,"uv",get_uv,null,true);
+		addMember(l,"pixelsPerUnit",get_pixelsPerUnit,null,true);
 		createTypeMetatable(l,null, typeof(UnityEngine.Sprite),typeof(UnityEngine.Object));
 	}
 }

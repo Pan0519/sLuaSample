@@ -2,10 +2,10 @@
 using SLua;
 using System.Collections.Generic;
 [UnityEngine.Scripting.Preserve]
-public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
+public class Lua_UnityEngine_WWW : LuaObject {
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int GetSources(IntPtr l) {
+	static public int constructor(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -16,10 +16,80 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			System.Collections.Generic.List<UnityEngine.Animations.ConstraintSource> a1;
+			int argc = LuaDLL.lua_gettop(l);
+			UnityEngine.WWW o;
+			if(argc==2){
+				System.String a1;
+				checkType(l,2,out a1);
+				o=new UnityEngine.WWW(a1);
+				pushValue(l,true);
+				pushValue(l,o);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(string),typeof(UnityEngine.WWWForm))){
+				System.String a1;
+				checkType(l,2,out a1);
+				UnityEngine.WWWForm a2;
+				checkType(l,3,out a2);
+				o=new UnityEngine.WWW(a1,a2);
+				pushValue(l,true);
+				pushValue(l,o);
+				return 2;
+			}
+			else if(matchType(l,argc,2,typeof(string),typeof(System.Byte[]))){
+				System.String a1;
+				checkType(l,2,out a1);
+				System.Byte[] a2;
+				checkArray(l,3,out a2);
+				o=new UnityEngine.WWW(a1,a2);
+				pushValue(l,true);
+				pushValue(l,o);
+				return 2;
+			}
+			else if(argc==4){
+				System.String a1;
+				checkType(l,2,out a1);
+				System.Byte[] a2;
+				checkArray(l,3,out a2);
+				System.Collections.Generic.Dictionary<System.String,System.String> a3;
+				checkType(l,4,out a3);
+				o=new UnityEngine.WWW(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,o);
+				return 2;
+			}
+			return error(l,"New object failed.");
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int LoadImageIntoTexture(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+			UnityEngine.Texture2D a1;
 			checkType(l,2,out a1);
-			self.GetSources(a1);
+			self.LoadImageIntoTexture(a1);
 			pushValue(l,true);
 			return 1;
 		}
@@ -38,7 +108,7 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int SetSources(IntPtr l) {
+	static public int Dispose(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -49,10 +119,8 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			System.Collections.Generic.List<UnityEngine.Animations.ConstraintSource> a1;
-			checkType(l,2,out a1);
-			self.SetSources(a1);
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+			self.Dispose();
 			pushValue(l,true);
 			return 1;
 		}
@@ -71,7 +139,7 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int AddSource(IntPtr l) {
+	static public int GetAudioClip(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -82,10 +150,137 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			UnityEngine.Animations.ConstraintSource a1;
-			checkValueType(l,2,out a1);
-			var ret=self.AddSource(a1);
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==1){
+				UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+				var ret=self.GetAudioClip();
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==2){
+				UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+				System.Boolean a1;
+				checkType(l,2,out a1);
+				var ret=self.GetAudioClip(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==3){
+				UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+				System.Boolean a1;
+				checkType(l,2,out a1);
+				System.Boolean a2;
+				checkType(l,3,out a2);
+				var ret=self.GetAudioClip(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==4){
+				UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+				System.Boolean a1;
+				checkType(l,2,out a1);
+				System.Boolean a2;
+				checkType(l,3,out a2);
+				UnityEngine.AudioType a3;
+				a3 = (UnityEngine.AudioType)LuaDLL.luaL_checkinteger(l, 4);
+				var ret=self.GetAudioClip(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function GetAudioClip to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int GetAudioClipCompressed(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==1){
+				UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+				var ret=self.GetAudioClipCompressed();
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==2){
+				UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+				System.Boolean a1;
+				checkType(l,2,out a1);
+				var ret=self.GetAudioClipCompressed(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==3){
+				UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+				System.Boolean a1;
+				checkType(l,2,out a1);
+				UnityEngine.AudioType a2;
+				a2 = (UnityEngine.AudioType)LuaDLL.luaL_checkinteger(l, 3);
+				var ret=self.GetAudioClipCompressed(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function GetAudioClipCompressed to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int GetMovieTexture(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+			var ret=self.GetMovieTexture();
 			pushValue(l,true);
 			pushValue(l,ret);
 			return 2;
@@ -105,7 +300,7 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int RemoveSource(IntPtr l) {
+	static public int EscapeURL_s(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -116,45 +311,27 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			System.Int32 a1;
-			checkType(l,2,out a1);
-			self.RemoveSource(a1);
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int GetSource(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			System.Int32 a1;
-			checkType(l,2,out a1);
-			var ret=self.GetSource(a1);
-			pushValue(l,true);
-			pushValue(l,ret);
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==1){
+				System.String a1;
+				checkType(l,1,out a1);
+				var ret=UnityEngine.WWW.EscapeURL(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==2){
+				System.String a1;
+				checkType(l,1,out a1);
+				System.Text.Encoding a2;
+				checkType(l,2,out a2);
+				var ret=UnityEngine.WWW.EscapeURL(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function EscapeURL to call");
 			return 2;
 		}
 		catch(Exception e) {
@@ -172,7 +349,7 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int SetSource(IntPtr l) {
+	static public int UnEscapeURL_s(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -183,44 +360,27 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			System.Int32 a1;
-			checkType(l,2,out a1);
-			UnityEngine.Animations.ConstraintSource a2;
-			checkValueType(l,3,out a2);
-			self.SetSource(a1,a2);
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_weight(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.weight);
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==1){
+				System.String a1;
+				checkType(l,1,out a1);
+				var ret=UnityEngine.WWW.UnEscapeURL(a1);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(argc==2){
+				System.String a1;
+				checkType(l,1,out a1);
+				System.Text.Encoding a2;
+				checkType(l,2,out a2);
+				var ret=UnityEngine.WWW.UnEscapeURL(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function UnEscapeURL to call");
 			return 2;
 		}
 		catch(Exception e) {
@@ -238,7 +398,7 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_weight(IntPtr l) {
+	static public int LoadFromCacheOrDownload_s(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -249,42 +409,65 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			float v;
-			checkType(l,2,out v);
-			self.weight=v;
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_roll(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.roll);
+			int argc = LuaDLL.lua_gettop(l);
+			if(matchType(l,argc,1,typeof(string),typeof(int))){
+				System.String a1;
+				checkType(l,1,out a1);
+				System.Int32 a2;
+				checkType(l,2,out a2);
+				var ret=UnityEngine.WWW.LoadFromCacheOrDownload(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Hash128))){
+				System.String a1;
+				checkType(l,1,out a1);
+				UnityEngine.Hash128 a2;
+				checkValueType(l,2,out a2);
+				var ret=UnityEngine.WWW.LoadFromCacheOrDownload(a1,a2);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,1,typeof(string),typeof(int),typeof(System.UInt32))){
+				System.String a1;
+				checkType(l,1,out a1);
+				System.Int32 a2;
+				checkType(l,2,out a2);
+				System.UInt32 a3;
+				checkType(l,3,out a3);
+				var ret=UnityEngine.WWW.LoadFromCacheOrDownload(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.Hash128),typeof(System.UInt32))){
+				System.String a1;
+				checkType(l,1,out a1);
+				UnityEngine.Hash128 a2;
+				checkValueType(l,2,out a2);
+				System.UInt32 a3;
+				checkType(l,3,out a3);
+				var ret=UnityEngine.WWW.LoadFromCacheOrDownload(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			else if(matchType(l,argc,1,typeof(string),typeof(UnityEngine.CachedAssetBundle),typeof(System.UInt32))){
+				System.String a1;
+				checkType(l,1,out a1);
+				UnityEngine.CachedAssetBundle a2;
+				checkValueType(l,2,out a2);
+				System.UInt32 a3;
+				checkType(l,3,out a3);
+				var ret=UnityEngine.WWW.LoadFromCacheOrDownload(a1,a2,a3);
+				pushValue(l,true);
+				pushValue(l,ret);
+				return 2;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function LoadFromCacheOrDownload to call");
 			return 2;
 		}
 		catch(Exception e) {
@@ -302,7 +485,7 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_roll(IntPtr l) {
+	static public int get_assetBundle(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -313,42 +496,9 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			float v;
-			checkType(l,2,out v);
-			self.roll=v;
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
 			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_constraintActive(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.constraintActive);
+			pushValue(l,self.assetBundle);
 			return 2;
 		}
 		catch(Exception e) {
@@ -366,7 +516,7 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_constraintActive(IntPtr l) {
+	static public int get_bytes(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -377,42 +527,9 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			bool v;
-			checkType(l,2,out v);
-			self.constraintActive=v;
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
 			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_locked(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.locked);
+			pushValue(l,self.bytes);
 			return 2;
 		}
 		catch(Exception e) {
@@ -430,7 +547,7 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_locked(IntPtr l) {
+	static public int get_bytesDownloaded(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -441,42 +558,9 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			bool v;
-			checkType(l,2,out v);
-			self.locked=v;
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
 			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_rotationAtRest(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.rotationAtRest);
+			pushValue(l,self.bytesDownloaded);
 			return 2;
 		}
 		catch(Exception e) {
@@ -494,7 +578,7 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_rotationAtRest(IntPtr l) {
+	static public int get_error(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -505,42 +589,9 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			UnityEngine.Vector3 v;
-			checkType(l,2,out v);
-			self.rotationAtRest=v;
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
 			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_rotationOffset(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.rotationOffset);
+			pushValue(l,self.error);
 			return 2;
 		}
 		catch(Exception e) {
@@ -558,7 +609,7 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_rotationOffset(IntPtr l) {
+	static public int get_isDone(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -569,42 +620,9 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			UnityEngine.Vector3 v;
-			checkType(l,2,out v);
-			self.rotationOffset=v;
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
 			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_worldUpObject(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.worldUpObject);
+			pushValue(l,self.isDone);
 			return 2;
 		}
 		catch(Exception e) {
@@ -622,7 +640,7 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_worldUpObject(IntPtr l) {
+	static public int get_progress(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -633,42 +651,9 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			UnityEngine.Transform v;
-			checkType(l,2,out v);
-			self.worldUpObject=v;
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
 			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_useUpObject(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.useUpObject);
+			pushValue(l,self.progress);
 			return 2;
 		}
 		catch(Exception e) {
@@ -686,7 +671,7 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int set_useUpObject(IntPtr l) {
+	static public int get_responseHeaders(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -697,10 +682,165 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
-			bool v;
-			checkType(l,2,out v);
-			self.useUpObject=v;
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.responseHeaders);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_text(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.text);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_texture(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.texture);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_textureNonReadable(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.textureNonReadable);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_threadPriority(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+			pushValue(l,true);
+			pushEnum(l,(int)self.threadPriority);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int set_threadPriority(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+			UnityEngine.ThreadPriority v;
+			v = (UnityEngine.ThreadPriority)LuaDLL.luaL_checkinteger(l, 2);
+			self.threadPriority=v;
 			pushValue(l,true);
 			return 1;
 		}
@@ -719,7 +859,7 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_sourceCount(IntPtr l) {
+	static public int get_uploadProgress(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -730,9 +870,71 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			UnityEngine.Animations.LookAtConstraint self=(UnityEngine.Animations.LookAtConstraint)checkSelf(l);
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
 			pushValue(l,true);
-			pushValue(l,self.sourceCount);
+			pushValue(l,self.uploadProgress);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_url(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.url);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_keepWaiting(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.WWW self=(UnityEngine.WWW)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.keepWaiting);
 			return 2;
 		}
 		catch(Exception e) {
@@ -750,22 +952,29 @@ public class Lua_UnityEngine_Animations_LookAtConstraint : LuaObject {
 	}
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
-		getTypeTable(l,"UnityEngine.Animations.LookAtConstraint");
-		addMember(l,GetSources);
-		addMember(l,SetSources);
-		addMember(l,AddSource);
-		addMember(l,RemoveSource);
-		addMember(l,GetSource);
-		addMember(l,SetSource);
-		addMember(l,"weight",get_weight,set_weight,true);
-		addMember(l,"roll",get_roll,set_roll,true);
-		addMember(l,"constraintActive",get_constraintActive,set_constraintActive,true);
-		addMember(l,"locked",get_locked,set_locked,true);
-		addMember(l,"rotationAtRest",get_rotationAtRest,set_rotationAtRest,true);
-		addMember(l,"rotationOffset",get_rotationOffset,set_rotationOffset,true);
-		addMember(l,"worldUpObject",get_worldUpObject,set_worldUpObject,true);
-		addMember(l,"useUpObject",get_useUpObject,set_useUpObject,true);
-		addMember(l,"sourceCount",get_sourceCount,null,true);
-		createTypeMetatable(l,null, typeof(UnityEngine.Animations.LookAtConstraint),typeof(UnityEngine.Behaviour));
+		getTypeTable(l,"UnityEngine.WWW");
+		addMember(l,LoadImageIntoTexture);
+		addMember(l,Dispose);
+		addMember(l,GetAudioClip);
+		addMember(l,GetAudioClipCompressed);
+		addMember(l,GetMovieTexture);
+		addMember(l,EscapeURL_s);
+		addMember(l,UnEscapeURL_s);
+		addMember(l,LoadFromCacheOrDownload_s);
+		addMember(l,"assetBundle",get_assetBundle,null,true);
+		addMember(l,"bytes",get_bytes,null,true);
+		addMember(l,"bytesDownloaded",get_bytesDownloaded,null,true);
+		addMember(l,"error",get_error,null,true);
+		addMember(l,"isDone",get_isDone,null,true);
+		addMember(l,"progress",get_progress,null,true);
+		addMember(l,"responseHeaders",get_responseHeaders,null,true);
+		addMember(l,"text",get_text,null,true);
+		addMember(l,"texture",get_texture,null,true);
+		addMember(l,"textureNonReadable",get_textureNonReadable,null,true);
+		addMember(l,"threadPriority",get_threadPriority,set_threadPriority,true);
+		addMember(l,"uploadProgress",get_uploadProgress,null,true);
+		addMember(l,"url",get_url,null,true);
+		addMember(l,"keepWaiting",get_keepWaiting,null,true);
+		createTypeMetatable(l,constructor, typeof(UnityEngine.WWW),typeof(UnityEngine.CustomYieldInstruction));
 	}
 }

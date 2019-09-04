@@ -136,41 +136,6 @@ public class Lua_UnityEngine_SystemInfo : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int IsFormatSupported_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Experimental.Rendering.GraphicsFormat a1;
-			a1 = (UnityEngine.Experimental.Rendering.GraphicsFormat)LuaDLL.luaL_checkinteger(l, 1);
-			UnityEngine.Experimental.Rendering.FormatUsage a2;
-			a2 = (UnityEngine.Experimental.Rendering.FormatUsage)LuaDLL.luaL_checkinteger(l, 2);
-			var ret=UnityEngine.SystemInfo.IsFormatSupported(a1,a2);
-			pushValue(l,true);
-			pushValue(l,ret);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_unsupportedIdentifier(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1011,66 +976,6 @@ public class Lua_UnityEngine_SystemInfo : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_hasHiddenSurfaceRemovalOnGPU(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			pushValue(l,true);
-			pushValue(l,UnityEngine.SystemInfo.hasHiddenSurfaceRemovalOnGPU);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_hasDynamicUniformArrayIndexingInFragmentShaders(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			pushValue(l,true);
-			pushValue(l,UnityEngine.SystemInfo.hasDynamicUniformArrayIndexingInFragmentShaders);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_supportsShadows(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1551,36 +1456,6 @@ public class Lua_UnityEngine_SystemInfo : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_supportsSeparatedRenderTargetsBlend(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			pushValue(l,true);
-			pushValue(l,UnityEngine.SystemInfo.supportsSeparatedRenderTargetsBlend);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_supportsMultisampledTextures(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1594,36 +1469,6 @@ public class Lua_UnityEngine_SystemInfo : LuaObject {
 			#endif
 			pushValue(l,true);
 			pushValue(l,UnityEngine.SystemInfo.supportsMultisampledTextures);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_supportsMultisampleAutoResolve(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			pushValue(l,true);
-			pushValue(l,UnityEngine.SystemInfo.supportsMultisampleAutoResolve);
 			return 2;
 		}
 		catch(Exception e) {
@@ -1879,43 +1724,12 @@ public class Lua_UnityEngine_SystemInfo : LuaObject {
 		}
 		#endif
 	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_supportsMipStreaming(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			pushValue(l,true);
-			pushValue(l,UnityEngine.SystemInfo.supportsMipStreaming);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.SystemInfo");
 		addMember(l,SupportsRenderTextureFormat_s);
 		addMember(l,SupportsBlendingOnRenderTextureFormat_s);
 		addMember(l,SupportsTextureFormat_s);
-		addMember(l,IsFormatSupported_s);
 		addMember(l,"unsupportedIdentifier",get_unsupportedIdentifier,null,false);
 		addMember(l,"batteryLevel",get_batteryLevel,null,false);
 		addMember(l,"batteryStatus",get_batteryStatus,null,false);
@@ -1944,8 +1758,6 @@ public class Lua_UnityEngine_SystemInfo : LuaObject {
 		addMember(l,"graphicsDeviceVersion",get_graphicsDeviceVersion,null,false);
 		addMember(l,"graphicsShaderLevel",get_graphicsShaderLevel,null,false);
 		addMember(l,"graphicsMultiThreaded",get_graphicsMultiThreaded,null,false);
-		addMember(l,"hasHiddenSurfaceRemovalOnGPU",get_hasHiddenSurfaceRemovalOnGPU,null,false);
-		addMember(l,"hasDynamicUniformArrayIndexingInFragmentShaders",get_hasDynamicUniformArrayIndexingInFragmentShaders,null,false);
 		addMember(l,"supportsShadows",get_supportsShadows,null,false);
 		addMember(l,"supportsRawShadowDepthSampling",get_supportsRawShadowDepthSampling,null,false);
 		addMember(l,"supportsMotionVectors",get_supportsMotionVectors,null,false);
@@ -1962,9 +1774,7 @@ public class Lua_UnityEngine_SystemInfo : LuaObject {
 		addMember(l,"supports32bitsIndexBuffer",get_supports32bitsIndexBuffer,null,false);
 		addMember(l,"supportsSparseTextures",get_supportsSparseTextures,null,false);
 		addMember(l,"supportedRenderTargetCount",get_supportedRenderTargetCount,null,false);
-		addMember(l,"supportsSeparatedRenderTargetsBlend",get_supportsSeparatedRenderTargetsBlend,null,false);
 		addMember(l,"supportsMultisampledTextures",get_supportsMultisampledTextures,null,false);
-		addMember(l,"supportsMultisampleAutoResolve",get_supportsMultisampleAutoResolve,null,false);
 		addMember(l,"supportsTextureWrapMirrorOnce",get_supportsTextureWrapMirrorOnce,null,false);
 		addMember(l,"usesReversedZBuffer",get_usesReversedZBuffer,null,false);
 		addMember(l,"npotSupport",get_npotSupport,null,false);
@@ -1973,7 +1783,6 @@ public class Lua_UnityEngine_SystemInfo : LuaObject {
 		addMember(l,"supportsAsyncCompute",get_supportsAsyncCompute,null,false);
 		addMember(l,"supportsGPUFence",get_supportsGPUFence,null,false);
 		addMember(l,"supportsAsyncGPUReadback",get_supportsAsyncGPUReadback,null,false);
-		addMember(l,"supportsMipStreaming",get_supportsMipStreaming,null,false);
 		createTypeMetatable(l,constructor, typeof(UnityEngine.SystemInfo));
 	}
 }

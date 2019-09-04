@@ -1850,37 +1850,6 @@ public class Lua_UnityEngine_Animator : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int WriteDefaultValues(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Animator self=(UnityEngine.Animator)checkSelf(l);
-			self.WriteDefaultValues();
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int CrossFade(IntPtr l) {
 		try {
 			#if DEBUG
@@ -3010,6 +2979,70 @@ public class Lua_UnityEngine_Animator : LuaObject {
 			bool v;
 			checkType(l,2,out v);
 			self.applyRootMotion=v;
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_linearVelocityBlending(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Animator self=(UnityEngine.Animator)checkSelf(l);
+			pushValue(l,true);
+			pushValue(l,self.linearVelocityBlending);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int set_linearVelocityBlending(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Animator self=(UnityEngine.Animator)checkSelf(l);
+			bool v;
+			checkType(l,2,out v);
+			self.linearVelocityBlending=v;
 			pushValue(l,true);
 			return 1;
 		}
@@ -4560,7 +4593,6 @@ public class Lua_UnityEngine_Animator : LuaObject {
 		addMember(l,MatchTarget);
 		addMember(l,InterruptMatchTarget);
 		addMember(l,CrossFadeInFixedTime);
-		addMember(l,WriteDefaultValues);
 		addMember(l,CrossFade);
 		addMember(l,PlayInFixedTime);
 		addMember(l,Play);
@@ -4587,6 +4619,7 @@ public class Lua_UnityEngine_Animator : LuaObject {
 		addMember(l,"rootPosition",get_rootPosition,set_rootPosition,true);
 		addMember(l,"rootRotation",get_rootRotation,set_rootRotation,true);
 		addMember(l,"applyRootMotion",get_applyRootMotion,set_applyRootMotion,true);
+		addMember(l,"linearVelocityBlending",get_linearVelocityBlending,set_linearVelocityBlending,true);
 		addMember(l,"updateMode",get_updateMode,set_updateMode,true);
 		addMember(l,"hasTransformHierarchy",get_hasTransformHierarchy,null,true);
 		addMember(l,"gravityWeight",get_gravityWeight,null,true);

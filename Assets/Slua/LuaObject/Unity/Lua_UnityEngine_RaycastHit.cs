@@ -37,38 +37,6 @@ public class Lua_UnityEngine_RaycastHit : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_collider(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.RaycastHit self;
-			checkValueType(l,1,out self);
-			pushValue(l,true);
-			pushValue(l,self.collider);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_point(IntPtr l) {
 		try {
 			#if DEBUG
@@ -433,7 +401,7 @@ public class Lua_UnityEngine_RaycastHit : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_transform(IntPtr l) {
+	static public int get_lightmapCoord(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -447,7 +415,39 @@ public class Lua_UnityEngine_RaycastHit : LuaObject {
 			UnityEngine.RaycastHit self;
 			checkValueType(l,1,out self);
 			pushValue(l,true);
-			pushValue(l,self.transform);
+			pushValue(l,self.lightmapCoord);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int get_collider(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.RaycastHit self;
+			checkValueType(l,1,out self);
+			pushValue(l,true);
+			pushValue(l,self.collider);
 			return 2;
 		}
 		catch(Exception e) {
@@ -497,7 +497,7 @@ public class Lua_UnityEngine_RaycastHit : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_lightmapCoord(IntPtr l) {
+	static public int get_transform(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -511,7 +511,7 @@ public class Lua_UnityEngine_RaycastHit : LuaObject {
 			UnityEngine.RaycastHit self;
 			checkValueType(l,1,out self);
 			pushValue(l,true);
-			pushValue(l,self.lightmapCoord);
+			pushValue(l,self.transform);
 			return 2;
 		}
 		catch(Exception e) {
@@ -530,7 +530,6 @@ public class Lua_UnityEngine_RaycastHit : LuaObject {
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.RaycastHit");
-		addMember(l,"collider",get_collider,null,true);
 		addMember(l,"point",get_point,set_point,true);
 		addMember(l,"normal",get_normal,set_normal,true);
 		addMember(l,"barycentricCoordinate",get_barycentricCoordinate,set_barycentricCoordinate,true);
@@ -538,9 +537,10 @@ public class Lua_UnityEngine_RaycastHit : LuaObject {
 		addMember(l,"triangleIndex",get_triangleIndex,null,true);
 		addMember(l,"textureCoord",get_textureCoord,null,true);
 		addMember(l,"textureCoord2",get_textureCoord2,null,true);
-		addMember(l,"transform",get_transform,null,true);
-		addMember(l,"rigidbody",get_rigidbody,null,true);
 		addMember(l,"lightmapCoord",get_lightmapCoord,null,true);
+		addMember(l,"collider",get_collider,null,true);
+		addMember(l,"rigidbody",get_rigidbody,null,true);
+		addMember(l,"transform",get_transform,null,true);
 		createTypeMetatable(l,constructor, typeof(UnityEngine.RaycastHit),typeof(System.ValueType));
 	}
 }

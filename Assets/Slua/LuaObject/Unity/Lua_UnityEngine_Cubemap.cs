@@ -16,77 +16,16 @@ public class Lua_UnityEngine_Cubemap : LuaObject {
 			Profiler.BeginSample(methodName);
 			#endif
 			#endif
-			int argc = LuaDLL.lua_gettop(l);
 			UnityEngine.Cubemap o;
-			if(matchType(l,argc,2,typeof(int),typeof(UnityEngine.Experimental.Rendering.GraphicsFormat),typeof(UnityEngine.Experimental.Rendering.TextureCreationFlags))){
-				System.Int32 a1;
-				checkType(l,2,out a1);
-				UnityEngine.Experimental.Rendering.GraphicsFormat a2;
-				a2 = (UnityEngine.Experimental.Rendering.GraphicsFormat)LuaDLL.luaL_checkinteger(l, 3);
-				UnityEngine.Experimental.Rendering.TextureCreationFlags a3;
-				a3 = (UnityEngine.Experimental.Rendering.TextureCreationFlags)LuaDLL.luaL_checkinteger(l, 4);
-				o=new UnityEngine.Cubemap(a1,a2,a3);
-				pushValue(l,true);
-				pushValue(l,o);
-				return 2;
-			}
-			else if(matchType(l,argc,2,typeof(int),typeof(UnityEngine.TextureFormat),typeof(bool))){
-				System.Int32 a1;
-				checkType(l,2,out a1);
-				UnityEngine.TextureFormat a2;
-				a2 = (UnityEngine.TextureFormat)LuaDLL.luaL_checkinteger(l, 3);
-				System.Boolean a3;
-				checkType(l,4,out a3);
-				o=new UnityEngine.Cubemap(a1,a2,a3);
-				pushValue(l,true);
-				pushValue(l,o);
-				return 2;
-			}
-			return error(l,"New object failed.");
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int SmoothEdges(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			int argc = LuaDLL.lua_gettop(l);
-			if(argc==1){
-				UnityEngine.Cubemap self=(UnityEngine.Cubemap)checkSelf(l);
-				self.SmoothEdges();
-				pushValue(l,true);
-				return 1;
-			}
-			else if(argc==2){
-				UnityEngine.Cubemap self=(UnityEngine.Cubemap)checkSelf(l);
-				System.Int32 a1;
-				checkType(l,2,out a1);
-				self.SmoothEdges(a1);
-				pushValue(l,true);
-				return 1;
-			}
-			pushValue(l,false);
-			LuaDLL.lua_pushstring(l,"No matched override function SmoothEdges to call");
+			System.Int32 a1;
+			checkType(l,2,out a1);
+			UnityEngine.TextureFormat a2;
+			a2 = (UnityEngine.TextureFormat)LuaDLL.luaL_checkinteger(l, 3);
+			System.Boolean a3;
+			checkType(l,4,out a3);
+			o=new UnityEngine.Cubemap(a1,a2,a3);
+			pushValue(l,true);
+			pushValue(l,o);
 			return 2;
 		}
 		catch(Exception e) {
@@ -191,6 +130,51 @@ public class Lua_UnityEngine_Cubemap : LuaObject {
 			}
 			pushValue(l,false);
 			LuaDLL.lua_pushstring(l,"No matched override function SetPixels to call");
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int SmoothEdges(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			int argc = LuaDLL.lua_gettop(l);
+			if(argc==1){
+				UnityEngine.Cubemap self=(UnityEngine.Cubemap)checkSelf(l);
+				self.SmoothEdges();
+				pushValue(l,true);
+				return 1;
+			}
+			else if(argc==2){
+				UnityEngine.Cubemap self=(UnityEngine.Cubemap)checkSelf(l);
+				System.Int32 a1;
+				checkType(l,2,out a1);
+				self.SmoothEdges(a1);
+				pushValue(l,true);
+				return 1;
+			}
+			pushValue(l,false);
+			LuaDLL.lua_pushstring(l,"No matched override function SmoothEdges to call");
 			return 2;
 		}
 		catch(Exception e) {
@@ -439,50 +423,18 @@ public class Lua_UnityEngine_Cubemap : LuaObject {
 		}
 		#endif
 	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_isReadable(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Cubemap self=(UnityEngine.Cubemap)checkSelf(l);
-			pushValue(l,true);
-			pushValue(l,self.isReadable);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.Cubemap");
-		addMember(l,SmoothEdges);
 		addMember(l,GetPixels);
 		addMember(l,SetPixels);
+		addMember(l,SmoothEdges);
 		addMember(l,SetPixel);
 		addMember(l,GetPixel);
 		addMember(l,Apply);
 		addMember(l,CreateExternalTexture_s);
 		addMember(l,"mipmapCount",get_mipmapCount,null,true);
 		addMember(l,"format",get_format,null,true);
-		addMember(l,"isReadable",get_isReadable,null,true);
 		createTypeMetatable(l,constructor, typeof(UnityEngine.Cubemap),typeof(UnityEngine.Texture));
 	}
 }

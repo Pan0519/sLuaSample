@@ -213,39 +213,6 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int Normalize(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Quaternion self;
-			checkType(l,1,out self);
-			self.Normalize();
-			pushValue(l,true);
-			setBack(l,self);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int FromToRotation_s(IntPtr l) {
 		try {
 			#if DEBUG
@@ -825,39 +792,6 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int Normalize_s(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Quaternion a1;
-			checkType(l,1,out a1);
-			var ret=UnityEngine.Quaternion.Normalize(a1);
-			pushValue(l,true);
-			pushValue(l,ret);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int get_x(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1253,38 +1187,6 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_normalized(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Quaternion self;
-			checkType(l,1,out self);
-			pushValue(l,true);
-			pushValue(l,self.normalized);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
 	static public int getItem(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1361,7 +1263,6 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 		addMember(l,SetLookRotation);
 		addMember(l,ToAngleAxis);
 		addMember(l,SetFromToRotation);
-		addMember(l,Normalize);
 		addMember(l,FromToRotation_s);
 		addMember(l,Inverse_s);
 		addMember(l,Slerp_s);
@@ -1377,7 +1278,6 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 		addMember(l,Angle_s);
 		addMember(l,Euler_s);
 		addMember(l,RotateTowards_s);
-		addMember(l,Normalize_s);
 		addMember(l,getItem);
 		addMember(l,setItem);
 		addMember(l,"x",get_x,set_x,true);
@@ -1387,7 +1287,6 @@ public class Lua_UnityEngine_Quaternion : LuaObject {
 		addMember(l,"kEpsilon",get_kEpsilon,null,false);
 		addMember(l,"identity",get_identity,null,false);
 		addMember(l,"eulerAngles",get_eulerAngles,set_eulerAngles,true);
-		addMember(l,"normalized",get_normalized,null,true);
 		createTypeMetatable(l,constructor, typeof(UnityEngine.Quaternion),typeof(System.ValueType));
 	}
 }

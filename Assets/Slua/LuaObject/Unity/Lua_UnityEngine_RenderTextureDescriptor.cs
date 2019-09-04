@@ -345,6 +345,73 @@ public class Lua_UnityEngine_RenderTextureDescriptor : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int get_bindMS(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.RenderTextureDescriptor self;
+			checkValueType(l,1,out self);
+			pushValue(l,true);
+			pushValue(l,self.bindMS);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int set_bindMS(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.RenderTextureDescriptor self;
+			checkValueType(l,1,out self);
+			bool v;
+			checkType(l,2,out v);
+			self.bindMS=v;
+			setBack(l,self);
+			pushValue(l,true);
+			return 1;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int get_colorFormat(IntPtr l) {
 		try {
 			#if DEBUG
@@ -1045,73 +1112,6 @@ public class Lua_UnityEngine_RenderTextureDescriptor : LuaObject {
 		}
 		#endif
 	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int get_bindMS(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.RenderTextureDescriptor self;
-			checkValueType(l,1,out self);
-			pushValue(l,true);
-			pushValue(l,self.bindMS);
-			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int set_bindMS(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.RenderTextureDescriptor self;
-			checkValueType(l,1,out self);
-			bool v;
-			checkType(l,2,out v);
-			self.bindMS=v;
-			setBack(l,self);
-			pushValue(l,true);
-			return 1;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.RenderTextureDescriptor");
@@ -1119,6 +1119,7 @@ public class Lua_UnityEngine_RenderTextureDescriptor : LuaObject {
 		addMember(l,"height",get_height,set_height,true);
 		addMember(l,"msaaSamples",get_msaaSamples,set_msaaSamples,true);
 		addMember(l,"volumeDepth",get_volumeDepth,set_volumeDepth,true);
+		addMember(l,"bindMS",get_bindMS,set_bindMS,true);
 		addMember(l,"colorFormat",get_colorFormat,set_colorFormat,true);
 		addMember(l,"depthBufferBits",get_depthBufferBits,set_depthBufferBits,true);
 		addMember(l,"dimension",get_dimension,set_dimension,true);
@@ -1130,7 +1131,6 @@ public class Lua_UnityEngine_RenderTextureDescriptor : LuaObject {
 		addMember(l,"useMipMap",get_useMipMap,set_useMipMap,true);
 		addMember(l,"autoGenerateMips",get_autoGenerateMips,set_autoGenerateMips,true);
 		addMember(l,"enableRandomWrite",get_enableRandomWrite,set_enableRandomWrite,true);
-		addMember(l,"bindMS",get_bindMS,set_bindMS,true);
 		createTypeMetatable(l,constructor, typeof(UnityEngine.RenderTextureDescriptor),typeof(System.ValueType));
 	}
 }

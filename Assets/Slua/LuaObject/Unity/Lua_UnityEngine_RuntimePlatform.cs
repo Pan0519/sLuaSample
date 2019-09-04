@@ -39,7 +39,6 @@ public class Lua_UnityEngine_RuntimePlatform : LuaObject {
 		addMember(l,30,"WiiU");
 		addMember(l,31,"tvOS");
 		addMember(l,32,"Switch");
-		addMember(l,33,"Lumin");
 		LuaDLL.lua_pop(l, 1);
 	}
 }

@@ -20,9 +20,7 @@ public class TestMain : LuaBehavior
     [CustomLuaClass]
     public delegate void newClassDelegate(object self);
     newClassDelegate newClassDele;
-
-
-
+    
     public override string fileName => "testlua2";
 
     public override void Awake()

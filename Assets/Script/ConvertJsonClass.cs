@@ -1,7 +1,7 @@
-﻿using System.Collections;
+﻿using SLua;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using SLua;
 
 class jsonClass
 {
@@ -34,8 +34,7 @@ public class ConvertJsonClass : LuaBehavior
         base.initComplete();
 
         var theJson = JsonUtility.ToJson(theJsonClass);
-        Debug.Log(theJson);
-
+        //Debug.Log(theJson);
         callLuaFunction("getJson", theJson);
     }
 }

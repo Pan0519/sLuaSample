@@ -5,6 +5,40 @@ using System.Collections.Generic;
 public class Lua_UnityEngine_Collider : LuaObject {
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
+	static public int ClosestPointOnBounds(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Collider self=(UnityEngine.Collider)checkSelf(l);
+			UnityEngine.Vector3 a1;
+			checkType(l,2,out a1);
+			var ret=self.ClosestPointOnBounds(a1);
+			pushValue(l,true);
+			pushValue(l,ret);
+			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
 	static public int ClosestPoint(IntPtr l) {
 		try {
 			#if DEBUG
@@ -61,40 +95,6 @@ public class Lua_UnityEngine_Collider : LuaObject {
 			pushValue(l,ret);
 			pushValue(l,a2);
 			return 3;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int ClosestPointOnBounds(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Collider self=(UnityEngine.Collider)checkSelf(l);
-			UnityEngine.Vector3 a1;
-			checkType(l,2,out a1);
-			var ret=self.ClosestPointOnBounds(a1);
-			pushValue(l,true);
-			pushValue(l,ret);
-			return 2;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -334,7 +334,7 @@ public class Lua_UnityEngine_Collider : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_bounds(IntPtr l) {
+	static public int get_material(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -347,8 +347,41 @@ public class Lua_UnityEngine_Collider : LuaObject {
 			#endif
 			UnityEngine.Collider self=(UnityEngine.Collider)checkSelf(l);
 			pushValue(l,true);
-			pushValue(l,self.bounds);
+			pushValue(l,self.material);
 			return 2;
+		}
+		catch(Exception e) {
+			return error(l,e);
+		}
+		#if DEBUG
+		finally {
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.EndSample();
+			#else
+			Profiler.EndSample();
+			#endif
+		}
+		#endif
+	}
+	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	[UnityEngine.Scripting.Preserve]
+	static public int set_material(IntPtr l) {
+		try {
+			#if DEBUG
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			string methodName = GetMethodName(method);
+			#if UNITY_5_5_OR_NEWER
+			UnityEngine.Profiling.Profiler.BeginSample(methodName);
+			#else
+			Profiler.BeginSample(methodName);
+			#endif
+			#endif
+			UnityEngine.Collider self=(UnityEngine.Collider)checkSelf(l);
+			UnityEngine.PhysicMaterial v;
+			checkType(l,2,out v);
+			self.material=v;
+			pushValue(l,true);
+			return 1;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -429,7 +462,7 @@ public class Lua_UnityEngine_Collider : LuaObject {
 	}
 	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	[UnityEngine.Scripting.Preserve]
-	static public int get_material(IntPtr l) {
+	static public int get_bounds(IntPtr l) {
 		try {
 			#if DEBUG
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
@@ -442,41 +475,8 @@ public class Lua_UnityEngine_Collider : LuaObject {
 			#endif
 			UnityEngine.Collider self=(UnityEngine.Collider)checkSelf(l);
 			pushValue(l,true);
-			pushValue(l,self.material);
+			pushValue(l,self.bounds);
 			return 2;
-		}
-		catch(Exception e) {
-			return error(l,e);
-		}
-		#if DEBUG
-		finally {
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.EndSample();
-			#else
-			Profiler.EndSample();
-			#endif
-		}
-		#endif
-	}
-	[SLua.MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	[UnityEngine.Scripting.Preserve]
-	static public int set_material(IntPtr l) {
-		try {
-			#if DEBUG
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			string methodName = GetMethodName(method);
-			#if UNITY_5_5_OR_NEWER
-			UnityEngine.Profiling.Profiler.BeginSample(methodName);
-			#else
-			Profiler.BeginSample(methodName);
-			#endif
-			#endif
-			UnityEngine.Collider self=(UnityEngine.Collider)checkSelf(l);
-			UnityEngine.PhysicMaterial v;
-			checkType(l,2,out v);
-			self.material=v;
-			pushValue(l,true);
-			return 1;
 		}
 		catch(Exception e) {
 			return error(l,e);
@@ -494,16 +494,16 @@ public class Lua_UnityEngine_Collider : LuaObject {
 	[UnityEngine.Scripting.Preserve]
 	static public void reg(IntPtr l) {
 		getTypeTable(l,"UnityEngine.Collider");
+		addMember(l,ClosestPointOnBounds);
 		addMember(l,ClosestPoint);
 		addMember(l,Raycast);
-		addMember(l,ClosestPointOnBounds);
 		addMember(l,"enabled",get_enabled,set_enabled,true);
 		addMember(l,"attachedRigidbody",get_attachedRigidbody,null,true);
 		addMember(l,"isTrigger",get_isTrigger,set_isTrigger,true);
 		addMember(l,"contactOffset",get_contactOffset,set_contactOffset,true);
-		addMember(l,"bounds",get_bounds,null,true);
-		addMember(l,"sharedMaterial",get_sharedMaterial,set_sharedMaterial,true);
 		addMember(l,"material",get_material,set_material,true);
+		addMember(l,"sharedMaterial",get_sharedMaterial,set_sharedMaterial,true);
+		addMember(l,"bounds",get_bounds,null,true);
 		createTypeMetatable(l,null, typeof(UnityEngine.Collider),typeof(UnityEngine.Component));
 	}
 }

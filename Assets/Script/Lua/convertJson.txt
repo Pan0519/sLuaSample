@@ -3,53 +3,35 @@ function main()
 end
 
 function getJson(jsonValue)
-    local jsonTable = json2table(jsonValue)
-    --local tableCount = 0
-    --for k, v in ipairs(jsonTable) do
-    --    tableCount = tableCount + 1
-    --end
-    -- print(tableCount)
+    return jsonToTable(jsonValue)
 end
-local tableCount = 0
-function json2table(str, from, to)
+
+function jsonToTable(str)
     local result = {}
-    local resultArray = {}
-    from = from or 1
-    local pos = from + 1
-    local to = to or string.len(str)
-    local key
-    local startCut = 2
-    local arrayIndex = 1
-    while (pos <= to) do
-        local char = string.sub(str, pos, pos)
-        if char == ':' then
-            key = string.sub(str, startCut, pos - 1)
-            resultArray[arrayIndex] = key
-            arrayIndex = arrayIndex + 1
-            startCut = pos + 1
-        elseif char == ',' then
-            value = string.sub(str, startCut, pos - 1)
-            result[key] = value
-            startCut = pos + 1
-        elseif (char == 'f' or char == 'F') then
-            result[key] = false
-            startCut = pos + 1
-        elseif (char == 't' or char == 'T') then
-            result[key] = true
-            startCut = pos + 1
+    str = string.sub(str, 2, #str - 1)
+    local jsonSplite = string.split(str, ',')
+    for _, s in ipairs(jsonSplite) do
+        local keyValue = string.split(s, ':')
+        local key = string.sub(keyValue[1], 2, #keyValue[1] - 1)
+        local value = keyValue[2]
+        if string.match(value, "false") ~= nil then
+            value = false
+        elseif string.match(value, "true") ~= nil then
+            value = true
+        elseif tonumber(value) ~= nil then
+            value = tonumber(value)
         end
-
-        --print(key, result[key], type(key))
-        pos = pos + 1
+        result[key] = value
     end
-
-    for i = 0, #resultArray do
-        print(result[resultArray[i]])
-    end
-    for k, v in ipairs(result) do
-        tableCount = tableCount + 1
-    end
-    print(tableCount)
-
     return result
+end
+
+string.split = function(s, p)
+
+    local rt = {}
+    string.gsub(s, '[^' .. p .. ']+', function(w)
+        table.insert(rt, w)
+    end)
+    return rt
+
 end

@@ -6,7 +6,7 @@ namespace SLua
     public partial class LuaDelegation : LuaObject
     {
 
-        static internal void Lua_System_Action_2_string_bool(LuaFunction ld ,string a1,bool a2) {
+        static internal void Lua_UnityEngine_U2D_SpriteAtlasManager_RequestAtlasCallback(LuaFunction ld ,string a1,System.Action<UnityEngine.U2D.SpriteAtlas> a2) {
             IntPtr l = ld.L;
             int error = pushTry(l);
 
