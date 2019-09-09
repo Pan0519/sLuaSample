@@ -23,7 +23,9 @@ public class ConvertJsonClass : LuaBehavior
 
         theJsonClass = new jsonClass()
         {
-          
+            aaa = "aaa",
+            bbb = 123,
+            ccc = false
         };
     }
 
@@ -32,7 +34,7 @@ public class ConvertJsonClass : LuaBehavior
         base.initComplete();
 
         var theJson = JsonUtility.ToJson(theJsonClass);
-        //Debug.Log(theJson);
+        Debug.Log(theJson);
         callLuaFunction("getJson", string.Empty);
     }
 }
